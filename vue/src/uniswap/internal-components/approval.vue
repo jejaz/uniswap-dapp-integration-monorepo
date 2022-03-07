@@ -1,70 +1,66 @@
-<template>
-  <button
-    class="uni-ic__swap-allow uni-ic__theme-background-button"
-    v-if="
-      tradeContext &&
-        tradeContext.approvalTransaction &&
-        tradeContext.fromBalance &&
-        tradeContext.fromBalance.hasEnough
-    "
-    :disabled="logic.transactionInProcess()"
-    v-on:click="logic.approveAllowance()"
-  >
-    <TokenIcon
-      classes="uni-ic__swap-allow-icon"
-      :context="logic.inputToken.tokenImageContext"
-    />
-
-    <span
+<template>  
+    <button
+      class="uni-ic__swap-allow uni-ic__theme-background-button"
       v-if="
-        miningTransaction === undefined ||
-          miningTransactionStatus === TransactionStatus.rejected
+        tradeContext &&
+          tradeContext.approvalTransaction &&
+          tradeContext.fromBalance &&
+          tradeContext.fromBalance.hasEnough
       "
-      >You must give the Uniswap smart contract permisson to use your
-      {{ tradeContext.fromToken.symbol }}. You only have to do this once per
-      token per uniswap version. Click here to approve the permissons.
-    </span>
-
-    <span
-      v-if="
-        miningTransactionStatus === TransactionStatus.waitingForConfirmation
-      "
-      >Waiting for confirmation....</span
+      :disabled="logic.transactionInProcess()"
+      v-on:click="logic.approveAllowance()"
     >
-    <span v-if="miningTransactionStatus === TransactionStatus.mining"
-      >Waiting for your transaction to be mined...
-      <u
-        ><a
-          class="uni-ic__swap-allow-etherscan"
-          v-on:click="logic.viewOnEtherscan()"
-        >
-          View tx on etherscan
-        </a>
-      </u>
-    </span>
-  </button>
+      <TokenIcon
+        classes="uni-ic__swap-allow-icon"
+        :context="logic.inputToken.tokenImageContext"
+      />
+  
+      <span
+        v-if="
+          miningTransaction === undefined ||
+            miningTransactionStatus === TransactionStatus.rejected
+        "
+        >You must give the Uniswap smart contract permisson to use your
+        {{ tradeContext.fromToken.symbol }}. You only have to do this once per
+        token per uniswap version. Click here to approve the permissons.
+      </span>
+  
+      <span
+        v-if="
+          miningTransactionStatus === TransactionStatus.waitingForConfirmation
+        "
+        >Waiting for confirmation....</span
+      >
+      <span v-if="miningTransactionStatus === TransactionStatus.mining"
+        >Waiting for your transaction to be mined...
+        <u
+          ><a
+            class="uni-ic__swap-allow-etherscan"
+            v-on:click="logic.viewOnEtherscan()"
+          >
+            View tx on etherscan
+          </a>
+        </u>
+      </span>
+    </button>
 </template>
 
-<script lang="ts">
+<script>
 import { default as TokenIcon } from './token-icon.vue';
 import { TransactionStatus } from 'uniswap-dapp-integration-shared';
 import { defineComponent } from 'vue';
-
 export default defineComponent({
   name: 'Approval',
   components: {
-    TokenIcon,
+    TokenIcon
   },
-  props: [
-    'logic',
-    'tradeContext',
-    'miningTransaction',
-    'miningTransactionStatus',
-  ],
+  props: ['logic', 'tradeContext', 'miningTransaction', 'miningTransactionStatus'],
+
   data() {
     return {
-      TransactionStatus,
+      TransactionStatus
     };
-  },
+  }
+
 });
 </script>
