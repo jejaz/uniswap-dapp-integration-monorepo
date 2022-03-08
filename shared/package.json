@@ -17,7 +17,7 @@
   "dependencies": {
     "bignumber.js": "^9.0.1",
     "ethers": "^5.4.0",
-    "rxjs": "^7.1.0", 
+    "rxjs": "^7.1.0",
     "simple-uniswap-sdk": "https://github.com/jejaz/simple-uniswap-sdk.git#master"
   },
   "devDependencies": {
