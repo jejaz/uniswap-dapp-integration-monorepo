@@ -15,6 +15,7 @@ export default defineComponent({
       method: 'eth_requestAccounts',
     });
 
+    //TODO: change this
     this.uniswapDappSharedLogicContext = {
       supportedNetworkTokens: [
         {
@@ -33,6 +34,16 @@ export default defineComponent({
         },
         {
           chainId: ChainId.RINKEBY,
+          defaultInputToken: ETH.RINKEBY().contractAddress,
+          defaultOutputToken: '0xef0e839cf88e47be676e72d5a9cb6ced99fad1cf',
+          supportedTokens: [
+            {
+              contractAddress: '0xef0e839cf88e47be676e72d5a9cb6ced99fad1cf',
+            },
+          ],
+        },
+        {
+          chainId: ChainId.POLYGON,
           defaultInputToken: ETH.RINKEBY().contractAddress,
           defaultOutputToken: '0xef0e839cf88e47be676e72d5a9cb6ced99fad1cf',
           supportedTokens: [
