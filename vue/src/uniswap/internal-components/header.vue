@@ -1,9 +1,6 @@
 <template>  
     <div class="uni-ic__header-container">
       <div class="uni-ic__header-content">
-        <div class="uni-ic__header-content-title">
-          Swap
-        </div>
         <div class="uni-ic__header-content-settings">
           <button
             class="uni-ic__header-content-settings-button"

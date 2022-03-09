@@ -3,11 +3,11 @@
       <Loading v-if="loading" />
       <div v-else>
         <div class="uni-ic uni-ic__theme-background">
-          <Header
-            v-if="logic && supportedNetwork && inputToken"
-            :logic="logic"
-            @disableMultihopsCompleted="disableMultihopsCompleted"
-          />
+<!--          <Header-->
+<!--            v-if="logic && supportedNetwork && inputToken"-->
+<!--            :logic="logic"-->
+<!--            @disableMultihopsCompleted="disableMultihopsCompleted"-->
+<!--          />-->
   
           <div
             class="uni-ic__swap-container"
