@@ -57,7 +57,7 @@ var CoinGecko = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         contractAddresses = contractAddresses.map(function (address) {
-                            return simple_uniswap_sdk_1.removeEthFromContractAddress(address);
+                            return (0, simple_uniswap_sdk_1.removeEthFromContractAddress)(address);
                         });
                         if (!(chainId === simple_uniswap_sdk_1.ChainId.MAINNET)) return [3 /*break*/, 6];
                         if (this._fiatPriceCache) {
@@ -70,7 +70,7 @@ var CoinGecko = /** @class */ (function () {
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 4, , 5]);
-                        return [4 /*yield*/, fetch("https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=" + contractAddresses.join() + "&vs_currencies=usd")];
+                        return [4 /*yield*/, fetch("https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=".concat(contractAddresses.join(), "&vs_currencies=usd"))];
                     case 2: return [4 /*yield*/, (_a.sent()).json()];
                     case 3:
                         response = _a.sent();

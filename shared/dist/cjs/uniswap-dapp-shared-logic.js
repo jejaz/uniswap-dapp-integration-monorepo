@@ -765,8 +765,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_m.label) {
                     case 0:
                         (_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.destroy();
-                        inputToken = simple_uniswap_sdk_1.getAddress(inputToken, true);
-                        outputToken = simple_uniswap_sdk_1.getAddress(outputToken, true);
+                        inputToken = (0, simple_uniswap_sdk_1.getAddress)(inputToken, true);
+                        outputToken = (0, simple_uniswap_sdk_1.getAddress)(outputToken, true);
                         uniswapPair = this.createUniswapPairContext(inputToken, outputToken, this.uniswapPairSettings);
                         _c = this;
                         return [4 /*yield*/, uniswapPair.createFactory()];
@@ -911,7 +911,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         if (!this.supportedNetwork) return [3 /*break*/, 4];
                         return [4 /*yield*/, this._tokensFactoryPublic.getAllowanceAndBalanceOfForContracts(this._ethereumProvider.address, this._context.supportedNetworkTokens
                                 .find(function (t) { return t.chainId === _this.chainId; })
-                                .supportedTokens.map(function (c) { return simple_uniswap_sdk_1.getAddress(c.contractAddress, true); }), true)];
+                                .supportedTokens.map(function (c) { return (0, simple_uniswap_sdk_1.getAddress)(c.contractAddress, true); }), true)];
                     case 1:
                         tokenWithAllowanceInfo = _c.sent();
                         return [4 /*yield*/, this._coinGecko.getCoinGeckoFiatPrices(tokenWithAllowanceInfo.map(function (c) { return c.token.contractAddress; }), this.chainId)];

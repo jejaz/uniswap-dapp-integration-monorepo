@@ -57,14 +57,14 @@ var TokenService = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        contractAddress = simple_uniswap_sdk_1.getAddress(contractAddress, true);
+                        contractAddress = (0, simple_uniswap_sdk_1.getAddress)(contractAddress, true);
                         cachedImage = this._tokensCachedImages.find(function (c) { return c.contractAddress === contractAddress && c.chainId === chainId; });
                         if (cachedImage) {
                             return [2 /*return*/, cachedImage.tokenImageContext];
                         }
                         supportedTokensForNetwork = this._supportedNetworkTokens.find(function (tokens) { return tokens.chainId === chainId; });
                         if (supportedTokensForNetwork) {
-                            token = supportedTokensForNetwork.supportedTokens.find(function (c) { return simple_uniswap_sdk_1.getAddress(c.contractAddress, true) === contractAddress; });
+                            token = supportedTokensForNetwork.supportedTokens.find(function (c) { return (0, simple_uniswap_sdk_1.getAddress)(c.contractAddress, true) === contractAddress; });
                             if (token === null || token === void 0 ? void 0 : token.tokenImageContext) {
                                 this._tokensCachedImages.push({
                                     contractAddress: contractAddress,
@@ -74,7 +74,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/" + simple_uniswap_sdk_1.removeEthFromContractAddress(contractAddress) + "/logo.png";
+                        image = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/".concat((0, simple_uniswap_sdk_1.removeEthFromContractAddress)(contractAddress), "/logo.png");
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
@@ -109,7 +109,7 @@ var TokenService = /** @class */ (function () {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
-                        contractAddress = simple_uniswap_sdk_1.getAddress(contractAddress, true);
+                        contractAddress = (0, simple_uniswap_sdk_1.getAddress)(contractAddress, true);
                         tokenFactoryPublic = new simple_uniswap_sdk_1.TokenFactoryPublic(contractAddress, {
                             ethereumProvider: ethereumProvider,
                         });
@@ -143,7 +143,7 @@ var TokenService = /** @class */ (function () {
                         for (_i = 0, _a = Object.entries(fiatPriceResults); _i < _a.length; _i++) {
                             _b = _a[_i], key = _b[0], value = _b[1];
                             if (key.toLowerCase() ===
-                                simple_uniswap_sdk_1.removeEthFromContractAddress(token.contractAddress.toLowerCase())) {
+                                (0, simple_uniswap_sdk_1.removeEthFromContractAddress)(token.contractAddress.toLowerCase())) {
                                 // @ts-ignore
                                 // tslint:disable-next-line: no-string-literal
                                 fiatPrice = Number(value['usd']);

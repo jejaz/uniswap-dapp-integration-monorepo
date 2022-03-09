@@ -16,7 +16,7 @@ var ChainService = /** @class */ (function () {
      * @param transactionHash The transaction hash
      */
     ChainService.prototype.getBlockExplorerLinkForTransactionHash = function (chainId, transactionHash) {
-        return this.getBlockExplorerForNetwork(chainId) + "tx/" + transactionHash;
+        return "".concat(this.getBlockExplorerForNetwork(chainId), "tx/").concat(transactionHash);
     };
     /**
      * unwatch any block streams
@@ -40,6 +40,8 @@ var ChainService = /** @class */ (function () {
                 return 'https://kovan.etherscan.io/';
             case simple_uniswap_sdk_1.ChainId.GÖRLI:
                 return 'https://goerli.etherscan.io/';
+            case simple_uniswap_sdk_1.ChainId.POLYGON:
+                return 'https://polygonscan.com/';
             default:
                 throw new Error('Network is not defined');
         }
