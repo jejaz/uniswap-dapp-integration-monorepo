@@ -71,7 +71,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/" + removeEthFromContractAddress(contractAddress) + "/logo.png";
+                        image = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/".concat(removeEthFromContractAddress(contractAddress), "/logo.png");
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);

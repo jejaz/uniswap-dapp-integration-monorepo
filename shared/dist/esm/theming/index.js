@@ -21,7 +21,7 @@ var Theming = /** @class */ (function () {
     Theming.prototype.themeBackgroundColors = function () {
         var _a;
         if ((_a = this._theming) === null || _a === void 0 ? void 0 : _a.backgroundColor) {
-            return ".uni-ic__theme-background {background: " + this._theming.backgroundColor + " !important}";
+            return ".uni-ic__theme-background {background: ".concat(this._theming.backgroundColor, " !important}");
         }
         return '';
     };
@@ -31,7 +31,7 @@ var Theming = /** @class */ (function () {
     Theming.prototype.themeTextColors = function () {
         var _a;
         if ((_a = this._theming) === null || _a === void 0 ? void 0 : _a.textColor) {
-            return ".uni-ic,\n              .uni-ic__modal,\n              .uni-ic__modal button:not(.uni-ic__theme-background-button),\n              svg\n              {color: " + this._theming.textColor + " !important}";
+            return ".uni-ic,\n              .uni-ic__modal,\n              .uni-ic__modal button:not(.uni-ic__theme-background-button),\n              svg\n              {color: ".concat(this._theming.textColor, " !important}");
         }
         return '';
     };
@@ -42,13 +42,13 @@ var Theming = /** @class */ (function () {
         var _a, _b, _c, _d;
         var css = '';
         if ((_b = (_a = this._theming) === null || _a === void 0 ? void 0 : _a.button) === null || _b === void 0 ? void 0 : _b.backgroundColor) {
-            css += "background: " + this._theming.button.backgroundColor + " !important; ";
+            css += "background: ".concat(this._theming.button.backgroundColor, " !important; ");
         }
         if ((_d = (_c = this._theming) === null || _c === void 0 ? void 0 : _c.button) === null || _d === void 0 ? void 0 : _d.textColor) {
-            css += "color: " + this._theming.button.textColor + " !important";
+            css += "color: ".concat(this._theming.button.textColor, " !important");
         }
         if (css.length > 0) {
-            return ".uni-ic__theme-background-button,\n              .uni-ic__settings-transaction-slippage-option.selected,\n              .uni-ic__settings-interface-multihops-actions-off.selected\n              {" + css + "}";
+            return ".uni-ic__theme-background-button,\n              .uni-ic__settings-transaction-slippage-option.selected,\n              .uni-ic__settings-interface-multihops-actions-off.selected\n              {".concat(css, "}");
         }
         return css;
     };
@@ -59,13 +59,13 @@ var Theming = /** @class */ (function () {
         var _a, _b, _c, _d;
         var css = '';
         if ((_b = (_a = this._theming) === null || _a === void 0 ? void 0 : _a.panel) === null || _b === void 0 ? void 0 : _b.backgroundColor) {
-            css += "background: " + this._theming.panel.backgroundColor + " !important; border-color: " + this._theming.backgroundColor + " !important; ";
+            css += "background: ".concat(this._theming.panel.backgroundColor, " !important; border-color: ").concat(this._theming.backgroundColor, " !important; ");
         }
         if ((_d = (_c = this._theming) === null || _c === void 0 ? void 0 : _c.panel) === null || _d === void 0 ? void 0 : _d.textColor) {
-            css += "color: " + this._theming.panel.textColor + " !important";
+            css += "color: ".concat(this._theming.panel.textColor, " !important");
         }
         if (css.length > 0) {
-            return ".uni-ic__theme-panel {" + css + "}";
+            return ".uni-ic__theme-panel {".concat(css, "}");
         }
         return css;
     };

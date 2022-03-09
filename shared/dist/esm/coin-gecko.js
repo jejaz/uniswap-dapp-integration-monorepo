@@ -67,7 +67,7 @@ var CoinGecko = /** @class */ (function () {
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 4, , 5]);
-                        return [4 /*yield*/, fetch("https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=" + contractAddresses.join() + "&vs_currencies=usd")];
+                        return [4 /*yield*/, fetch("https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=".concat(contractAddresses.join(), "&vs_currencies=usd"))];
                     case 2: return [4 /*yield*/, (_a.sent()).json()];
                     case 3:
                         response = _a.sent();
