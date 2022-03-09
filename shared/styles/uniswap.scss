@@ -153,10 +153,11 @@
 
     &-input-content-main {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       -webkit-box-align: center;
-      align-items: center;
+      align-items: start;
       padding: 16px;
+      gap:10px;
 
       &-from {
         color: #E3E8DD;
@@ -197,6 +198,7 @@
           -webkit-box-align: center;
           align-items: center;
           height: 37px;
+          width: 140px;
           font-size: 20px;
           @include xsm {
             font-size: 16px;
@@ -363,31 +365,34 @@
         &-main {
           display: flex;
           flex-direction: column;
-          gap:10px;
+          gap: 10px;
           -webkit-box-align: center;
           align-items: flex-start;
           padding: 16px;
 
-          &-from {
-            color: RGB(0, 0, 0);
-            width: 0px;
-            position: relative;
-            font-weight: 500;
-            outline: none;
-            border: none;
-            flex: 1 1 auto;
-            background-color: RGB(247, 248, 250);
-            font-size: 24px;
-            @include xsm {
-              font-size: 16px;
-            }
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding: 0px;
-            appearance: textfield;
-            text-align: right;
+          & -from {
+          color: #E3E8DD;
+          width: 100%;
+          position: relative;
+          font-family: Aktiv Grotesk;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 28px;
+          outline: none;
+          border: none;
+          flex: 1 1 auto;
+          background-color: #0B0B0B;
+          font-size: 24px;
+          @include xsm {
+            font-size: 18px;
           }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0px;
+          appearance: textfield;
+        }
 
           &-select {
             -webkit-box-align: center;
@@ -395,15 +400,27 @@
             height: 2.2rem;
             font-size: 20px;
             font-weight: 500;
-            background-color: RGB(255, 255, 255);
-            color: RGB(0, 0, 0);
-            border-radius: 12px;
+            font-family: Aktiv Grotesk;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+
+            /* or 129% */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: #212121;
+            border-radius: 8px;
+            color: #E3E8DD;
             box-shadow: none;
             outline: none;
             cursor: pointer;
             user-select: none;
             border: none;
             padding: 0px 0.5rem;
+            width:140px;
+            height: 37px;
 
             &-content {
               display: flex;
