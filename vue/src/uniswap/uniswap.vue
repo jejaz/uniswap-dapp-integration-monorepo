@@ -67,9 +67,8 @@
                         <div
                           class="uni-ic__swap-content-balance-and-price__balance-text"
                         >
-                          Balance:
+                          Balance =
                           {{ inputBalance }}
-                          {{ inputToken.symbol }}
                         </div>
                       </div>
                       <div

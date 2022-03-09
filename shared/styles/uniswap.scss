@@ -131,8 +131,9 @@
       padding: 8px;
     }
     &-content {
-      display: grid;
-      grid-auto-rows: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
 
     &-input-container {
@@ -158,14 +159,18 @@
       padding: 16px;
 
       &-from {
-        color: RGB(0, 0, 0);
-        width: 0px;
+        color: #E3E8DD;
+        width: 100%;
         position: relative;
-        font-weight: 500;
+        font-family: Aktiv Grotesk;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 28px;
         outline: none;
         border: none;
         flex: 1 1 auto;
-        background-color: RGB(247, 248, 250);
+        background-color: #0B0B0B;
         font-size: 24px;
         @include xsm {
           font-size: 18px;
@@ -175,7 +180,6 @@
         text-overflow: ellipsis;
         padding: 0px;
         appearance: textfield;
-        text-align: right;
 
         &-max {
           height: 28px;
@@ -192,7 +196,7 @@
         &-currency-container {
           -webkit-box-align: center;
           align-items: center;
-          height: 2.2rem;
+          height: 37px;
           font-size: 20px;
           @include xsm {
             font-size: 16px;
@@ -206,6 +210,7 @@
           font-weight: normal;
           font-size: 14px;
           line-height: 18px;
+          color: #E3E8DD;
 
           /* or 129% */
           display: flex;
@@ -269,7 +274,7 @@
         flex-flow: row nowrap;
         -webkit-box-align: center;
         align-items: center;
-        color: RGB(0, 0, 0);
+        color: #6E6F67;
         font-size: 0.75rem;
         line-height: 1rem;
         padding: 0px 1rem 1rem;
@@ -294,8 +299,11 @@
           box-sizing: border-box;
           margin: 0px;
           min-width: 0px;
-          font-weight: 400;
-          font-size: 14px;
+          font-family: Aktiv Grotesk;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 18px;
           display: inline;
           cursor: pointer;
         }
@@ -317,15 +325,17 @@
 
     &-divider {
       padding: 4px;
-      border-radius: 12px;
-      height: 18px;
-      width: 18px;
+      border-radius: 100px;
+      height: 28px;
+      width: 28px;
       position: relative;
       margin-top: -14px;
       margin-bottom: -14px;
       left: calc(50% - 16px);
-      background-color: RGB(247, 248, 250);
-      border: 4px solid RGB(255, 255, 255);
+      background: #141414;
+
+      /* Border/Border Dark 04 */
+      border: 1px solid rgba(247, 249, 246, 0.8);
       z-index: 2;
       cursor: pointer;
     }
@@ -336,14 +346,15 @@
         flex-flow: column nowrap;
         position: relative;
         border-radius: 20px;
-        background-color: RGB(247, 248, 250);
         z-index: 1;
       }
 
       &-content {
         border-radius: 20px;
-        border: 1px solid RGB(247, 248, 250);
-        background-color: RGB(247, 248, 250);
+        background: #0B0B0B;
+        border: 1px solid rgba(247, 249, 246, 0.3);
+        box-sizing: border-box;
+        border-radius: 8px;
 
         @include xsm {
           margin-top: 5px;
@@ -351,10 +362,11 @@
 
         &-main {
           display: flex;
-          flex-flow: row nowrap;
+          flex-direction: column;
+          gap:10px;
           -webkit-box-align: center;
-          align-items: center;
-          padding: 0.75rem 0.75rem 0.75rem 1rem;
+          align-items: flex-start;
+          padding: 16px;
 
           &-from {
             color: RGB(0, 0, 0);
