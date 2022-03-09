@@ -365,34 +365,38 @@
         &-main {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap:10px;
           -webkit-box-align: center;
           align-items: flex-start;
           padding: 16px;
 
-          & -from {
-          color: #E3E8DD;
-          width: 100%;
-          position: relative;
-          font-family: Aktiv Grotesk;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 24px;
-          line-height: 28px;
-          outline: none;
-          border: none;
-          flex: 1 1 auto;
-          background-color: #0B0B0B;
-          font-size: 24px;
-          @include xsm {
-            font-size: 18px;
+          &-from {
+            color: #E3E8DD;
+            width: 100%;
+            position: relative;
+            outline: none;
+            border: none;
+            flex: 1 1 auto;
+            background-color: #0B0B0B;
+            font-size: 24px;
+            color: #E3E8DD;
+            width: 100%;
+            position: relative;
+            font-family: Aktiv Grotesk;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            @include xsm {
+              font-size: 16px;
+            }
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0px;
+            appearance: textfield;
+            text-align: right;
           }
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          padding: 0px;
-          appearance: textfield;
-        }
 
           &-select {
             -webkit-box-align: center;
