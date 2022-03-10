@@ -13,8 +13,6 @@
             class="uni-ic__swap-container"
             v-if="logic && supportedNetwork && inputToken"
           >
-            input Token ----> {{inputToken}}
-            input fiat price ---> {{inputFiatPrice}}
             <div class="uni-ic__swap-content">
               <div class="uni-ic__swap-input-container">
                 <div class="uni-ic__swap-input-content uni-ic__theme-panel">
@@ -96,7 +94,7 @@
                 class="uni-ic__swap-divider uni-ic__theme-panel"
                 v-on:click="switchSwap()"
               >
-              <img src='icons/arrows.png'>
+              <img src='@/uniswap/icons/arrows.png'>
               </div>
   
               <div class="uni-ic__swap-output-container">
