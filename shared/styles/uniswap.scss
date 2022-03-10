@@ -279,8 +279,8 @@
         color: #6E6F67;
         font-size: 0.75rem;
         line-height: 1rem;
-        padding: 0px 1rem 1rem;
         -webkit-box-pack: end;
+        width: 200px;
         justify-content: flex-end;
       }
 
@@ -308,6 +308,8 @@
           line-height: 18px;
           display: inline;
           cursor: pointer;
+          text-align: end;
+          width: 200px;
         }
       }
 
@@ -1828,6 +1830,5 @@
   }
   .second-container {
     display: flex;
-    flex-direction: column;
   }
 }
