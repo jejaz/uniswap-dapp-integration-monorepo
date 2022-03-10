@@ -3,11 +3,11 @@
       <Loading v-if="loading" />
       <div v-else>
         <div class="uni-ic uni-ic__theme-background">
-<!--          <Header-->
-<!--            v-if="logic && supportedNetwork && inputToken"-->
-<!--            :logic="logic"-->
-<!--            @disableMultihopsCompleted="disableMultihopsCompleted"-->
-<!--          />-->
+          <Header
+            v-if="logic && supportedNetwork && inputToken"
+            :logic="logic"
+            @disableMultihopsCompleted="disableMultihopsCompleted"
+          />
   
           <div
             class="uni-ic__swap-container"
@@ -22,7 +22,9 @@
                       v-on:click="logic.openTokenSelectorFrom()"
                     >
                       <span class="uni-ic__swap-input-content-main-from-currency">
+<!--                        TODO: render only if exists-->
                         <TokenIcon
+                          v-if='inputToken.tokenImageContext?.image'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="inputToken.tokenImageContext"
                         />

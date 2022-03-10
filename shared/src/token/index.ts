@@ -57,6 +57,7 @@ export class TokenService {
       }
     }
 
+    //TODO: need to change logos here
     const image = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${removeEthFromContractAddress(
       contractAddress,
     )}/logo.png`;
