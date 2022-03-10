@@ -992,6 +992,12 @@
     &-tokens {
       &-title {
         margin-top: 2px;
+        color: #6E6F67;
+        font-family: 'Aktiv Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 16px;
       }
 
       &-search {
@@ -1016,13 +1022,17 @@
           white-space: nowrap;
           background: none;
           outline: none;
-          border-radius: 20px;
-          color: RGB(0, 0, 0);
-          border: 1px solid RGB(206, 208, 217);
+          border-radius: 8px;
+          color: #6E6F67;
           appearance: none;
           font-size: 18px;
           transition: border 100ms ease 0s;
           margin-bottom: 12px;
+          font-family: 'Aktiv Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
         }
       }
 
@@ -1045,13 +1055,13 @@
 
         &-container {
           &:hover {
-            background: RGB(255, 0, 122);
+            background: #6E6F67;;
             color: white;
             cursor: pointer;
           }
 
           &.selected {
-            background: RGB(255, 0, 122);
+            background:  #6E6F67;;
             color: white;
             opacity: 0.6;
           }
@@ -1802,8 +1812,8 @@
     min-height: 80vh;
 
     &__content {
-      border-radius: 20px;
-      background-color: #fefefe;
+      border-radius: 8px;
+      background-color:  #0B0B0B;
       margin: auto;
       padding: 20px;
       width: 20%;
