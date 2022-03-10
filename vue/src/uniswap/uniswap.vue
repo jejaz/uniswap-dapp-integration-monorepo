@@ -94,7 +94,7 @@
                 class="uni-ic__swap-divider uni-ic__theme-panel"
                 v-on:click="switchSwap()"
               >
-              <img src='icons/arrows.png'>
+              <img src="icons/arrows.png">
               </div>
   
               <div class="uni-ic__swap-output-container">
@@ -231,7 +231,7 @@
               >
                 <div class="uni-ic__swap-button-text">
                   <span v-if="utils().isZero(outputValue) && !noLiquidityFound"
-                    >Enter an amount</span
+                    >Swap</span
                   >
                   <span
                     v-if="

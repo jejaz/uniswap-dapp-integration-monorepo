@@ -452,22 +452,20 @@
 
     &-button {
       &:disabled {
-        background-color: RGB(237, 238, 242);
-        color: RGB(136, 141, 155);
+        background-color: #434343;
+        color: #141414;
         cursor: auto;
         box-shadow: none;
-        border: 1px solid transparent;
         outline: none;
-        opacity: 0.6;
       }
 
       padding: 18px;
       width: 100%;
       font-weight: 500;
+      color: #141414;
       text-align: center;
-      border-radius: 20px;
+      border-radius: 8px;
       outline: none;
-      border: 1px solid transparent;
       text-decoration: none;
       display: flex;
       -webkit-box-pack: center;
@@ -478,10 +476,10 @@
       cursor: pointer;
       position: relative;
       z-index: 1;
-      background-color: RGB(255, 0, 122);
-      color: white;
+      background-color: #CAFF2C;
       box-sizing: border-box;
       margin: 0px;
+      padding: 11px 16px;
       min-width: 0px;
       appearance: none;
       margin-top: 10px;
@@ -494,8 +492,11 @@
         box-sizing: border-box;
         margin: 0px;
         min-width: 0px;
-        font-size: 20px;
-        font-weight: 500;
+        font-family: 'Aktiv Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
       }
     }
 
