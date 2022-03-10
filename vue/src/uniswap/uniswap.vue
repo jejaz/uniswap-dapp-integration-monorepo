@@ -44,6 +44,7 @@
                         </svg>
                       </span>
                     </button>
+                    <div class='second-container'>
                     <input
                       class="uni-ic__swap-input-content-main-from uni-ic__theme-panel"
                       autocomplete="off"
@@ -58,30 +59,31 @@
                       :disabled="logic.transactionInProcess()"
                       v-on:input="changeInputTradePrice"
                     />
-                  </div>
-                  <div class="uni-ic__swap-content-balance-and-price-container">
-                    <div class="uni-ic__swap-content-balance-and-price">
-                      <div
-                        class="uni-ic__swap-content-balance-and-price__balance"
-                      >
-                        <div
-                          class="uni-ic__swap-content-balance-and-price__balance-text"
-                        >
-                          Balance =
-                          {{ inputBalance }}
+                      <div class="uni-ic__swap-content-balance-and-price-container">
+                        <div class="uni-ic__swap-content-balance-and-price">
+                          <div
+                            class="uni-ic__swap-content-balance-and-price__balance"
+                          >
+                            <div
+                              class="uni-ic__swap-content-balance-and-price__balance-text"
+                            >
+                              Balance =
+                              {{ inputBalance }}
+                            </div>
+                          </div>
+                          <div
+                            class="uni-ic__swap-content-balance-and-price__price"
+                            v-if="inputValue && inputFiatPrice"
+                          >
+                            ~$
+                            <span
+                              class="uni-ic__swap-content-balance-and-price__price-text"
+                            >{{
+                                formatCurrency(inputFiatPrice.times(inputValue))
+                              }}</span
+                            >
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        class="uni-ic__swap-content-balance-and-price__price"
-                        v-if="inputValue && inputFiatPrice"
-                      >
-                        ~$
-                        <span
-                          class="uni-ic__swap-content-balance-and-price__price-text"
-                          >{{
-                            formatCurrency(inputFiatPrice.times(inputValue))
-                          }}</span
-                        >
                       </div>
                     </div>
                   </div>
@@ -165,6 +167,7 @@
                         </svg>
                       </span>
                     </button>
+                    <div class='second-container'>
                     <input
                       class="uni-ic__swap-output-content-main-from uni-ic__theme-panel"
                       autocomplete="off"
@@ -179,34 +182,35 @@
                       v-on:input="changeOutputTradePrice"
                       :disabled="logic.transactionInProcess()"
                     />
-                  </div>
-                  <div
-                    class="uni-ic__swap-content-balance-and-price-container"
-                    v-if="outputToken"
-                  >
-                    <div class="uni-ic__swap-content-balance-and-price">
                       <div
-                        class="uni-ic__swap-content-balance-and-price__balance"
+                        class="uni-ic__swap-content-balance-and-price-container"
+                        v-if="outputToken"
                       >
-                        <div
-                          class="uni-ic__swap-content-balance-and-price__balance-text"
-                        >
-                          Balance =
-                          {{ outputBalance }}
-                        </div>
-                      </div>
-                      <div
-                        class="uni-ic__swap-content-balance-and-price__price"
-                        v-if="outputValue && outputFiatPrice"
-                      >
-                        ~$
-                        <span
-                          class="uni-ic__swap-content-balance-and-price__price-text"
-                        >
+                        <div class="uni-ic__swap-content-balance-and-price">
+                          <div
+                            class="uni-ic__swap-content-balance-and-price__balance"
+                          >
+                            <div
+                              class="uni-ic__swap-content-balance-and-price__balance-text"
+                            >
+                              Balance =
+                              {{ outputBalance }}
+                            </div>
+                          </div>
+                          <div
+                            class="uni-ic__swap-content-balance-and-price__price"
+                            v-if="outputValue && outputFiatPrice"
+                          >
+                            ~$
+                            <span
+                              class="uni-ic__swap-content-balance-and-price__price-text"
+                            >
                           {{
-                            formatCurrency(outputFiatPrice.times(outputValue))
-                          }}</span
-                        >
+                                formatCurrency(outputFiatPrice.times(outputValue))
+                              }}</span
+                            >
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
