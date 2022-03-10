@@ -94,7 +94,7 @@
                 class="uni-ic__swap-divider uni-ic__theme-panel"
                 v-on:click="switchSwap()"
               >
-              <img src='@/uniswap/icons/arrows.png'>
+              <img v-bind:src="'icons/arrows.png'">
               </div>
   
               <div class="uni-ic__swap-output-container">
