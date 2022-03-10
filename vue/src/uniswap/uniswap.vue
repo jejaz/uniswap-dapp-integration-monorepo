@@ -94,7 +94,7 @@
                 class="uni-ic__swap-divider uni-ic__theme-panel"
                 v-on:click="switchSwap()"
               >
-                <v-img :src="image"></v-img>
+                <v-img :src=""></v-img>
               </div>
   
               <div class="uni-ic__swap-output-container">
@@ -306,7 +306,6 @@ import { defineComponent } from 'vue';
 import { Loading, Header, TokenIcon, SwapQuoteInfo, Approval, ConfirmSwap, TransactionModal, TokenModal } from './internal-components';
 import 'uniswap-dapp-integration-shared/styles/uniswap.css';
 import { UniswapDappSharedLogic, Utils as UniswapUtils, TradeDirection, ErrorCodes } from 'uniswap-dapp-integration-shared';
-import image from 'src/uniswap/icons/arrows.png';
 import { BigNumber } from 'bignumber.js';
 const DEBOUNCE_DELAY = 250;
 export default defineComponent({
@@ -344,7 +343,6 @@ export default defineComponent({
       chainId: undefined,
       noLiquidityFound: false,
       debounceTimeout: undefined,
-      image: image
     };
   },
 
