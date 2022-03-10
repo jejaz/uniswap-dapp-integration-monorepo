@@ -94,7 +94,7 @@
                 class="uni-ic__swap-divider uni-ic__theme-panel"
                 v-on:click="switchSwap()"
               >
-                <img src='arrows.svg'/>
+                <img :src="image"/>
               </div>
   
               <div class="uni-ic__swap-output-container">
@@ -320,7 +320,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext'],
+  props: ['uniswapDappSharedLogicContext', 'image'],
 
   data() {
     return {
@@ -343,6 +343,7 @@ export default defineComponent({
       chainId: undefined,
       noLiquidityFound: false,
       debounceTimeout: undefined,
+      image: this.image
     };
   },
 
