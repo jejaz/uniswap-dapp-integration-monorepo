@@ -20,7 +20,7 @@
 <template>
   <div class="loader-wrapper">
     <div
-      class="loader"
+      class="loader change-border"
     ></div>
   </div>
 </template>
