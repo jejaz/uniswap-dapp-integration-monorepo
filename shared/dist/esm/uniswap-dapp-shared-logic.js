@@ -762,12 +762,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_m.label) {
                     case 0:
                         (_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.destroy();
-                        console.log('input token -->' + inputToken);
-                        console.log('output token -->' + outputToken);
                         inputToken = getAddress(inputToken, true);
                         outputToken = getAddress(outputToken, true);
-                        console.log('input token  after get address -->' + inputToken);
-                        console.log('output token after get address -->' + outputToken);
                         uniswapPair = this.createUniswapPairContext(inputToken, outputToken, this.uniswapPairSettings);
                         _c = this;
                         return [4 /*yield*/, uniswapPair.createFactory()];

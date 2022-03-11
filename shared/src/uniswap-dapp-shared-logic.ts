@@ -693,12 +693,8 @@ export class UniswapDappSharedLogic {
     executeTrade = true,
   ): Promise<void> {
     this.tradeContext?.destroy();
-    console.log('input token -->' + inputToken);
-    console.log('output token -->' + outputToken);
     inputToken = getAddress(inputToken, true);
     outputToken = getAddress(outputToken, true);
-    console.log('input token  after get address -->' + inputToken);
-    console.log('output token after get address -->' + outputToken)
     const uniswapPair = this.createUniswapPairContext(
       inputToken,
       outputToken,
