@@ -1,7 +1,7 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
       <Loading />
-      <div v-else>
+      <div>
         <div class="uni-ic uni-ic__theme-background">
           <Header
             v-if="logic && supportedNetwork && inputToken"
