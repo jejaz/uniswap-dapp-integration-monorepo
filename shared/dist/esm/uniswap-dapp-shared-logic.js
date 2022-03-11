@@ -845,8 +845,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];
                     case 1:
                         context = _a.sent();
-                        console.log(amount);
-                        console.log(context);
                         this.tradeContext = this.formatTradeContext(context);
                         this.tradeContext$.next(this.tradeContext);
                         this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(function (quote) {
