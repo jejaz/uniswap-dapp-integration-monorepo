@@ -369,7 +369,6 @@ export default defineComponent({
     },
 
     async changeTradePrice(amount, tradeDirection) {
-      console.log(amount)
       try {
         await this.logic.changeTradePrice(amount, tradeDirection);
       } catch (error) {
