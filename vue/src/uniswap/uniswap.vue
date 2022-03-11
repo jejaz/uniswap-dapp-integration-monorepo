@@ -1,6 +1,6 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
-      <Loading v-if="loading" />
+      <Loading />
       <div v-else>
         <div class="uni-ic uni-ic__theme-background">
           <Header
