@@ -398,7 +398,6 @@ export class UniswapDappSharedLogic {
         this.outputToken!.contractAddress,
       );
     }
-    console.log(amount)
     await this.trade(new BigNumber(amount), directon);
   }
 
@@ -772,8 +771,9 @@ export class UniswapDappSharedLogic {
     direction: TradeDirection,
   ): Promise<void> {
     if (amount.isGreaterThan(0)) {
-      console.log("tradee")
       const context = await this.factory!.trade(amount.toFixed(), direction);
+      console.log(amount)
+      console.log(context)
       this.tradeContext = this.formatTradeContext(context);
       this.tradeContext$.next(this.tradeContext);
 
