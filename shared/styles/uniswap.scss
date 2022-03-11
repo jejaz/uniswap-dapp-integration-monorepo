@@ -14,6 +14,28 @@
     display: none !important;
   }
 
+  .loader-wrapper {
+    text-align: center;
+    .loader {
+      margin: 20px auto 0;
+      --border-width: 4px;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      --mask: radial-gradient(
+                      farthest-side,
+                      transparent calc(100% - var(--border-width) - 0.5px),
+                      #000 calc(100% - var(--border-width) + 0.5px)
+      );
+      -webkit-mask: var(--mask);
+      mask: var(--mask);
+
+      background: linear-gradient(205.14deg, #FFFFFF 38.52%, rgba(255, 255, 255, 0) 75.18%) 100% 0/50% 100% no-repeat,
+      linear-gradient(205.14deg, #FFFFFF 38.52%, rgba(255, 255, 255, 0) 75.18%) 0 0/50% 100% no-repeat;
+      animation: loader 1s linear infinite;
+    }
+  }
+
   &__loading {
     padding-top: 10px;
     padding-bottom: 10px;
