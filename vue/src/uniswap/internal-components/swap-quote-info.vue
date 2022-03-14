@@ -2,10 +2,6 @@
     <div class="uni-ic__swap-quote" v-if="tradeContext">
       <div class="uni-ic__swap-quote-container">
         <div class="uni-ic__swap-quote-price">
-          <div class="uni-ic__swap-quote-price-text">
-            Best rate on
-            {{ tradeContext.uniswapVersion }}
-          </div>
           <div
             class="uni-ic__swap-quote-price-text"
             style="
