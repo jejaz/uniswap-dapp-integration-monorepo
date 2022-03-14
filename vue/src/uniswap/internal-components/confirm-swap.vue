@@ -10,7 +10,7 @@
         <span class="uni-ic__modal__close" v-on:click="logic.hideConfirmSwap()"
           >&times;</span
         >
-        <p>Confirm swap</p>
+        <p class='modal-text'>Confirm swap</p>
   
         <div
           class="uni-ic__modal-confirm-swap__content"
@@ -71,7 +71,7 @@
               height="16"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#565A69"
+              stroke="rgba(247, 249, 246, 0.8)"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -133,7 +133,7 @@
             </div>
           </div>
           <div class="uni-ic__modal-confirm-swap__price">
-            <div class="uni-ic__modal-confirm-swap__price__title">Price</div>
+            <div class="uni-ic__modal-confirm-swap__price__title modal-text">Price</div>
             <button class="uni-ic__modal-confirm-swap__price__rate-button">
               <div class="uni-ic__modal-confirm-swap__price__rate">
                 1

@@ -1274,20 +1274,19 @@
 
       &__divider {
         padding: 4px;
-        border-radius: 12px;
-        height: 32px;
-        width: 32px;
+        border-radius: 100px;
+        height: 28px;
+        width: 28px;
         position: relative;
-        margin-top: -18px;
-        margin-bottom: -18px;
+        margin-top: -14px;
+        margin-bottom: -14px;
         left: calc(50% - 16px);
-        display: flex;
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        align-items: center;
-        background-color: RGB(247, 248, 250);
+        background: #141414;
+
+        /* Border/Border Dark 04 */
+        border: 1px solid rgba(247, 249, 246, 0.8);
         z-index: 2;
+        cursor: pointer;
       }
 
       &__price {
@@ -1334,7 +1333,7 @@
       &__info {
         display: grid;
         grid-auto-rows: auto;
-        row-gap: 8px;
+        row-gap: 2px;
 
         &-container {
           box-sizing: border-box;
@@ -1376,8 +1375,11 @@
               box-sizing: border-box;
               margin: 0px;
               min-width: 0px;
-              font-weight: 400;
-              font-size: 12px;
+              font-family: 'Aktiv Grotesk';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 11px;
+              color: #E3E8DD;
             }
           }
 
@@ -1385,10 +1387,12 @@
             box-sizing: border-box;
             margin: 0px;
             min-width: 0px;
-            font-weight: 500;
-            color: RGB(0, 0, 0);
             text-align: right;
-            font-size: 12px;
+            font-family: 'Aktiv Grotesk';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11px;
+            color: #6E6F67;
           }
         }
       }
@@ -1405,6 +1409,9 @@
         font-size: 12px;
         line-height: 16px;
         color: #6E6F67;
+        background-color: #0B0B0B;
+        border: 1px solid rgba(247, 249, 246, 0.3);
+        border-radius: 8px;
 
         /* identical to box height, or 133% */
         display: flex;
@@ -1840,7 +1847,7 @@
       border-radius: 8px;
       background: rgba(9, 9, 9, 0.6);
       border: 1px solid white;
-      border-radius: 500px 500px 30px 30px;
+      border-radius: 300px 30px 30px 30px;
       margin: auto;
       padding: 20px;
       width: 20%;
@@ -1854,6 +1861,15 @@
       }
     }
 
+    .modal-text {
+      float: left;
+      font-family: 'Aktiv Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #E3E8DD;
+    }
     &__close {
       float: right;
       font-size: 28px;
