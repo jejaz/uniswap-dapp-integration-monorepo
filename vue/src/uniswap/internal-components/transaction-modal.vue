@@ -164,7 +164,7 @@
 <script>
 import { TransactionStatus, TradeDirection } from 'uniswap-dapp-integration-shared';
 import { defineComponent } from 'vue';
-import { Loading } from '../../../lib/uniswap/internal-components';
+import { Loading } from '@/uniswap/internal-components/index';
 
 export default defineComponent({
   name: 'TransactionModal',
