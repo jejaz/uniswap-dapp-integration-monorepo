@@ -33,14 +33,14 @@
       >
       <span v-if="miningTransactionStatus === TransactionStatus.mining"
         >Waiting for your transaction to be mined...
-        <u
-          ><a
-            class="uni-ic__swap-allow-etherscan"
-            v-on:click="logic.viewOnEtherscan()"
-          >
-            View tx on etherscan
-          </a>
-        </u>
+<!--        <u-->
+<!--          ><a-->
+<!--            class="uni-ic__swap-allow-etherscan"-->
+<!--            v-on:click="logic.viewOnEtherscan()"-->
+<!--          >-->
+<!--            View tx on etherscan-->
+<!--          </a>-->
+<!--        </u>-->
       </span>
     </button>
 </template>
