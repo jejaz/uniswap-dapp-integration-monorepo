@@ -536,6 +536,7 @@
           align-items: center;
           display: 'flex';
           color: #6E6F67;
+          margin-left: auto;
 
           &-info {
             &__container {
@@ -1736,7 +1737,7 @@
   &__tooltip {
     display: grid;
     grid-auto-rows: auto;
-    row-gap: 8px;
+    row-gap: 2px;
 
     &-wrapper {
       z-index: 9999;
@@ -1744,7 +1745,6 @@
       // opacity: 0;
       // transition: opacity 1s;
       background: #434343;
-      border: 1px solid RGB(206, 208, 217);
       border-radius: 8px;
       position: absolute;
       margin-left: 30px;
@@ -1790,7 +1790,7 @@
           font-family: 'Aktiv Grotesk';
           font-style: normal;
           font-weight: normal;
-          font-size: 14px;
+          font-size: 11px;
           color: #E3E8DD;
         }
       }
@@ -1799,9 +1799,12 @@
         box-sizing: border-box;
         margin: 0px;
         min-width: 0px;
-        font-weight: 500;
         text-align: right;
-        font-size: 12px;
+        font-family: 'Aktiv Grotesk';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        color: #6E6F67;
       }
     }
   }

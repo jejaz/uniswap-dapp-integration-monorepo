@@ -20,9 +20,9 @@
           miningTransaction === undefined ||
             miningTransactionStatus === TransactionStatus.rejected
         "
-        >You must give the Uniswap smart contract permisson to use your
+        >You must give the Sushiswap smart contract permisson to use your
         {{ tradeContext.fromToken.symbol }}. You only have to do this once per
-        token per uniswap version. Click here to approve the permissons.
+        token per sushiswap version. Click here to approve the permissons.
       </span>
   
       <span
