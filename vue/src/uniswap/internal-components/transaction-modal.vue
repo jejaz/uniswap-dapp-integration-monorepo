@@ -21,27 +21,28 @@
               miningTransactionStatus === TransactionStatus.completed
           "
         >
-          <div
-            class="uni-ic__modal-transaction__state__loading"
-            v-if="miningTransactionStatus !== TransactionStatus.completed"
-          >
-            <svg
-              class="uni-ic__modal-transaction__state__loading-spinner"
-              width="94"
-              height="94"
-              viewBox="0 0 94 94"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M92 47C92 22.1472 71.8528 2 47 2C22.1472 2 2 22.1472 2 47C2 71.8528 22.1472 92 47 92"
-                stroke="#2172E5"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+<!--          <div-->
+<!--            class="uni-ic__modal-transaction__state__loading"-->
+<!--            v-if="miningTransactionStatus !== TransactionStatus.completed"-->
+<!--          >-->
+<!--            <svg-->
+<!--              class="uni-ic__modal-transaction__state__loading-spinner"-->
+<!--              width="94"-->
+<!--              height="94"-->
+<!--              viewBox="0 0 94 94"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M92 47C92 22.1472 71.8528 2 47 2C22.1472 2 2 22.1472 2 47C2 71.8528 22.1472 92 47 92"-->
+<!--                stroke="#2172E5"-->
+<!--                stroke-width="3"-->
+<!--                stroke-linecap="round"-->
+<!--                stroke-linejoin="round"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </div>-->
+          <Loading v-if="miningTransactionStatus !== TransactionStatus.completed" />
           <div class="uni-ic__modal-transaction__state__info">
             <div class="uni-ic__modal-transaction__state__info-confirmation">
               <span
@@ -163,10 +164,14 @@
 <script>
 import { TransactionStatus, TradeDirection } from 'uniswap-dapp-integration-shared';
 import { defineComponent } from 'vue';
+import { Loading } from './internal-components';
+
 export default defineComponent({
   name: 'TransactionModal',
   props: ['logic', 'miningTransaction', 'miningTransactionStatus'],
-
+  components: {
+    Loading
+  },
   data() {
     return {
       TransactionStatus,

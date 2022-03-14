@@ -1142,6 +1142,7 @@
         grid-auto-rows: auto;
         row-gap: 4px;
         margin-top: 1rem;
+        width: 100%;
       }
 
       &__input,
@@ -1412,17 +1413,16 @@
         background-color: #0B0B0B;
         border: 1px solid rgba(247, 249, 246, 0.3);
         border-radius: 8px;
+        padding: 0.75rem 1rem;
 
         /* identical to box height, or 133% */
         display: flex;
-        align-items: center;
 
         &-container {
           display: grid;
           grid-auto-rows: auto;
           row-gap: 8px;
           justify-items: flex-start;
-          padding: 0.75rem 1rem;
           min-width: 24px;
         }
       }
@@ -1622,6 +1622,17 @@
           grid-auto-rows: auto;
           row-gap: 12px;
           justify-items: center;
+          font-family: 'Aktiv Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+
+          /* identical to box height, or 129% */
+          text-align: center;
+
+          /* Font + Icons/Content Dark 01 */
+          color: #E3E8DD;
 
           &-confirmation {
             box-sizing: border-box;
@@ -1718,13 +1729,13 @@
           border-bottom-right-radius: 20px;
 
           &-button {
-            padding: 16px;
+            padding: 18px;
             width: 100%;
             font-weight: 500;
+            color: #141414;
             text-align: center;
-            border-radius: 20px;
+            border-radius: 8px;
             outline: none;
-            border: 1px solid transparent;
             text-decoration: none;
             display: flex;
             -webkit-box-pack: center;
@@ -1735,11 +1746,14 @@
             cursor: pointer;
             position: relative;
             z-index: 1;
-            will-change: transform;
-            transition: transform 450ms ease 0s;
-            transform: perspective(1px) translateZ(0px);
-            background-color: RGB(232, 0, 111);
-            color: white;
+            background-color: #CAFF2C;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 11px 16px;
+            min-width: 0px;
+            appearance: none;
+            margin-top: 10px;
+            border: none;
           }
         }
       }
@@ -1847,7 +1861,7 @@
       border-radius: 8px;
       background: rgba(9, 9, 9, 0.6);
       border: 1px solid white;
-      border-radius: 300px 30px 30px 30px;
+      border-radius: 30px 30px 30px 30px;
       margin: auto;
       padding: 20px;
       width: 20%;

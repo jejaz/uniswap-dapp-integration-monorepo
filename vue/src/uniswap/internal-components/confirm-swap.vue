@@ -228,18 +228,18 @@
                   {{ logic.uniswapPairSettings.slippage * 100 }}%
                 </div>
               </div>
-              <div class="uni-ic__modal-confirm-swap__info__item">
-                <div class="uni-ic__modal-confirm-swap__info__item__title">
-                  <div
-                    class="uni-ic__modal-confirm-swap__info__item__title-content"
-                  >
-                    Uniswap version
-                  </div>
-                </div>
-                <div class="uni-ic__modal-confirm-swap__info__item__value">
-                  {{ tradeContext.uniswapVersion }}
-                </div>
-              </div>
+<!--              <div class="uni-ic__modal-confirm-swap__info__item">-->
+<!--                <div class="uni-ic__modal-confirm-swap__info__item__title">-->
+<!--                  <div-->
+<!--                    class="uni-ic__modal-confirm-swap__info__item__title-content"-->
+<!--                  >-->
+<!--                    Uniswap version-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="uni-ic__modal-confirm-swap__info__item__value">-->
+<!--                  {{ tradeContext.uniswapVersion }}-->
+<!--                </div>-->
+<!--              </div>-->
             </div>
           </div>
           <div
