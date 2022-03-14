@@ -42,7 +42,12 @@
 <!--              />-->
 <!--            </svg>-->
 <!--          </div>-->
-          <Loading v-if="miningTransactionStatus !== TransactionStatus.completed" />
+<!--          <Loading v-if="miningTransactionStatus !== TransactionStatus.completed" />-->
+          <div class="loader-wrapper" v-if="miningTransactionStatus !== TransactionStatus.completed">
+            <div
+              class="loader change-border"
+            ></div>
+          </div>
           <div class="uni-ic__modal-transaction__state__info">
             <div class="uni-ic__modal-transaction__state__info-confirmation">
               <span
@@ -164,14 +169,14 @@
 <script>
 import { TransactionStatus, TradeDirection } from 'uniswap-dapp-integration-shared';
 import { defineComponent } from 'vue';
-import { Loading } from '@/uniswap/internal-components/index';
+// import { Loading } from '@/uniswap/internal-components/index';
 
 export default defineComponent({
   name: 'TransactionModal',
   props: ['logic', 'miningTransaction', 'miningTransactionStatus'],
-  components: {
-    Loading
-  },
+  // components: {
+  //   Loading
+  // },
   data() {
     return {
       TransactionStatus,
