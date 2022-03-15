@@ -10,7 +10,7 @@
         <span class="uni-ic__modal__close" v-on:click="logic.hideConfirmSwap()"
           >&times;</span
         >
-        <p class='modal-text'>Confirm swap</p>
+        <p class='modal-text-main'>Confirm swap</p>
   
         <div
           class="uni-ic__modal-confirm-swap__content"

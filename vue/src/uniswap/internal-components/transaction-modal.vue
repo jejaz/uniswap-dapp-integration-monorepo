@@ -109,16 +109,16 @@
                 "
                 >Confirm this transaction in your wallet</span
               >
-              <button
-                v-if="
-                  miningTransactionStatus === TransactionStatus.mining ||
-                    miningTransactionStatus === TransactionStatus.completed
-                "
-                v-on:click="logic.viewOnEtherscan()"
-                class="uni-ic__theme-background-button"
-              >
-                View tx on etherscan
-              </button>
+<!--              <button-->
+<!--                v-if="-->
+<!--                  miningTransactionStatus === TransactionStatus.mining ||-->
+<!--                    miningTransactionStatus === TransactionStatus.completed-->
+<!--                "-->
+<!--                v-on:click="logic.viewOnEtherscan()"-->
+<!--                class="uni-ic__theme-background-button"-->
+<!--              >-->
+<!--                View tx on etherscan-->
+<!--              </button>-->
             </div>
           </div>
         </div>
