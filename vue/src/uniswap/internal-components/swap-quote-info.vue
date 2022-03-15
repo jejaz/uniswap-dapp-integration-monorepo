@@ -37,7 +37,7 @@
                 >
                   <div class="uni-ic__tooltip__item__title">
                     <div class="uni-ic__tooltip__item__title__content">
-                      Minimum received after slippage ({{logic.uniswapPairSettings.slippage}}%)
+                      Minimum received after slippage ({{logic.uniswapPairSettings.slippage * 100 }}%)
                     </div>
                   </div>
                   <div class="uni-ic__tooltip__item__value">
