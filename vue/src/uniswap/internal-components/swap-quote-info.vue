@@ -16,12 +16,12 @@
                     Expected output
                   </div>
                   <div class='main-item-text'>
-                    {{ parseFloat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
+                    Price impact
                   </div>
                 </div>
-                <div class='main-info-item'>
+                <div class='main-info-item' style='margin-right: 0; margin-left: auto;'>
                   <div class='main-item-text'>
-                    Price impact
+                    {{ parseFloat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
                   </div>
 <!--                  TODO: calculate-->
                   <div class='main-item-text'>
