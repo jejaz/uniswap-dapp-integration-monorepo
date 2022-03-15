@@ -1,6 +1,5 @@
 <template>  
     <div class="uni-ic__swap-quote" v-if="tradeContext">
-      {{tradeContext}}
       <div class="uni-ic__swap-input-container">
         <div class="uni-ic__swap-input-content uni-ic__theme-panel">
           <div class="uni-ic__swap-input-content-main">
