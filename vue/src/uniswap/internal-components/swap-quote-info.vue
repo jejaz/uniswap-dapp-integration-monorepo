@@ -1,10 +1,11 @@
 <template>  
     <div class="uni-ic__swap-quote" v-if="tradeContext">
+      {{tradeContext}}
       <div class="uni-ic__swap-input-container">
         <div class="uni-ic__swap-input-content uni-ic__theme-panel">
           <div class="uni-ic__swap-input-content-main">
-            <span
-              >1 {{ tradeContext.fromToken.symbol }} =
+            <span class='info-title'
+            >1 {{ tradeContext.fromToken.symbol }} <span class='change-color'>=</span>
               {{ logic.workOutOneEqualTo() }}
               {{ tradeContext.toToken.symbol }}
             </span>

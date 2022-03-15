@@ -159,6 +159,13 @@
       padding: 16px;
       gap:10px;
 
+      .info-title {
+        color: #E3E8DD;
+        .change-color {
+          color: #6E6F67;
+        }
+      }
+
       &-from {
         color: #E3E8DD;
         width: 100%;
@@ -1786,8 +1793,7 @@
     }
 
     &-container {
-      max-width: 256px;
-      min-width: 256px;
+      width: 100%;
       padding: 0.6rem 1rem;
       font-weight: 400;
       word-break: break-word;
@@ -1825,7 +1831,7 @@
           font-style: normal;
           font-weight: normal;
           font-size: 11px;
-          color: #E3E8DD;
+          color: #6E6F67;
         }
       }
 
