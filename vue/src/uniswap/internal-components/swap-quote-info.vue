@@ -3,13 +3,48 @@
       <div class="uni-ic__swap-input-container">
         <div class="uni-ic__swap-input-content uni-ic__theme-panel">
           <div class="uni-ic__swap-input-content-main">
-            <span class='info-title'
+            <span class='info-title'v-on:click="toggleInfo()"
             >1 {{ tradeContext.fromToken.symbol }} <span class='change-color'>=</span>
               {{ logic.workOutOneEqualTo() }}
               {{ tradeContext.toToken.symbol }}
             </span>
-            <div class="uni-ic__tooltip-container">
+<!--            TODO: here arrow-->
+            <div class="uni-ic__tooltip-container" v-if='showInfo'>
+              <div class='main-info'>
+                <div class='main-info-item'>
+                  <div>
+                    Expected output
+                  </div>
+                  <div>
+                    {{parseFLoat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
+                  </div>
+                </div>
+                <div class='main-info-item'>
+                  <div>
+                    Price impact
+                  </div>
+<!--                  TODO: calculate-->
+                  <div>
+                   %
+                  </div>
+                </div>
+              </div>
+              <div class='divider'></div>
               <div class="uni-ic__tooltip">
+                <div
+                  class="uni-ic__tooltip__item"
+                  v-if="tradeContext.minAmountConvertQuote"
+                >
+                  <div class="uni-ic__tooltip__item__title">
+                    <div class="uni-ic__tooltip__item__title__content">
+                      Minimum received after slippage ({{logic.uniswapPairSettings.slippage}}%)
+                    </div>
+                  </div>
+                  <div class="uni-ic__tooltip__item__value">
+                    {{ tradeContext.minAmountConvertQuote }}
+                    {{ tradeContext.toToken.symbol }}
+                  </div>
+                </div>
                 <div class="uni-ic__tooltip__item">
                   <div class="uni-ic__tooltip__item__title">
                     <div class="uni-ic__tooltip__item__title__content">
@@ -33,20 +68,6 @@
                 </div>
                 <div
                   class="uni-ic__tooltip__item"
-                  v-if="tradeContext.minAmountConvertQuote"
-                >
-                  <div class="uni-ic__tooltip__item__title">
-                    <div class="uni-ic__tooltip__item__title__content">
-                      Minimum received
-                    </div>
-                  </div>
-                  <div class="uni-ic__tooltip__item__value">
-                    {{ tradeContext.minAmountConvertQuote }}
-                    {{ tradeContext.toToken.symbol }}
-                  </div>
-                </div>
-                <div
-                  class="uni-ic__tooltip__item"
                   v-if="tradeContext.maximumSent"
                 >
                   <div class="uni-ic__tooltip__item__title">
@@ -57,16 +78,6 @@
                   <div class="uni-ic__tooltip__item__value">
                     {{ tradeContext.maximumSent }}
                     {{ tradeContext.fromToken.symbol }}
-                  </div>
-                </div>
-                <div class="uni-ic__tooltip__item">
-                  <div class="uni-ic__tooltip__item__title">
-                    <div class="uni-ic__tooltip__item__title__content">
-                      Slippage tolerance
-                    </div>
-                  </div>
-                  <div class="uni-ic__tooltip__item__value">
-                    {{ logic.uniswapPairSettings.slippage * 100 }}%
                   </div>
                 </div>
               </div>
@@ -186,6 +197,16 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'SwapQuoteInfo',
-  props: ['logic', 'tradeContext']
+  props: ['logic', 'tradeContext'],
+  data() {
+    return {
+        showInfo: false
+    }
+  },
+  methods: {
+    toggleInfo() {
+      this.showInfo = !this.showInfo;
+    }
+  }
 });
 </script>

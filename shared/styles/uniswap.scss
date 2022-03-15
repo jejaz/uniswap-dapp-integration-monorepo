@@ -1792,11 +1792,35 @@
       right: 10px;
     }
 
+    .main-info{
+      width: 100%;
+      display: flex;
+      font-family: 'Aktiv Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      .main-info-item {
+        display: flex;
+        flex-direction: column;
+        div {
+          font-family: 'Aktiv Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
     &-container {
       width: 100%;
-      padding: 0.6rem 1rem;
       font-weight: 400;
       word-break: break-word;
+      .divider {
+        opacity: 0.1;
+        border: 1px solid #FFFFFF;
+        width: 100%;
+      }
     }
 
     &__item {
