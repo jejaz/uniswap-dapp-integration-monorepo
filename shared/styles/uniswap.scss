@@ -344,6 +344,7 @@
       margin-bottom: -14px;
       left: calc(50% - 16px);
       background: #141414;
+      margin-bottom: 5px;
 
       /* Border/Border Dark 04 */
       border: 1px solid rgba(247, 249, 246, 0.8);
@@ -1791,27 +1792,6 @@
       margin-left: 30px;
       right: 10px;
     }
-
-    .main-info{
-      width: 100%;
-      display: flex;
-      font-family: 'Aktiv Grotesk';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-      .main-info-item {
-        display: flex;
-        flex-direction: column;
-        div {
-          font-family: 'Aktiv Grotesk';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 16px;
-        }
-      }
-    }
     &-container {
       width: 100%;
       font-weight: 400;
@@ -1965,5 +1945,27 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.main-info{
+  width: 100%;
+  display: flex;
+  font-family: 'Aktiv Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  .main-info-item {
+    display: flex;
+    flex-direction: column;
+    .main-item-text {
+      font-family: 'Aktiv Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #E3E8DD;
+    }
   }
 }

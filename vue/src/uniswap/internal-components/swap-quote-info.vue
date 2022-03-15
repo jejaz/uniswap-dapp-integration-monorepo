@@ -12,19 +12,19 @@
             <div class="uni-ic__tooltip-container" v-if='showInfo'>
               <div class='main-info'>
                 <div class='main-info-item'>
-                  <div>
+                  <div class='main-item-text'>
                     Expected output
                   </div>
-                  <div>
+                  <div class='main-item-text'>
                     {{ parseFloat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
                   </div>
                 </div>
                 <div class='main-info-item'>
-                  <div>
+                  <div class='main-item-text'>
                     Price impact
                   </div>
 <!--                  TODO: calculate-->
-                  <div>
+                  <div class='main-item-text'>
                    %
                   </div>
                 </div>
