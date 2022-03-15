@@ -1001,7 +1001,7 @@
     &-tokens {
       &-title {
         margin-top: 2px;
-        color: #6E6F67;
+        color: #E3E8DD;
         font-family: 'Aktiv Grotesk';
         font-style: normal;
         font-weight: 400;
@@ -1859,7 +1859,8 @@
 
     &__content {
       border-radius: 8px;
-      background: rgba(9, 9, 9, 0.6);
+      //background: rgba(9, 9, 9, 0.6);
+      background: #0B0B0B;
       border: 1px solid white;
       border-radius: 30px 30px 30px 30px;
       margin: auto;
