@@ -16,7 +16,7 @@
                     Expected output
                   </div>
                   <div>
-                    {{parseFLoat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
+                    {{ parseFloat(tradeContext.baseConvertRequest) * parseFloat(tradeContext.expectedConvertQuote)}}
                   </div>
                 </div>
                 <div class='main-info-item'>
