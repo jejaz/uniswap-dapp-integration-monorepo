@@ -299,6 +299,7 @@
             :logic="logic"
             :miningTransaction="miningTransaction"
             :miningTransactionStatus="miningTransactionStatus"
+            @closeExchangeTokenModal="closeExchangeTokenModal"
           />
         </template>
       </div>
@@ -444,12 +445,19 @@ export default defineComponent({
     registerEventListeners() {
       this.$el.addEventListener('switchSwapCompleted', swapSwitchResponse => this.switchSwapCompleted(swapSwitchResponse));
       this.$el.addEventListener('changeTokenCompleted', noLiquidityFound => this.changeTokenCompleted(noLiquidityFound));
+      this.$el.addEventListener('closeExchangeTokenModal', response => this.closeExchangeTokenModal(response));
     },
 
     switchSwapCompleted(response) {
       this.inputValue = response.inputValue;
       this.outputValue = response.outputValue;
     },
+
+    closeExchangeTokenModal(response) {
+      console.log('should close transational modal')
+      console.log(response)
+      this.$emit('closeTransactionalModalExternal', response);
+    }
 
     changeTokenCompleted(noLiquidityFound) {
       var _this$logic$tradeCont;
