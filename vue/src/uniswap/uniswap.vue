@@ -1,5 +1,6 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
+      {{showTransactionData}}
       <Loading v-if="loading" />
       <div v-else-if='!showTransactionData'>
         <p class="app-modal-title">Buy tokens</p>
@@ -303,6 +304,7 @@
         </template>
       </div>
       <div v-else-if='showTransactionData'>
+        PERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         <div id="uni-ic__modal-transaction" class="uni-ic__modal">
           <div
             class="
