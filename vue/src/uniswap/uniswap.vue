@@ -442,10 +442,9 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { TransactionStatus, TradeDirection } from 'uniswap-dapp-integration-shared';
 import { Loading, Header, TokenIcon, SwapQuoteInfo, Approval, ConfirmSwap, TransactionModal, TokenModal } from './internal-components';
 import 'uniswap-dapp-integration-shared/styles/uniswap.css';
-import { UniswapDappSharedLogic, Utils as UniswapUtils, TradeDirection, ErrorCodes } from 'uniswap-dapp-integration-shared';
+import { UniswapDappSharedLogic, Utils as UniswapUtils, TradeDirection, ErrorCodes, TransactionStatus } from 'uniswap-dapp-integration-shared';
 import { BigNumber } from 'bignumber.js';
 const DEBOUNCE_DELAY = 250;
 export default defineComponent({
