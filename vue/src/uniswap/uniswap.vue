@@ -1,7 +1,9 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
       <Loading v-if="loading" />
-      <div v-else>
+      <div v-else-if='!showTransactionData'>
+        <p class="app-modal-title">Buy tokens</p>
+        <p class="app-modal-text">Select tokens to swap them</p>
         <div class="uni-ic uni-ic__theme-background">
           <Header
             v-if="logic && supportedNetwork && inputToken"
@@ -286,15 +288,13 @@
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
-  
-          <ConfirmSwap
-            :logic="logic"
-            :tradeContext="tradeContext"
-            :newPriceTradeContext="newPriceTradeContext"
-            :inputFiatPrice="inputFiatPrice"
-            :outputFiatPrice="outputFiatPrice"
-          />
-  
+<!--          <ConfirmSwap-->
+<!--            :logic="logic"-->
+<!--            :tradeContext="tradeContext"-->
+<!--            :newPriceTradeContext="newPriceTradeContext"-->
+<!--            :inputFiatPrice="inputFiatPrice"-->
+<!--            :outputFiatPrice="outputFiatPrice"-->
+<!--          />-->
           <TransactionModal
             :logic="logic"
             :miningTransaction="miningTransaction"
@@ -349,6 +349,7 @@ export default defineComponent({
       noLiquidityFound: false,
       debounceTimeout: undefined,
       image: this.image,
+      showTransactionData: false,
     };
   },
 
@@ -367,8 +368,8 @@ export default defineComponent({
     },
 
     async swapTransaction() {
-      console.log('swappp clicked')
       this.eventBus.emit("closeExchangeTokenModal", true);
+      this.showTransactionData = true;
       await this.logic.swapTransaction();
     },
 
