@@ -174,7 +174,7 @@ export default defineComponent({
   name: 'TransactionModal',
   props: ['logic', 'miningTransaction', 'miningTransactionStatus'],
   async mounted() {
-    this.$emit('swapCompleted', props.miningTransactionStatus);
+    this.$emit('swapCompleted', TransactionStatus);
   },
   data() {
     return {
