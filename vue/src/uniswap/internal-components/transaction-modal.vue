@@ -21,28 +21,6 @@
               miningTransactionStatus === TransactionStatus.completed
           "
         >
-<!--          <div-->
-<!--            class="uni-ic__modal-transaction__state__loading"-->
-<!--            v-if="miningTransactionStatus !== TransactionStatus.completed"-->
-<!--          >-->
-<!--            <svg-->
-<!--              class="uni-ic__modal-transaction__state__loading-spinner"-->
-<!--              width="94"-->
-<!--              height="94"-->
-<!--              viewBox="0 0 94 94"-->
-<!--              fill="none"-->
-<!--              xmlns="http://www.w3.org/2000/svg"-->
-<!--            >-->
-<!--              <path-->
-<!--                d="M92 47C92 22.1472 71.8528 2 47 2C22.1472 2 2 22.1472 2 47C2 71.8528 22.1472 92 47 92"-->
-<!--                stroke="#2172E5"-->
-<!--                stroke-width="3"-->
-<!--                stroke-linecap="round"-->
-<!--                stroke-linejoin="round"-->
-<!--              />-->
-<!--            </svg>-->
-<!--          </div>-->
-<!--          <Loading v-if="miningTransactionStatus !== TransactionStatus.completed" />-->
           <div class="loader-wrapper" v-if="miningTransactionStatus !== TransactionStatus.completed">
             <div
               class="loader change-border"
@@ -109,16 +87,6 @@
                 "
                 >Confirm this transaction in your wallet</span
               >
-<!--              <button-->
-<!--                v-if="-->
-<!--                  miningTransactionStatus === TransactionStatus.mining ||-->
-<!--                    miningTransactionStatus === TransactionStatus.completed-->
-<!--                "-->
-<!--                v-on:click="logic.viewOnEtherscan()"-->
-<!--                class="uni-ic__theme-background-button"-->
-<!--              >-->
-<!--                View tx on etherscan-->
-<!--              </button>-->
             </div>
           </div>
         </div>
