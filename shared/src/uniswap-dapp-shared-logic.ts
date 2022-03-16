@@ -282,7 +282,7 @@ export class UniswapDappSharedLogic {
     };
     this.miningTransaction$.next(this.miningTransaction);
 
-    //this.showTransaction();
+    this.showTransaction();
 
     await this.handleTransaction(
       this.tradeContext!.transaction,
