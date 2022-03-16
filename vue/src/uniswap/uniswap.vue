@@ -222,7 +222,7 @@
             <div class="uni-ic__swap-button-container">
               <button
                 class="uni-ic__swap-button uni-ic__theme-background-button"
-                v-on:click="logic.showConfirmSwap()"
+                v-on:click="logic.swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
                     (tradeContext && tradeContext.hasEnoughAllowance === false) ||
