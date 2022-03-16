@@ -218,7 +218,8 @@
                 :miningTransactionStatus="miningTransactionStatus"
               />
             </template>
-  
+
+<!--            Here instead of logic.swapTransaction() was logic.showConfirmSwap() for showing modal-->
             <div class="uni-ic__swap-button-container">
               <button
                 class="uni-ic__swap-button uni-ic__theme-background-button"

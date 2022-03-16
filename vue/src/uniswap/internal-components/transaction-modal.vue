@@ -169,18 +169,17 @@
 <script>
 import { TransactionStatus, TradeDirection } from 'uniswap-dapp-integration-shared';
 import { defineComponent } from 'vue';
-// import { Loading } from '@/uniswap/internal-components/index';
 
 export default defineComponent({
   name: 'TransactionModal',
   props: ['logic', 'miningTransaction', 'miningTransactionStatus'],
-  // components: {
-  //   Loading
-  // },
+  async mounted() {
+    this.$emit('swapCompleted', props.miningTransactionStatus);
+  },
   data() {
     return {
       TransactionStatus,
-      TradeDirection
+      TradeDirection,
     };
   }
 
