@@ -173,9 +173,6 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'TransactionModal',
   props: ['logic', 'miningTransaction', 'miningTransactionStatus'],
-  async mounted() {
-    this.$emit('closeExchangeTokenModal', TransactionStatus);
-  },
   data() {
     return {
       TransactionStatus,

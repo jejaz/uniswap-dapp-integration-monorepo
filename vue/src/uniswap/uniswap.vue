@@ -223,7 +223,7 @@
             <div class="uni-ic__swap-button-container">
               <button
                 class="uni-ic__swap-button uni-ic__theme-background-button"
-                v-on:click="logic.swapTransaction()"
+                v-on:click="swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
                     (tradeContext && tradeContext.hasEnoughAllowance === false) ||
@@ -299,7 +299,6 @@
             :logic="logic"
             :miningTransaction="miningTransaction"
             :miningTransactionStatus="miningTransactionStatus"
-            @closeExchangeTokenModal="closeExchangeTokenModal"
           />
         </template>
       </div>
@@ -364,6 +363,11 @@ export default defineComponent({
 
       const swapState = await this.logic.swapSwitch();
       this.switchSwapCompleted(swapState);
+    },
+
+    async swapTransaction() {
+      await this.logic.swapTransaction();
+      console.log('swappp clicked')
     },
 
     formatCurrency(value) {
@@ -445,18 +449,11 @@ export default defineComponent({
     registerEventListeners() {
       this.$el.addEventListener('switchSwapCompleted', swapSwitchResponse => this.switchSwapCompleted(swapSwitchResponse));
       this.$el.addEventListener('changeTokenCompleted', noLiquidityFound => this.changeTokenCompleted(noLiquidityFound));
-      this.$el.addEventListener('closeExchangeTokenModal', response => this.closeExchangeTokenModal(response));
     },
 
     switchSwapCompleted(response) {
       this.inputValue = response.inputValue;
       this.outputValue = response.outputValue;
-    },
-
-    closeExchangeTokenModal(response) {
-      console.log('should close transational modal')
-      console.log(response)
-      this.$emit('closeTransactionalModalExternal', response);
     },
 
     changeTokenCompleted(noLiquidityFound) {
