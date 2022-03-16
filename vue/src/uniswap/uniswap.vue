@@ -288,13 +288,13 @@
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
-<!--          <ConfirmSwap-->
-<!--            :logic="logic"-->
-<!--            :tradeContext="tradeContext"-->
-<!--            :newPriceTradeContext="newPriceTradeContext"-->
-<!--            :inputFiatPrice="inputFiatPrice"-->
-<!--            :outputFiatPrice="outputFiatPrice"-->
-<!--          />-->
+          <ConfirmSwap
+            :logic="logic"
+            :tradeContext="tradeContext"
+            :newPriceTradeContext="newPriceTradeContext"
+            :inputFiatPrice="inputFiatPrice"
+            :outputFiatPrice="outputFiatPrice"
+          />
 <!--          <TransactionModal-->
 <!--            :logic="logic"-->
 <!--            :miningTransaction="miningTransaction"-->
