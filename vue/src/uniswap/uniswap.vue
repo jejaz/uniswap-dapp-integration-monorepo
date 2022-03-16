@@ -311,6 +311,7 @@ import { Loading, Header, TokenIcon, SwapQuoteInfo, Approval, ConfirmSwap, Trans
 import 'uniswap-dapp-integration-shared/styles/uniswap.css';
 import { UniswapDappSharedLogic, Utils as UniswapUtils, TradeDirection, ErrorCodes } from 'uniswap-dapp-integration-shared';
 import { BigNumber } from 'bignumber.js';
+import mitt from "mitt";
 const DEBOUNCE_DELAY = 250;
 export default defineComponent({
   name: 'UniswapVue',
@@ -347,7 +348,7 @@ export default defineComponent({
       chainId: undefined,
       noLiquidityFound: false,
       debounceTimeout: undefined,
-      image: this.image
+      image: this.image,
     };
   },
 
@@ -366,8 +367,10 @@ export default defineComponent({
     },
 
     async swapTransaction() {
-      await this.logic.swapTransaction();
+      const eventBus = mitt();
       console.log('swappp clicked')
+      eventBus.emit("closeExchangeTokenModal", true);
+      await this.logic.swapTransaction();
     },
 
     formatCurrency(value) {
