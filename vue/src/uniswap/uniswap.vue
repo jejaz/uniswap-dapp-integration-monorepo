@@ -457,7 +457,7 @@ export default defineComponent({
       console.log('should close transational modal')
       console.log(response)
       this.$emit('closeTransactionalModalExternal', response);
-    }
+    },
 
     changeTokenCompleted(noLiquidityFound) {
       var _this$logic$tradeCont;
