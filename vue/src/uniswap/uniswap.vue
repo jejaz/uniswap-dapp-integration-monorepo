@@ -288,13 +288,13 @@
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
-          <ConfirmSwap
-            :logic="logic"
-            :tradeContext="tradeContext"
-            :newPriceTradeContext="newPriceTradeContext"
-            :inputFiatPrice="inputFiatPrice"
-            :outputFiatPrice="outputFiatPrice"
-          />
+<!--          <ConfirmSwap-->
+<!--            :logic="logic"-->
+<!--            :tradeContext="tradeContext"-->
+<!--            :newPriceTradeContext="newPriceTradeContext"-->
+<!--            :inputFiatPrice="inputFiatPrice"-->
+<!--            :outputFiatPrice="outputFiatPrice"-->
+<!--          />-->
 <!--          <TransactionModal-->
 <!--            :logic="logic"-->
 <!--            :miningTransaction="miningTransaction"-->
@@ -302,7 +302,7 @@
 <!--          />-->
         </template>
       </div>
-      <div v-else>
+      <div v-else-if='showTransactionData'>
         <div id="uni-ic__modal-transaction" class="uni-ic__modal">
           <div
             class="
@@ -505,8 +505,8 @@ export default defineComponent({
 
     async swapTransaction() {
       this.eventBus.emit("closeExchangeTokenModal", true);
-      this.showTransactionData = true;
       await this.logic.swapTransaction();
+      this.showTransactionData = true;
     },
 
     formatCurrency(value) {
