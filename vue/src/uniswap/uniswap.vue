@@ -325,7 +325,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus'],
 
   data() {
     return {
@@ -367,9 +367,8 @@ export default defineComponent({
     },
 
     async swapTransaction() {
-      const eventBus = mitt();
       console.log('swappp clicked')
-      eventBus.emit("closeExchangeTokenModal", true);
+      this.eventBus.emit("closeExchangeTokenModal", true);
       await this.logic.swapTransaction();
     },
 
