@@ -286,9 +286,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             miningAction: MiningAction.swap,
                         };
                         this.miningTransaction$.next(this.miningTransaction);
-                        this.showTransaction();
+                        //this.showTransaction();
                         return [4 /*yield*/, this.handleTransaction(this.tradeContext.transaction, this.miningTransaction)];
                     case 1:
+                        //this.showTransaction();
                         _a.sent();
                         return [2 /*return*/];
                 }
