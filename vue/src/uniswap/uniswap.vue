@@ -1,11 +1,11 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
-      {{showTransactionData}}
       <Loading v-if="loading" />
       <div v-else-if='!showTransactionData'>
         <p class="app-modal-title">Buy tokens</p>
         <p class="app-modal-text">Select tokens to swap them</p>
         <div class="uni-ic uni-ic__theme-background">
+          {{showTransactionData}}
           <Header
             v-if="logic && supportedNetwork && inputToken"
             :logic="logic"
@@ -304,7 +304,13 @@
         </template>
       </div>
       <div v-else-if='showTransactionData'>
-        PERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        <div class="uni-ic uni-ic__theme-background">
+          {{showTransactionData}}
+          PERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          <template v-if="logic && supportedNetwork">
+            lala
+          </template>
+        </div>
       </div>
     </div>
 </template>
