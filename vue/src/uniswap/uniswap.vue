@@ -352,6 +352,7 @@
                         >Your tokens has been successfully swapped and now is time to buy the NFT!
                         </span>
                         <button style="margin-bottom: 10px;"
+                                v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
                                 v-on:click="goToBuyNFT()">
                           <div class="uni-ic__swap-button-text">
@@ -359,9 +360,11 @@
                           </div>
                         </button>
                         <button
-                          class="app-modal-button-gray">
-                          <div class="uni-ic__swap-button-text"
-                               v-on:click="closeModal()">
+                          class="app-modal-button-gray"
+                          v-if="miningTransactionStatus === TransactionStatus.completed"
+                          v-on:click="closeModal()"
+                        >
+                          <div class="uni-ic__swap-button-text">
                             <span>Back</span>
                           </div>
                         </button>

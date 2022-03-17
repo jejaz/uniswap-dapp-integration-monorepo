@@ -281,6 +281,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.swapTransaction = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var res;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -289,11 +290,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             miningAction: models_1.MiningAction.swap,
                         };
                         this.miningTransaction$.next(this.miningTransaction);
-                        //this.showTransaction();
                         return [4 /*yield*/, this.handleTransaction(this.tradeContext.transaction, this.miningTransaction)];
                     case 1:
-                        //this.showTransaction();
-                        _a.sent();
+                        res = _a.sent();
+                        console.log(res);
                         return [2 /*return*/];
                 }
             });
