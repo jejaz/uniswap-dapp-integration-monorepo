@@ -26,10 +26,12 @@
                     >
                       <span class="uni-ic__swap-input-content-main-from-currency">
                         <TokenIcon
-                          v-if='inputToken.symbol != "THEOS" && inputToken.symbol != "ETH"'
+                          v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="inputToken.tokenImageContext"
                         />
+                        <div v-else style='width: 24px; height: 24px;'>
+                        </div>
   
                         <span
                           class="uni-ic__swap-input-content-main-from-currency-symbol"
@@ -137,10 +139,12 @@
                         v-if="outputToken"
                       >
                         <TokenIcon
-                          v-if='outputToken.symbol != "THEOS" && outputToken.symbol != "ETH"'
+                          v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
                         />
+                        <div v-else style='width: 24px; height: 24px;'>
+                        </div>
   
                         <span
                           class="uni-ic__swap-input-content-main-from-currency-symbol"
@@ -324,10 +328,6 @@
                 "
               >Waiting For Confirmation...</span
               >
-<!--                      <span v-if="miningTransactionStatus === TransactionStatus.mining"-->
-<!--                      >Mining</span-->
-<!--                      >-->
-
                       <span v-if="miningTransactionStatus === TransactionStatus.completed" class='swap-complete-main'
                       >Congrats!</span
                       >
@@ -402,45 +402,6 @@
                   </div>
                 </div>
 
-<!--                <div-->
-<!--                  class="uni-ic__modal-transaction__rejected"-->
-<!--                  v-if="miningTransactionStatus === TransactionStatus.rejected"-->
-<!--                >-->
-<!--                  <div class="uni-ic__modal-transaction__rejected__content">-->
-<!--                    <svg-->
-<!--                      xmlns="http://www.w3.org/2000/svg"-->
-<!--                      width="64"-->
-<!--                      height="64"-->
-<!--                      viewBox="0 0 24 24"-->
-<!--                      fill="none"-->
-<!--                      stroke="#DA2D2B"-->
-<!--                      stroke-width="1.5"-->
-<!--                      stroke-linecap="round"-->
-<!--                      stroke-linejoin="round"-->
-<!--                    >-->
-<!--                      <path-->
-<!--                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"-->
-<!--                      ></path>-->
-<!--                      <line x1="12" y1="9" x2="12" y2="13"></line>-->
-<!--                      <line x1="12" y1="17" x2="12.01" y2="17"></line>-->
-<!--                    </svg>-->
-<!--                    <div class="uni-ic__modal-transaction__rejected__content-text">-->
-<!--                      Transaction rejected.-->
-<!--                    </div>-->
-<!--                  </div>-->
-
-<!--                  <div class="uni-ic__modal-transaction__rejected__dismiss">-->
-<!--                    <button-->
-<!--                      class="-->
-<!--              uni-ic__modal-transaction__rejected__dismiss-button-->
-<!--              uni-ic__theme-background-button-->
-<!--            "-->
-<!--                      v-on:click="logic.hideTransaction()"-->
-<!--                    >-->
-<!--                      Dismiss-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
           </template>
         </div>
       </div>

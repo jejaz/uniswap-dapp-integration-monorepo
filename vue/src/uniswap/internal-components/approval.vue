@@ -10,10 +10,6 @@
       :disabled="logic.transactionInProcess()"
       v-on:click="logic.approveAllowance()"
     >
-<!--      <TokenIcon-->
-<!--        classes="uni-ic__swap-allow-icon"-->
-<!--        :context="logic.inputToken.tokenImageContext"-->
-<!--      />-->
   
       <span
         v-if="
