@@ -51,6 +51,7 @@
                 >
                   <div class="uni-ic__modal-tokens-item" v-if="token.canShow">
                     <TokenIcon
+                      v v-if='inputToken.tokenImageContext?.image'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
                     />

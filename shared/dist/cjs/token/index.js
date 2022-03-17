@@ -74,7 +74,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/".concat((0, simple_uniswap_sdk_1.removeEthFromContractAddress)(contractAddress), "/logo.png");
+                        image = "".concat((0, simple_uniswap_sdk_1.removeEthFromContractAddress)(contractAddress), ".png");
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);

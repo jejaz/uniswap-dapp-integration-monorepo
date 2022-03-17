@@ -2036,10 +2036,12 @@ radial-gradient(
   font-size: 50px;
   line-height: 58px;
   text-transform: uppercase;
-  color: $Holo1Color;
-
-  text-align: center;
-  margin-top: 10px;
+  background: $Holo1Color;
+  background-clip: border-box, border-box, border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-blend-mode: screen, difference, normal;
+  -webkit-text-fill-color: transparent;
 }
 
 .app-modal-text {
@@ -2060,7 +2062,12 @@ radial-gradient(
   font-size: 50px;
   line-height: 58px;
   text-transform: uppercase;
-  color: $Holo1Color;
+  background: $Holo1Color;
+  background-clip: border-box, border-box, border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-blend-mode: screen, difference, normal;
+  -webkit-text-fill-color: transparent;
 }
 .app-modal-button,
 .app-modal-button-inverse,
