@@ -57,10 +57,7 @@ export class TokenService {
       }
     }
 
-    //TODO: need to change logos here
-    const image = `${removeEthFromContractAddress(
-      contractAddress,
-    )}.png`;
+    const image = require(`@/token/logos/${removeEthFromContractAddress(contractAddress,)}.png`);
 
     try {
       const result = await fetch(image);

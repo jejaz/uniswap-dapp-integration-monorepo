@@ -71,7 +71,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = "".concat(removeEthFromContractAddress(contractAddress), ".png");
+                        image = require("@/token/logos/".concat(removeEthFromContractAddress(contractAddress), ".png"));
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);

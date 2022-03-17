@@ -26,6 +26,7 @@
                     >
                       <span class="uni-ic__swap-input-content-main-from-currency">
 <!--                        TODO: render only if exists-->
+                        LALALALA
                         {{inputToken.tokenImageContext?.image}}
                         <TokenIcon
                           v-if='inputToken.tokenImageContext?.image'
