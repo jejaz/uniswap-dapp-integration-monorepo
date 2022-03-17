@@ -74,7 +74,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = require("@/token/logos/0x158D5a2690742793de60CdE90253B39441e6029d.png");
+                        image = require("/shared/dist/esm/token/logos/0x158D5a2690742793de60CdE90253B39441e6029d.png");
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
