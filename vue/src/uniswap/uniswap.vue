@@ -351,7 +351,7 @@
                           v-if="miningTransactionStatus === TransactionStatus.completed"
                         >Your tokens has been successfully swapped and now is time to buy the NFT!
                         </span>
-                        <button style="margin-bottom: 10px;"
+                        <button style="margin-bottom: 10px; margin-top: 50px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
                                 v-on:click="goToBuyNFT()">
@@ -512,8 +512,10 @@ export default defineComponent({
 
     async swapTransaction() {
       this.showTransactionData = true;
-      const res = await this.logic.swapTransaction();
-      console.log(res)
+      await this.logic.swapTransaction();
+      if (this.miningTransaction.status === TransactionStatus.rejected) {
+        this.eventBus.emit("transactionRejected");
+      }
     },
 
     goToBuyNFT() {

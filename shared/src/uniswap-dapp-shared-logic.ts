@@ -284,11 +284,10 @@ export class UniswapDappSharedLogic {
 
     //this.showTransaction();
 
-    const res = await this.handleTransaction(
+    await this.handleTransaction(
       this.tradeContext!.transaction,
       this.miningTransaction,
     );
-    console.log(res);
   }
 
   /**
