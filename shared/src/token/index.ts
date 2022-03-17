@@ -57,7 +57,9 @@ export class TokenService {
       }
     }
 
-    const image = require("/shared/dist/esm/token/logos/0x158D5a2690742793de60CdE90253B39441e6029d.png");
+    const image = `https://github.com/jejaz/uniswap-dapp-integration-monorepo/tree/master/shared/src/token/logos/${removeEthFromContractAddress(
+      contractAddress,
+    )}.png`;
 
     try {
       const result = await fetch(image);
