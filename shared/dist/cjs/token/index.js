@@ -74,7 +74,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = "https://github.com/jejaz/uniswap-dapp-integration-monorepo/tree/master/shared/src/token/logos/".concat((0, simple_uniswap_sdk_1.removeEthFromContractAddress)(contractAddress), ".png");
+                        image = 'https://app.theos.fi/img/TheosLogo.8a33e028.svg';
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);

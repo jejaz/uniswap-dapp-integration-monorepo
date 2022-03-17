@@ -57,9 +57,7 @@ export class TokenService {
       }
     }
 
-    const image = `https://github.com/jejaz/uniswap-dapp-integration-monorepo/tree/master/shared/src/token/logos/${removeEthFromContractAddress(
-      contractAddress,
-    )}.png`;
+    const image = 'https://app.theos.fi/img/TheosLogo.8a33e028.svg';
 
     try {
       const result = await fetch(image);

@@ -25,11 +25,8 @@
                       v-on:click="logic.openTokenSelectorFrom()"
                     >
                       <span class="uni-ic__swap-input-content-main-from-currency">
-<!--                        TODO: render only if exists-->
-                        LALALALA
-                        {{inputToken.tokenImageContext?.image}}
                         <TokenIcon
-                          v-if='inputToken.tokenImageContext?.image'
+                          v-if='inputToken.symbol != "THEOS" && inputToken.symbol != "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="inputToken.tokenImageContext"
                         />
@@ -140,6 +137,7 @@
                         v-if="outputToken"
                       >
                         <TokenIcon
+                          v-if='outputToken.symbol != "THEOS" && outputToken.symbol != "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
                         />
@@ -468,7 +466,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'logos'],
 
   data() {
     return {
