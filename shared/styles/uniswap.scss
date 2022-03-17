@@ -690,6 +690,7 @@ radial-gradient(
       display: grid;
       grid-auto-rows: auto;
       row-gap: 12px;
+      display: block;
 
       &-title {
         box-sizing: border-box;
@@ -1628,6 +1629,7 @@ radial-gradient(
         display: grid;
         grid-auto-rows: auto;
         row-gap: 12px;
+        display: block;
 
         &__loading {
           display: flex;

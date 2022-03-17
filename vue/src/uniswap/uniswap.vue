@@ -303,7 +303,7 @@
 <!--          />-->
         </template>
       </div>
-      <div v-else-if='showTransactionData'>
+      <div v-else >
         <div class="uni-ic uni-ic__theme-background">
           {{showTransactionData}}
           PERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
