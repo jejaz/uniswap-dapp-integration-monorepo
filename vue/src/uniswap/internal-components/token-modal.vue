@@ -51,7 +51,7 @@
                 >
                   <div class="uni-ic__modal-tokens-item" v-if="token.canShow">
                     <TokenIcon
-                      v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
+                      v-if='token.symbol == "THEOS" || token.symbol == "ETH"'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
                     />
