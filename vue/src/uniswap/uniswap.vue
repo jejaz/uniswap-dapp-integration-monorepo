@@ -5,7 +5,6 @@
         <p class="app-modal-title">Buy tokens</p>
         <p class="app-modal-text">Select tokens to swap them</p>
         <div class="uni-ic uni-ic__theme-background">
-          {{showTransactionData}}
           <Header
             v-if="logic && supportedNetwork && inputToken"
             :logic="logic"
@@ -306,12 +305,6 @@
       <div v-else-if='showTransactionData' >
         <div class="uni-ic uni-ic__theme-background">
           <template v-if="logic && supportedNetwork">
-            <span
-              class="uni-ic__modal__close"
-              v-on:click="logic.hideTransaction()"
-              v-if="miningTransactionStatus === TransactionStatus.completed"
-            >&times;</span
-            >
 
             <div
               class="uni-ic__modal-transaction__state"
@@ -322,11 +315,6 @@
                    miningTransactionStatus === TransactionStatus.completed
                "
                 >
-                  <div class="loader-wrapper" v-if="miningTransactionStatus !== TransactionStatus.completed">
-                    <div
-                      class="loader change-border"
-                    ></div>
-                  </div>
                   <div class="uni-ic__modal-transaction__state__info">
                     <div class="uni-ic__modal-transaction__state__info-confirmation">
               <span
@@ -336,13 +324,18 @@
                 "
               >Waiting For Confirmation</span
               >
-                      <span v-if="miningTransactionStatus === TransactionStatus.mining"
-                      >Mining</span
-                      >
+<!--                      <span v-if="miningTransactionStatus === TransactionStatus.mining"-->
+<!--                      >Mining</span-->
+<!--                      >-->
 
-                      <span v-if="miningTransactionStatus === TransactionStatus.completed"
-                      >Swap complete</span
+                      <span v-if="miningTransactionStatus === TransactionStatus.completed" class='swap-complete-main'
+                      >Congrats!</span
                       >
+                    </div>
+                    <div class="loader-wrapper" style="margin-bottom: 20px" v-if="miningTransactionStatus !== TransactionStatus.completed">
+                      <div
+                        class="loader change-border"
+                      ></div>
                     </div>
                     <div class="uni-ic__modal-transaction__state__info-quote">
                       <div class="uni-ic__modal-transaction__state__info-quote-info">
@@ -356,11 +349,11 @@
                 </span>
                         <span
                           v-if="miningTransactionStatus === TransactionStatus.completed"
-                        >Swapped
+                        >Your tokens has been successfully swapped and now is time to buy the NFT!
                 </span>
                         <span
                           v-if="
-                    logic.tradeContext.quoteDirection === TradeDirection.input
+                    logic.tradeContext.quoteDirection === TradeDirection.input && miningTransactionStatus !== TransactionStatus.completed
                   "
                         >
                   {{ logic.tradeContext.baseConvertRequest }}

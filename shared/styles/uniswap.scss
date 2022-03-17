@@ -1679,9 +1679,14 @@ radial-gradient(
             box-sizing: border-box;
             margin: 0px;
             min-width: 0px;
-            font-weight: 500;
-            font-size: 20px;
             text-align: center;
+            font-family: 'Editorial New';
+            font-style: normal;
+            font-weight: 200;
+            font-size: 29px;
+            line-height: 27px;
+            text-transform: uppercase;
+            color: $Holo1Color;
           }
 
           &-quote {
@@ -1694,9 +1699,13 @@ radial-gradient(
               box-sizing: border-box;
               margin: 0px;
               min-width: 0px;
-              font-weight: 600;
-              font-size: 14px;
               text-align: center;
+              font-family: 'Aktiv Grotesk';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              color: #E3E8DD;
             }
           }
         }
@@ -1707,6 +1716,12 @@ radial-gradient(
           min-width: 0px;
           font-size: 12px;
           text-align: center;
+          font-family: 'Aktiv Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 18px;
+          color: #E3E8DD;
 
           button {
             padding: 16px;
@@ -2036,4 +2051,15 @@ radial-gradient(
   max-width: 358px;
   color: #E3E8DD;
   margin-bottom: 15px;
+}
+.swap-complete-main {
+
+  font-family: 'Editorial New';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 50px;
+  line-height: 58px;
+  text-transform: uppercase;
+  color: $Holo1Color;
+  
 }
