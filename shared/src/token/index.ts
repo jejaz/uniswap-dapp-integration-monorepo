@@ -57,7 +57,7 @@ export class TokenService {
       }
     }
 
-    const image = require(`@/token/logos/${removeEthFromContractAddress(contractAddress,)}.png`);
+    const image = require("@/token/logos/0x158D5a2690742793de60CdE90253B39441e6029d.png");
 
     try {
       const result = await fetch(image);
