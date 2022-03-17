@@ -508,7 +508,6 @@ export default defineComponent({
     },
 
     async swapTransaction() {
-      this.eventBus.emit("closeExchangeTokenModal", true);
       this.showTransactionData = true;
       const res = await this.logic.swapTransaction();
       console.log(res)
