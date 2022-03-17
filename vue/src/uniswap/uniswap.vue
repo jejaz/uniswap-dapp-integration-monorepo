@@ -306,27 +306,21 @@
       <div v-else-if='showTransactionData' >
         <div class="uni-ic uni-ic__theme-background">
           <template v-if="logic && supportedNetwork">
-            <div id="uni-ic__modal-transaction" class="uni-ic__modal">
-              <div
-                class="
-        uni-ic__modal__content uni-ic__modal-transaction uni-ic__theme-background
-      "
-              >
-        <span
-          class="uni-ic__modal__close"
-          v-on:click="logic.hideTransaction()"
-          v-if="miningTransactionStatus === TransactionStatus.completed"
-        >&times;</span
-        >
+            <span
+              class="uni-ic__modal__close"
+              v-on:click="logic.hideTransaction()"
+              v-if="miningTransactionStatus === TransactionStatus.completed"
+            >&times;</span
+            >
 
-                <div
-                  class="uni-ic__modal-transaction__state"
-                  v-if="
-            miningTransactionStatus ===
-              TransactionStatus.waitingForConfirmation ||
-              miningTransactionStatus === TransactionStatus.mining ||
-              miningTransactionStatus === TransactionStatus.completed
-          "
+            <div
+              class="uni-ic__modal-transaction__state"
+              v-if="
+                 miningTransactionStatus ===
+                   TransactionStatus.waitingForConfirmation ||
+                   miningTransactionStatus === TransactionStatus.mining ||
+                   miningTransactionStatus === TransactionStatus.completed
+               "
                 >
                   <div class="loader-wrapper" v-if="miningTransactionStatus !== TransactionStatus.completed">
                     <div
@@ -437,8 +431,6 @@
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
           </template>
         </div>
       </div>
