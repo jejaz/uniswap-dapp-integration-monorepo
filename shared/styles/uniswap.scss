@@ -1668,6 +1668,7 @@ radial-gradient(
           font-weight: 400;
           font-size: 14px;
           line-height: 18px;
+          margin-top: 10px;
 
           /* identical to box height, or 129% */
           text-align: center;
@@ -1680,13 +1681,13 @@ radial-gradient(
             margin: 0px;
             min-width: 0px;
             text-align: center;
-            font-family: 'Editorial New';
+            text-align: center;
+            font-family: 'Aktiv Grotesk';
             font-style: normal;
-            font-weight: 200;
-            font-size: 29px;
-            line-height: 27px;
-            text-transform: uppercase;
-            color: $Holo1Color;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: #E3E8DD;
           }
 
           &-quote {
@@ -2038,7 +2039,7 @@ radial-gradient(
   color: $Holo1Color;
 
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .app-modal-text {
@@ -2053,7 +2054,6 @@ radial-gradient(
   margin-bottom: 15px;
 }
 .swap-complete-main {
-
   font-family: 'Editorial New';
   font-style: normal;
   font-weight: 200;
@@ -2061,5 +2061,87 @@ radial-gradient(
   line-height: 58px;
   text-transform: uppercase;
   color: $Holo1Color;
-  
+}
+.app-modal-button,
+.app-modal-button-inverse,
+.app-modal-button-transparent,
+.app-modal-button-gray {
+  font-family: 'Aktiv Grotesk';
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  padding: 10px 0;
+  background: #000;
+  color: #caff2c;
+  border: 2px solid #caff2c;
+  cursor: pointer;
+}
+
+.app-modal-button-disabled {
+  background: #353535;
+  color: #0B0B0B;
+}
+
+.app-modal-button-transparent {
+  background: rgba(11, 11, 11, 0.2);
+}
+
+.app-modal-button-gray {
+  border: 1px solid #E3E8DD;
+  color: #E3E8DD;
+  background: rgba(11, 11, 11, 0.6);
+}
+
+.app-modal-button-inverse {
+  color: #0B0B0B;
+  background: #caff2c;
+}
+
+.app-modal-button-controls {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.app-modal-button-controls-column {
+  @extend .app-modal-button-controls;
+  flex-direction: column;
+}
+.app-modal-button-inverse:active {
+  background: #fbcee6;
+  border: none;
+  color: #0B0B0B;
+}
+.app-modal-button:active {
+  background: rgba(196, 196, 196, 0.2);
+  color: #E3E8DD;
+  border: 2px solid #E3E8DD;
+}
+.app-modal-button-transparent:active {
+  background: rgba(11, 11, 11, 0.2);
+  color: #E3E8DD;
+  border: 2px solid #E3E8DD;
+}
+.app-modal-button-inverse:hover {
+  background: rgba(196, 196, 196, 0.2);
+  color: #E3E8DD;
+  border: 2px solid #E3E8DD;
+}
+.app-modal-button[disabled],
+.app-modal-button-inverse[disabled] {
+  background: #353535;
+  border-color: #353535;
+}
+
+.app-modal-button:hover,
+.app-modal-button-transparent:hover {
+  background: rgba(202, 255, 44, 0.1);
+  border: 2px solid #caff2c;
+}
+.app-modal-button-gray:hover {
+  background: rgba(50, 50, 50, 0.6);
 }

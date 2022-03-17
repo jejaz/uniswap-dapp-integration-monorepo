@@ -224,7 +224,7 @@
 <!--            Here instead of logic.swapTransaction() was logic.showConfirmSwap() for showing modal-->
             <div class="uni-ic__swap-button-container">
               <button
-                class="uni-ic__swap-button uni-ic__theme-background-button"
+                class="app-modal-button-inverse"
                 v-on:click="swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
@@ -322,7 +322,7 @@
                   miningTransactionStatus ===
                     TransactionStatus.waitingForConfirmation
                 "
-              >Waiting For Confirmation</span
+              >Waiting For Confirmation...</span
               >
 <!--                      <span v-if="miningTransactionStatus === TransactionStatus.mining"-->
 <!--                      >Mining</span-->
@@ -347,10 +347,24 @@
                   "
                 >Swapping
                 </span>
-                        <span
+                        <span style="margin-bottom: 10px;"
                           v-if="miningTransactionStatus === TransactionStatus.completed"
                         >Your tokens has been successfully swapped and now is time to buy the NFT!
-                </span>
+                        </span>
+                        <button style="margin-bottom: 10px;"
+                                class="app-modal-button-inverse"
+                                v-on:click="goToBuyNFT()">
+                          <div class="uni-ic__swap-button-text">
+                            <span>Buy NFT</span>
+                          </div>
+                        </button>
+                        <button
+                          class="app-modal-button-gray">
+                          <div class="uni-ic__swap-button-text"
+                               v-on:click="closeModal()">
+                            <span>Back</span>
+                          </div>
+                        </button>
                         <span
                           v-if="
                     logic.tradeContext.quoteDirection === TradeDirection.input && miningTransactionStatus !== TransactionStatus.completed
@@ -385,45 +399,45 @@
                   </div>
                 </div>
 
-                <div
-                  class="uni-ic__modal-transaction__rejected"
-                  v-if="miningTransactionStatus === TransactionStatus.rejected"
-                >
-                  <div class="uni-ic__modal-transaction__rejected__content">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="64"
-                      height="64"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#DA2D2B"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-                      ></path>
-                      <line x1="12" y1="9" x2="12" y2="13"></line>
-                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                    <div class="uni-ic__modal-transaction__rejected__content-text">
-                      Transaction rejected.
-                    </div>
-                  </div>
+<!--                <div-->
+<!--                  class="uni-ic__modal-transaction__rejected"-->
+<!--                  v-if="miningTransactionStatus === TransactionStatus.rejected"-->
+<!--                >-->
+<!--                  <div class="uni-ic__modal-transaction__rejected__content">-->
+<!--                    <svg-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                      width="64"-->
+<!--                      height="64"-->
+<!--                      viewBox="0 0 24 24"-->
+<!--                      fill="none"-->
+<!--                      stroke="#DA2D2B"-->
+<!--                      stroke-width="1.5"-->
+<!--                      stroke-linecap="round"-->
+<!--                      stroke-linejoin="round"-->
+<!--                    >-->
+<!--                      <path-->
+<!--                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"-->
+<!--                      ></path>-->
+<!--                      <line x1="12" y1="9" x2="12" y2="13"></line>-->
+<!--                      <line x1="12" y1="17" x2="12.01" y2="17"></line>-->
+<!--                    </svg>-->
+<!--                    <div class="uni-ic__modal-transaction__rejected__content-text">-->
+<!--                      Transaction rejected.-->
+<!--                    </div>-->
+<!--                  </div>-->
 
-                  <div class="uni-ic__modal-transaction__rejected__dismiss">
-                    <button
-                      class="
-              uni-ic__modal-transaction__rejected__dismiss-button
-              uni-ic__theme-background-button
-            "
-                      v-on:click="logic.hideTransaction()"
-                    >
-                      Dismiss
-                    </button>
-                  </div>
-                </div>
+<!--                  <div class="uni-ic__modal-transaction__rejected__dismiss">-->
+<!--                    <button-->
+<!--                      class="-->
+<!--              uni-ic__modal-transaction__rejected__dismiss-button-->
+<!--              uni-ic__theme-background-button-->
+<!--            "-->
+<!--                      v-on:click="logic.hideTransaction()"-->
+<!--                    >-->
+<!--                      Dismiss-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </div>-->
           </template>
         </div>
       </div>
@@ -496,7 +510,15 @@ export default defineComponent({
     async swapTransaction() {
       this.eventBus.emit("closeExchangeTokenModal", true);
       this.showTransactionData = true;
-      await this.logic.swapTransaction();
+      const res = await this.logic.swapTransaction();
+      console.log(res)
+    },
+
+    goToBuyNFT() {
+      this.eventBus.emit("goToBuyNFT");
+    },
+    closeModal() {
+      this.eventBus.emit("closeExchangeTokenModal");
     },
 
     formatCurrency(value) {
