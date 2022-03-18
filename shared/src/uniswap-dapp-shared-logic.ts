@@ -130,6 +130,7 @@ export class UniswapDappSharedLogic {
     }
 
     //(this.chainId === 800001 ? matic.contractAddress : eth.contractAddress)
+    console.log(this.chainId)
     const inputToken =
       supportedNetworkTokens.defaultInputToken || matic.contractAddress;
 
