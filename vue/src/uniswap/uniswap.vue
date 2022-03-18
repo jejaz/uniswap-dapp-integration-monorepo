@@ -712,6 +712,7 @@ export default defineComponent({
     }));
     this.logic = uniswapDappSharedLogic;
     this.loading = false;
+    this.supportedNetworkTokens = supportedNetworkTokens;
   },
 
   unmounted() {
