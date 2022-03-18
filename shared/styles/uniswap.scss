@@ -471,8 +471,12 @@ radial-gradient(
               justify-content: space-between;
 
               &-title {
-                margin: 0px 0.25rem;
-                font-size: 16px;
+                font-family: 'Aktiv Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: #CAFF2C;
               }
 
               &-icon {

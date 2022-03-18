@@ -24,7 +24,29 @@
                       class="uni-ic__swap-input-content-main-from-currency-container uni-ic__theme-panel"
                       v-on:click="logic.openTokenSelectorFrom()"
                     >
-                      <span class="uni-ic__swap-input-content-main-from-currency">
+                      <span
+                        class="uni-ic__swap-output-content-main-select-content"
+                        v-if="!inputToken"
+                      ><span
+                        class="
+                        uni-ic__swap-output-content-main-select-content-title
+                      "
+                      >Select a token</span
+                      ><svg
+                        width="12"
+                        height="7"
+                        viewBox="0 0 12 7"
+                        fill="none"
+                        class="uni-ic__swap-output-content-main-select-content-icon"
+                      >
+                          <path
+                            d="M0.97168 1L6.20532 6L11.439 1"
+                            stroke="#AEAEAE"
+                          ></path>
+                        </svg>
+                      </span>
+
+                      <span class="uni-ic__swap-input-content-main-from-currency" v-if='inputToken'>
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "MATIC"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
