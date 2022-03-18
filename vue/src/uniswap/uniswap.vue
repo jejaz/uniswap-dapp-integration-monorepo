@@ -692,6 +692,7 @@ export default defineComponent({
       this.selectorOpenFrom = openFrom;
     }));
     this.inputToken = uniswapDappSharedLogic.inputToken;
+    console.log(uniswapDappSharedLogic.inputToken)
     this.inputBalance = this.utils().toPrecision((_uniswapDappSharedLog3 = uniswapDappSharedLogic.inputToken) === null || _uniswapDappSharedLog3 === void 0 ? void 0 : _uniswapDappSharedLog3.balance);
     this.inputFiatPrice = (_uniswapDappSharedLog4 = uniswapDappSharedLogic.inputToken) === null || _uniswapDappSharedLog4 === void 0 ? void 0 : _uniswapDappSharedLog4.fiatPrice;
     this.subscriptions.push(uniswapDappSharedLogic.inputToken$.subscribe(token => {
