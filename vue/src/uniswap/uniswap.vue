@@ -26,7 +26,7 @@
                     >
                       <span class="uni-ic__swap-input-content-main-from-currency">
                         <TokenIcon
-                          v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
+                          v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "MATIC"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :logo='inputToken.symbol == "THEOS" ? theosLogo : maticLogo'
                           :context="inputToken.tokenImageContext"
@@ -140,7 +140,7 @@
                         v-if="outputToken"
                       >
                         <TokenIcon
-                          v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "ETH"'
+                          v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "MATIC"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
                           :logo='outputToken.symbol == "THEOS" ? theosLogo : maticLogo'

@@ -51,7 +51,7 @@
                 >
                   <div class="uni-ic__modal-tokens-item" v-if="token.canShow">
                     <TokenIcon
-                      v-if='token.symbol == "THEOS" || token.symbol == "ETH"'
+                      v-if='token.symbol == "THEOS" || token.symbol == "MATIC"'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
                       :logo='token.symbol == "THEOS" ? theosLogo : maticLogo'
@@ -100,7 +100,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo'],
 
   data() {
     return {
