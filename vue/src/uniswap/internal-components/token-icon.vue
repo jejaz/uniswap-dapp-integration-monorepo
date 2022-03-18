@@ -4,11 +4,11 @@
         :src="logo"
         v-bind:class="classes"
       />
-      <div
-        v-if="context.isSvg"
-        v-bind:class="classes"
-        v-html="logo"
-      ></div>
+<!--      <div-->
+<!--        v-if="context.isSvg"-->
+<!--        v-bind:class="classes"-->
+<!--        v-html="logo"-->
+<!--      ></div>-->
     </div>
 </template>
 
