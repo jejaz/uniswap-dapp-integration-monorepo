@@ -2,6 +2,7 @@ export {
   ChainId,
   ErrorCodes,
   ETH,
+  MATIC,
   Token,
   TradeContext,
   TradeDirection,

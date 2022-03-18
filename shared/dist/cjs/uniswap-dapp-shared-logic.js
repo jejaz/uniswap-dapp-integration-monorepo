@@ -84,7 +84,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var eth, supportedNetworkTokens, inputToken, _a, _c;
+            var eth, matic, supportedNetworkTokens, inputToken, _a, _c;
             var _this = this;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -102,6 +102,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             return [2 /*return*/];
                         }
                         eth = simple_uniswap_sdk_1.ETH.info(this.chainId);
+                        matic = simple_uniswap_sdk_1.MATIC.info(this.chainId);
                         supportedNetworkTokens = this._context.supportedNetworkTokens.find(function (t) { return t.chainId === _this.chainId; });
                         if (supportedNetworkTokens.defaultInputValue &&
                             this._inputAmount.isZero()) {
@@ -114,7 +115,14 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 contractAddress: eth.contractAddress,
                             });
                         }
-                        inputToken = supportedNetworkTokens.defaultInputToken || eth.contractAddress;
+                        if (!supportedNetworkTokens.supportedTokens.find(function (c) {
+                            return c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase();
+                        })) {
+                            supportedNetworkTokens.supportedTokens.push({
+                                contractAddress: matic.contractAddress,
+                            });
+                        }
+                        inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 800001 ? matic.contractAddress : eth.contractAddress);
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 2:
