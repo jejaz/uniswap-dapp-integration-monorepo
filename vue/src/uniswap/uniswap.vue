@@ -28,7 +28,7 @@
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
-                          :logo='token.symbol == "THEOS" ? theosLogo : ethLogo'
+                          :logo='inputToken.symbol == "THEOS" ? theosLogo : maticLogo'
                           :context="inputToken.tokenImageContext"
                         />
                         <div v-else style='width: 24px; height: 24px;'>
@@ -143,7 +143,7 @@
                           v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
-                          :logo='token.symbol == "THEOS" ? theosLogo : ethLogo'
+                          :logo='outputToken.symbol == "THEOS" ? theosLogo : maticLogo'
                         />
                         <div v-else style='width: 24px; height: 24px;'>
                         </div>
@@ -292,7 +292,7 @@
             :inputToken="inputToken"
             :outputToken="outputToken"
             :theosLogo="theosLogo"
-            :ethLogo="ethLogo"
+            :maticLogo="maticLogo"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -431,7 +431,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'ethLogo'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo'],
 
   data() {
     return {
@@ -456,7 +456,7 @@ export default defineComponent({
       debounceTimeout: undefined,
       image: this.image,
       theosLogo: this.theosLogo,
-      ethLogo: this.ethLogo,
+      maticLogo: this.maticLogo,
       showTransactionData: false,
       TransactionStatus,
       TradeDirection,
