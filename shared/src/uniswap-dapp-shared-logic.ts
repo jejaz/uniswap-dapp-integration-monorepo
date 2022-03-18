@@ -118,21 +118,19 @@ export class UniswapDappSharedLogic {
       );
     }
 
-    if (
-      !supportedNetworkTokens.supportedTokens.find(
-        (c) =>
-          c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
-      )
-    ) {
-      supportedNetworkTokens.supportedTokens.push({
-        contractAddress: eth.contractAddress,
-      });
-    }
+    // if (
+    //   !supportedNetworkTokens.supportedTokens.find(
+    //     (c) =>
+    //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
+    //   )
+    // ) {
+    //   supportedNetworkTokens.supportedTokens.push({
+    //     contractAddress: eth.contractAddress,
+    //   });
+    // }
 
-    //(this.chainId === 800001 ? matic.contractAddress : eth.contractAddress)
-    console.log(this.chainId)
     const inputToken =
-      supportedNetworkTokens.defaultInputToken || matic.contractAddress;
+      supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 ? matic.contractAddress : eth.contractAddress);
 
     this.inputToken = await this._tokenService.getTokenInformation(
       inputToken,
