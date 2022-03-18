@@ -112,7 +112,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 contractAddress: eth.contractAddress,
                             });
                         }
-                        inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 800001 ? matic.contractAddress : eth.contractAddress);
+                        inputToken = supportedNetworkTokens.defaultInputToken || matic.contractAddress;
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 2:
