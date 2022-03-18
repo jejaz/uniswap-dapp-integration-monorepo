@@ -380,18 +380,9 @@
                         <button style="margin-bottom: 10px; margin-top: 50px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
-                                v-on:click="goToBuyNFT()">
+                                v-on:click="closeModal()">
                           <div class="uni-ic__swap-button-text">
                             <span>Buy NFT</span>
-                          </div>
-                        </button>
-                        <button
-                          class="app-modal-button-gray"
-                          v-if="miningTransactionStatus === TransactionStatus.completed"
-                          v-on:click="closeModal()"
-                        >
-                          <div class="uni-ic__swap-button-text">
-                            <span>Back</span>
                           </div>
                         </button>
                         <span
@@ -508,9 +499,6 @@ export default defineComponent({
       }
     },
 
-    goToBuyNFT() {
-      this.eventBus.emit("goToBuyNFT");
-    },
     closeModal() {
       this.eventBus.emit("closeExchangeTokenModal");
     },
