@@ -1,7 +1,7 @@
 <template>  
     <div>
       <img
-        v-bind:src="logo"
+        :src="logo"
         v-bind:class="classes"
       />
       <div
