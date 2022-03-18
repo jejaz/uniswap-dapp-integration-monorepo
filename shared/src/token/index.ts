@@ -57,7 +57,7 @@ export class TokenService {
       }
     }
 
-    const image = 'https://app.theos.fi/img/TheosLogo.8a33e028.svg';
+    const image = '';
 
     try {
       const result = await fetch(image);

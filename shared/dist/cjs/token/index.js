@@ -74,7 +74,7 @@ var TokenService = /** @class */ (function () {
                                 return [2 /*return*/, token.tokenImageContext];
                             }
                         }
-                        image = 'https://app.theos.fi/img/TheosLogo.8a33e028.svg';
+                        image = '';
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
