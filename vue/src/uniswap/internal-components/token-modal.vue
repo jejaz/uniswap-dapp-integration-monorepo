@@ -54,6 +54,7 @@
                       v-if='token.symbol == "THEOS" || token.symbol == "ETH"'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
+                      :theosLogo='theosLogo'
                     />
                     <div v-else style='width: 24px; height: 24px;'>
                     </div>
@@ -99,7 +100,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo'],
 
   data() {
     return {

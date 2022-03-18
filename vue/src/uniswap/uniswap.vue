@@ -28,6 +28,7 @@
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
+                          :theosLogo='theosLogo'
                           :context="inputToken.tokenImageContext"
                         />
                         <div v-else style='width: 24px; height: 24px;'>
@@ -142,6 +143,7 @@
                           v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
+                          :theosLogo='theosLogo'
                         />
                         <div v-else style='width: 24px; height: 24px;'>
                         </div>
@@ -289,6 +291,7 @@
             :selectorOpenFrom="selectorOpenFrom"
             :inputToken="inputToken"
             :outputToken="outputToken"
+            :theosLogo='theosLogo'
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -427,7 +430,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'logos'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo'],
 
   data() {
     return {
@@ -451,6 +454,7 @@ export default defineComponent({
       noLiquidityFound: false,
       debounceTimeout: undefined,
       image: this.image,
+      theosLogo: this.theosLogo,
       showTransactionData: false,
       TransactionStatus,
       TradeDirection,
