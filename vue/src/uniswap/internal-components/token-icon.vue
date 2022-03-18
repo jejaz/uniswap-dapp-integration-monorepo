@@ -1,15 +1,14 @@
 <template>  
     <div>
       <img
-        v-if="!context.isSvg"
-        v-bind:src="theosLogo"
+        v-bind:src="logo"
         v-bind:class="classes"
       />
-<!--      <div-->
-<!--        v-if="context.isSvg"-->
-<!--        v-bind:class="classes"-->
-<!--        v-html="context.image"-->
-<!--      ></div>-->
+      <div
+        v-if="context.isSvg"
+        v-bind:class="classes"
+        v-html="logo"
+      ></div>
     </div>
 </template>
 
@@ -17,6 +16,6 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'TokenIcon',
-  props: ['classes', 'context', 'theosLogo']
+  props: ['classes', 'context', 'logo']
 });
 </script>

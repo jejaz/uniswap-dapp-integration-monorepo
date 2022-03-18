@@ -54,7 +54,7 @@
                       v-if='token.symbol == "THEOS" || token.symbol == "ETH"'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
-                      :theosLogo='theosLogo'
+                      :logo='token.symbol == "THEOS" ? theosLogo : ethLogo'
                     />
                     <div v-else style='width: 24px; height: 24px;'>
                     </div>

@@ -28,7 +28,7 @@
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
-                          :theosLogo='theosLogo'
+                          :logo='token.symbol == "THEOS" ? theosLogo : ethLogo'
                           :context="inputToken.tokenImageContext"
                         />
                         <div v-else style='width: 24px; height: 24px;'>
@@ -143,7 +143,7 @@
                           v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "ETH"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
-                          :theosLogo='theosLogo'
+                          :logo='token.symbol == "THEOS" ? theosLogo : ethLogo'
                         />
                         <div v-else style='width: 24px; height: 24px;'>
                         </div>
@@ -291,7 +291,8 @@
             :selectorOpenFrom="selectorOpenFrom"
             :inputToken="inputToken"
             :outputToken="outputToken"
-            :theosLogo='theosLogo'
+            :theosLogo="theosLogo"
+            :ethLogo="ethLogo"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -430,7 +431,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'ethLogo'],
 
   data() {
     return {
@@ -455,6 +456,7 @@ export default defineComponent({
       debounceTimeout: undefined,
       image: this.image,
       theosLogo: this.theosLogo,
+      ethLogo: this.ethLogo,
       showTransactionData: false,
       TransactionStatus,
       TradeDirection,
