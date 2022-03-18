@@ -26,7 +26,7 @@
                     >
                       <span
                         class="uni-ic__swap-output-content-main-select-content"
-                        v-if="!supportedNetworkTokens.defaultInputToken"
+                        v-if="!inputToken"
                       ><span
                         class="
                         uni-ic__swap-output-content-main-select-content-title
@@ -46,7 +46,7 @@
                         </svg>
                       </span>
 
-                      <span class="uni-ic__swap-input-content-main-from-currency" v-if='supportedNetworkTokens.defaultInputToken'>
+                      <span class="uni-ic__swap-input-content-main-from-currency" v-if='inputToken'>
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "MATIC"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
