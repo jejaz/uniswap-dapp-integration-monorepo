@@ -26,7 +26,7 @@
                     >
                       <span
                         class="uni-ic__swap-output-content-main-select-content"
-                        v-if="!inputToken"
+                        v-if="!supportedNetworkTokens.defaultInputToken"
                       ><span
                         class="
                         uni-ic__swap-output-content-main-select-content-title
@@ -41,12 +41,12 @@
                       >
                           <path
                             d="M0.97168 1L6.20532 6L11.439 1"
-                            stroke="#AEAEAE"
+                            stroke="#CAFF2C"
                           ></path>
                         </svg>
                       </span>
 
-                      <span class="uni-ic__swap-input-content-main-from-currency" v-if='inputToken'>
+                      <span class="uni-ic__swap-input-content-main-from-currency" v-if='supportedNetworkTokens.defaultInputToken'>
                         <TokenIcon
                           v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "MATIC"'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
@@ -68,7 +68,7 @@
                         >
                           <path
                             d="M0.97168 1L6.20532 6L11.439 1"
-                            stroke="#AEAEAE"
+                            stroke="#E3E8DD"
                           ></path>
                         </svg>
                       </span>
@@ -152,7 +152,7 @@
                         >
                           <path
                             d="M0.97168 1L6.20532 6L11.439 1"
-                            stroke="#AEAEAE"
+                            stroke="#CAFF2C"
                           ></path>
                         </svg>
                       </span>
@@ -182,7 +182,7 @@
                         >
                           <path
                             d="M0.97168 1L6.20532 6L11.439 1"
-                            stroke="#AEAEAE"
+                            stroke="#E3E8DD"
                           ></path>
                         </svg>
                       </span>
@@ -480,6 +480,7 @@ export default defineComponent({
       theosLogo: this.theosLogo,
       maticLogo: this.maticLogo,
       showTransactionData: false,
+      supportedNetworkTokens: undefined,
       TransactionStatus,
       TradeDirection,
     };
