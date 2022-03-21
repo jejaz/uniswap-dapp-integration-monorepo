@@ -88,7 +88,8 @@ var EthereumProvider = /** @class */ (function () {
      */
     EthereumProvider.prototype.isSupportedChain = function (chainId, supportedNetworkTokens) {
         try {
-            (chainId === 80001) ? simple_uniswap_sdk_1.MATIC.info(chainId) : simple_uniswap_sdk_1.ETH.info(chainId);
+            // (chainId === 80001) ? MATIC.info(chainId) : ETH.info(chainId);
+            simple_uniswap_sdk_1.ETH.info(chainId);
             return (supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
         }
         catch (error) {
