@@ -105,6 +105,23 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             this._inputAmount.isZero()) {
                             this._inputAmount = new BigNumber(supportedNetworkTokens.defaultInputValue);
                         }
+                        // if (
+                        //   !supportedNetworkTokens.supportedTokens.find(
+                        //     (c) =>
+                        //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
+                        //   )
+                        // ) {
+                        //   supportedNetworkTokens.supportedTokens.push({
+                        //     contractAddress: eth.contractAddress,
+                        //   });
+                        // }
+                        if (!supportedNetworkTokens.supportedTokens.find(function (c) {
+                            return c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase();
+                        })) {
+                            supportedNetworkTokens.supportedTokens.push({
+                                contractAddress: matic.contractAddress,
+                            });
+                        }
                         inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 ? matic.contractAddress : eth.contractAddress);
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];

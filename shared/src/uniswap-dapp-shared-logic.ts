@@ -129,6 +129,17 @@ export class UniswapDappSharedLogic {
     //   });
     // }
 
+    if (
+      !supportedNetworkTokens.supportedTokens.find(
+        (c) =>
+          c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase(),
+      )
+    ) {
+      supportedNetworkTokens.supportedTokens.push({
+        contractAddress: matic.contractAddress,
+      });
+    }
+
     const inputToken =
       supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 ? matic.contractAddress : eth.contractAddress);
 
