@@ -380,9 +380,16 @@
                         <button style="margin-bottom: 10px; margin-top: 50px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
-                                v-on:click="closeModal()">
+                                v-on:click="continueFLow()">
                           <div class="uni-ic__swap-button-text">
                             <span>Buy NFT</span>
+                          </div>
+                        </button>
+                        <button
+                          class="app-modal-button-gray">
+                          <div class="uni-ic__swap-button-text"
+                               v-on:click="closeModal()">
+                            <span>Do it later</span>
                           </div>
                         </button>
                         <span
@@ -501,6 +508,9 @@ export default defineComponent({
 
     closeModal() {
       this.eventBus.emit("closeExchangeTokenModal");
+    },
+    continueFLow() {
+      this.eventBus.emit("continueFlow");
     },
 
     formatCurrency(value) {
