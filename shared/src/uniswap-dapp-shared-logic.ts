@@ -233,6 +233,7 @@ export class UniswapDappSharedLogic {
     this.chainId$.next(this.chainId);
 
     console.log(JSON.stringify(this._context.supportedNetworkTokens))
+    console.log(JSON.stringify(this.chainId))
     this.supportedNetwork = this._ethereumProvider.isSupportedChain(
       this.chainId,
       this._context.supportedNetworkTokens,

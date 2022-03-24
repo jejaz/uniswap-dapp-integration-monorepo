@@ -209,6 +209,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         _a.chainId = (_c.sent()).chainId;
                         this.chainId$.next(this.chainId);
                         console.log(JSON.stringify(this._context.supportedNetworkTokens));
+                        console.log(JSON.stringify(this.chainId));
                         this.supportedNetwork = this._ethereumProvider.isSupportedChain(this.chainId, this._context.supportedNetworkTokens);
                         this.supportedNetwork$.next(this.supportedNetwork);
                         console.log(JSON.stringify(this.supportedNetwork));
