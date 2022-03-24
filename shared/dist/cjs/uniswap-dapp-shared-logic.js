@@ -115,12 +115,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             });
                         }
                         inputToken = supportedNetworkTokens.defaultInputToken || eth.contractAddress;
-                        console.log(JSON.stringify(inputToken));
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 2:
                         _a.inputToken = _d.sent();
-                        console.log(JSON.stringify(inputToken));
                         this.inputToken$.next(this.inputToken);
                         return [4 /*yield*/, this.getBalances()];
                     case 3:

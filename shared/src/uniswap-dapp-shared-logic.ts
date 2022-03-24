@@ -144,12 +144,10 @@ export class UniswapDappSharedLogic {
     const inputToken =
       supportedNetworkTokens.defaultInputToken || eth.contractAddress;
 
-    console.log(JSON.stringify(inputToken))
     this.inputToken = await this._tokenService.getTokenInformation(
       inputToken,
       this._context.ethereumProvider,
     );
-    console.log(JSON.stringify(inputToken))
     this.inputToken$.next(this.inputToken);
 
     await this.getBalances();
