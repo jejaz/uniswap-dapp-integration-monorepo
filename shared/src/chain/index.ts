@@ -46,6 +46,8 @@ export class ChainService {
         return 'https://goerli.etherscan.io/';
       case ChainId.POLYGON:
         return 'https://polygonscan.com/';
+      case ChainId.MUMBAI:
+        return 'https://polygonscan.com/';
       default:
         throw new Error('Network is not defined');
     }

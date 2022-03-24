@@ -42,6 +42,8 @@ var ChainService = /** @class */ (function () {
                 return 'https://goerli.etherscan.io/';
             case simple_uniswap_sdk_1.ChainId.POLYGON:
                 return 'https://polygonscan.com/';
+            case simple_uniswap_sdk_1.ChainId.MUMBAI:
+                return 'https://polygonscan.com/';
             default:
                 throw new Error('Network is not defined');
         }
