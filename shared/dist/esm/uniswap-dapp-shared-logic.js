@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { BigNumber } from 'bignumber.js';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
-import { ETH, getAddress, TokensFactoryPublic, TradeDirection, UniswapPair, UniswapPairSettings, UniswapSubscription, } from 'simple-uniswap-sdk';
+import { ETH, MATIC, getAddress, TokensFactoryPublic, TradeDirection, UniswapPair, UniswapPairSettings, UniswapSubscription, } from 'simple-uniswap-sdk';
 import { ChainService } from './chain';
 import { CoinGecko } from './coin-gecko';
 import { EthereumProvider } from './ethereum-provider';
@@ -81,7 +81,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var eth, supportedNetworkTokens, inputToken, _a, _c;
+            var eth, matic, supportedNetworkTokens, inputToken, _a, _c;
             var _this = this;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -99,22 +99,37 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             return [2 /*return*/];
                         }
                         eth = ETH.info(this.chainId);
+                        matic = MATIC.info(this.chainId);
                         supportedNetworkTokens = this._context.supportedNetworkTokens.find(function (t) { return t.chainId === _this.chainId; });
                         if (supportedNetworkTokens.defaultInputValue &&
                             this._inputAmount.isZero()) {
                             this._inputAmount = new BigNumber(supportedNetworkTokens.defaultInputValue);
                         }
+                        // if (
+                        //   !supportedNetworkTokens.supportedTokens.find(
+                        //     (c) =>
+                        //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
+                        //   )
+                        // ) {
+                        //   supportedNetworkTokens.supportedTokens.push({
+                        //     contractAddress: eth.contractAddress,
+                        //   });
+                        // }
                         if (!supportedNetworkTokens.supportedTokens.find(function (c) {
-                            return c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase();
+                            return c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase();
                         })) {
                             supportedNetworkTokens.supportedTokens.push({
-                                contractAddress: eth.contractAddress,
+                                contractAddress: matic.contractAddress,
                             });
                         }
-                        inputToken = supportedNetworkTokens.defaultInputToken || eth.contractAddress;
+                        inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 127 ? matic.contractAddress : eth.contractAddress);
+                        // const inputToken =
+                        //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 2:
+                        // const inputToken =
+                        //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
                         _a.inputToken = _d.sent();
                         this.inputToken$.next(this.inputToken);
                         return [4 /*yield*/, this.getBalances()];
