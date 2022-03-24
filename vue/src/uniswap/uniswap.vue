@@ -390,7 +390,7 @@
                           v-if="miningTransactionStatus === TransactionStatus.completed">
                           <div class="uni-ic__swap-button-text"
                                v-on:click="closeModal()">
-                            <span>Back()</span>
+                            <span>Back</span>
                           </div>
                         </button>
                         <span
@@ -480,6 +480,8 @@ export default defineComponent({
       maticLogo: this.maticLogo,
       showTransactionData: false,
       supportedNetworkTokens: undefined,
+      congratsModalText: this.congratsModalText,
+      congratsModalButtonText: this.congratsModalButtonText,
       TransactionStatus,
       TradeDirection,
     };
