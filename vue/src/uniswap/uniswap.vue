@@ -238,7 +238,6 @@
               </div>
             </div>
 
-            {{tradeContext}}
             <template v-if="tradeContext && !noLiquidityFound">
               <SwapQuoteInfo :logic="logic" :tradeContext="tradeContext" />
   
@@ -502,6 +501,7 @@ export default defineComponent({
     async swapTransaction() {
       this.showTransactionData = true;
       await this.logic.swapTransaction();
+      console.log(JSON.stringify(this.tradeContext));
       if (this.miningTransaction.status === TransactionStatus.rejected) {
         this.eventBus.emit("transactionRejected");
       }
