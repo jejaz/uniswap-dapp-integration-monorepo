@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { providers, utils } from 'ethers';
-import { ETH, MATIC } from 'simple-uniswap-sdk';
+import { ETH } from 'simple-uniswap-sdk';
 var EthereumProvider = /** @class */ (function () {
     function EthereumProvider(_address, provider) {
         this._address = _address;
@@ -85,7 +85,8 @@ var EthereumProvider = /** @class */ (function () {
      */
     EthereumProvider.prototype.isSupportedChain = function (chainId, supportedNetworkTokens) {
         try {
-            (chainId === 80001 || chainId === 137) ? MATIC.info(chainId) : ETH.info(chainId);
+            //(chainId === 80001 || chainId ===137) ? MATIC.info(chainId) : ETH.info(chainId);
+            ETH.info(chainId);
             return (supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
         }
         catch (error) {

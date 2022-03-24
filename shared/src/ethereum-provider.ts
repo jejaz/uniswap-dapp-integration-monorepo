@@ -1,5 +1,5 @@
 import { providers, utils } from 'ethers';
-import { ETH, Transaction, MATIC } from 'simple-uniswap-sdk';
+import { ETH, Transaction } from 'simple-uniswap-sdk';
 import { SupportedNetworkTokens } from './token/models/supported-network-token';
 
 export class EthereumProvider {
@@ -51,7 +51,8 @@ export class EthereumProvider {
     supportedNetworkTokens: SupportedNetworkTokens[],
   ): boolean {
     try {
-     (chainId === 80001 || chainId ===137) ? MATIC.info(chainId) : ETH.info(chainId);
+     //(chainId === 80001 || chainId ===137) ? MATIC.info(chainId) : ETH.info(chainId);
+      ETH.info(chainId);
 
       return (
         supportedNetworkTokens.find((t) => t.chainId === chainId) !== undefined

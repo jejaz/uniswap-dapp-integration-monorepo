@@ -237,7 +237,8 @@
                 </div>
               </div>
             </div>
-  
+
+            {{tradeContext}}
             <template v-if="tradeContext && !noLiquidityFound">
               <SwapQuoteInfo :logic="logic" :tradeContext="tradeContext" />
   

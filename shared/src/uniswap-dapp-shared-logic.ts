@@ -2,7 +2,6 @@ import { BigNumber } from 'bignumber.js';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import {
   ETH,
-  MATIC,
   getAddress,
   TokensFactoryPublic,
   TradeContext,
@@ -103,6 +102,7 @@ export class UniswapDappSharedLogic {
       return;
     }
 
+    const eth = ETH.info(this.chainId);
     const supportedNetworkTokens = this._context.supportedNetworkTokens.find(
       (t) => t.chainId === this.chainId,
     )!;
@@ -116,32 +116,33 @@ export class UniswapDappSharedLogic {
       );
     }
 
-    // if (
-    //   !supportedNetworkTokens.supportedTokens.find(
-    //     (c) =>
-    //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
-    //   )
-    // ) {
-    //   supportedNetworkTokens.supportedTokens.push({
-    //     contractAddress: eth.contractAddress,
-    //   });
-    // }
-
     if (
       !supportedNetworkTokens.supportedTokens.find(
         (c) =>
-          c.contractAddress.toLowerCase() === MATIC.info(this.chainId).contractAddress.toLowerCase(),
+          c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
       )
     ) {
       supportedNetworkTokens.supportedTokens.push({
-        contractAddress: MATIC.info(this.chainId).contractAddress,
+        contractAddress: eth.contractAddress,
       });
     }
 
-    const inputToken =
-      supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 137 ? MATIC.info(this.chainId).contractAddress : ETH.info(this.chainId).contractAddress);
+    // if (
+    //   !supportedNetworkTokens.supportedTokens.find(
+    //     (c) =>
+    //       c.contractAddress.toLowerCase() === MATIC.info(this.chainId).contractAddress.toLowerCase(),
+    //   )
+    // ) {
+    //   supportedNetworkTokens.supportedTokens.push({
+    //     contractAddress: MATIC.info(this.chainId).contractAddress,
+    //   });
+    // }
+
     // const inputToken =
-    //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
+    //   supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 137 ? MATIC.info(this.chainId).contractAddress : ETH.info(this.chainId).contractAddress);
+
+    const inputToken =
+      supportedNetworkTokens.defaultInputToken || eth.contractAddress;
 
     console.log(JSON.stringify(inputToken))
     this.inputToken = await this._tokenService.getTokenInformation(
