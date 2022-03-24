@@ -119,16 +119,16 @@ export class UniswapDappSharedLogic {
       );
     }
 
-    // if (
-    //   !supportedNetworkTokens.supportedTokens.find(
-    //     (c) =>
-    //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
-    //   )
-    // ) {
-    //   supportedNetworkTokens.supportedTokens.push({
-    //     contractAddress: eth.contractAddress,
-    //   });
-    // }
+    if (
+      !supportedNetworkTokens.supportedTokens.find(
+        (c) =>
+          c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
+      )
+    ) {
+      supportedNetworkTokens.supportedTokens.push({
+        contractAddress: eth.contractAddress,
+      });
+    }
 
     // if (
     //   !supportedNetworkTokens.supportedTokens.find(
