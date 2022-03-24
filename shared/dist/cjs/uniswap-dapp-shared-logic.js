@@ -84,7 +84,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var eth, matic, supportedNetworkTokens, inputToken, _a, _c;
+            var supportedNetworkTokens, inputToken, _a, _c;
             var _this = this;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -101,8 +101,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             this.loading$.next(false);
                             return [2 /*return*/];
                         }
-                        eth = simple_uniswap_sdk_1.ETH.info(this.chainId);
-                        matic = simple_uniswap_sdk_1.MATIC.info(this.chainId);
                         supportedNetworkTokens = this._context.supportedNetworkTokens.find(function (t) { return t.chainId === _this.chainId; });
                         if (supportedNetworkTokens.defaultInputValue &&
                             this._inputAmount.isZero()) {
@@ -119,13 +117,13 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         //   });
                         // }
                         if (!supportedNetworkTokens.supportedTokens.find(function (c) {
-                            return c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase();
+                            return c.contractAddress.toLowerCase() === simple_uniswap_sdk_1.MATIC.info(_this.chainId).contractAddress.toLowerCase();
                         })) {
                             supportedNetworkTokens.supportedTokens.push({
-                                contractAddress: matic.contractAddress,
+                                contractAddress: simple_uniswap_sdk_1.MATIC.info(this.chainId).contractAddress,
                             });
                         }
-                        inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 137 ? matic.contractAddress : eth.contractAddress);
+                        inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 137 ? simple_uniswap_sdk_1.MATIC.info(this.chainId).contractAddress : simple_uniswap_sdk_1.ETH.info(this.chainId).contractAddress);
                         // const inputToken =
                         //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
                         console.log(JSON.stringify(inputToken));
