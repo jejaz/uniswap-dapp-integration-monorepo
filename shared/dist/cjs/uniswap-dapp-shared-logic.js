@@ -150,6 +150,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 6:
                         _c.inputToken = _d.sent();
+                        console.log(JSON.stringify(inputToken));
                         this.inputToken$.next(this.inputToken);
                         _d.label = 7;
                     case 7:

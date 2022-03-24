@@ -166,6 +166,7 @@ export class UniswapDappSharedLogic {
         inputToken,
         this._context.ethereumProvider,
       );
+      console.log(JSON.stringify(inputToken))
       this.inputToken$.next(this.inputToken);
     }
 
