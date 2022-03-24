@@ -52,7 +52,6 @@ export class EthereumProvider {
   ): boolean {
     try {
      (chainId === 80001 || chainId ===127) ? MATIC.info(chainId) : ETH.info(chainId);
-     ETH.info(chainId);
 
       return (
         supportedNetworkTokens.find((t) => t.chainId === chainId) !== undefined
