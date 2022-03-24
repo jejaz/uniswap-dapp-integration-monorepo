@@ -119,27 +119,27 @@ export class UniswapDappSharedLogic {
       );
     }
 
-    if (
-      !supportedNetworkTokens.supportedTokens.find(
-        (c) =>
-          c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
-      )
-    ) {
-      supportedNetworkTokens.supportedTokens.push({
-        contractAddress: eth.contractAddress,
-      });
-    }
-
     // if (
     //   !supportedNetworkTokens.supportedTokens.find(
     //     (c) =>
-    //       c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase(),
+    //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
     //   )
     // ) {
     //   supportedNetworkTokens.supportedTokens.push({
-    //     contractAddress: matic.contractAddress,
+    //     contractAddress: eth.contractAddress,
     //   });
     // }
+
+    if (
+      !supportedNetworkTokens.supportedTokens.find(
+        (c) =>
+          c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase(),
+      )
+    ) {
+      supportedNetworkTokens.supportedTokens.push({
+        contractAddress: matic.contractAddress,
+      });
+    }
 
     const inputToken =
       supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 127 ? matic.contractAddress : eth.contractAddress);

@@ -105,11 +105,21 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             this._inputAmount.isZero()) {
                             this._inputAmount = new BigNumber(supportedNetworkTokens.defaultInputValue);
                         }
+                        // if (
+                        //   !supportedNetworkTokens.supportedTokens.find(
+                        //     (c) =>
+                        //       c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase(),
+                        //   )
+                        // ) {
+                        //   supportedNetworkTokens.supportedTokens.push({
+                        //     contractAddress: eth.contractAddress,
+                        //   });
+                        // }
                         if (!supportedNetworkTokens.supportedTokens.find(function (c) {
-                            return c.contractAddress.toLowerCase() === eth.contractAddress.toLowerCase();
+                            return c.contractAddress.toLowerCase() === matic.contractAddress.toLowerCase();
                         })) {
                             supportedNetworkTokens.supportedTokens.push({
-                                contractAddress: eth.contractAddress,
+                                contractAddress: matic.contractAddress,
                             });
                         }
                         inputToken = supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 127 ? matic.contractAddress : eth.contractAddress);
