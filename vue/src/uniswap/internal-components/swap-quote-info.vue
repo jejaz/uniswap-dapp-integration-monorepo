@@ -4,7 +4,9 @@
         <div class="uni-ic__swap-input-content uni-ic__theme-panel">
           <div class="uni-ic__swap-input-content-main">
             <span class='info-title'
-            >1 {{ tradeContext.fromToken.symbol }} <span class='change-color'>=</span>
+            >
+              {{tradeContext.fromToken}}
+              1 {{ tradeContext.fromToken.symbol }} <span class='change-color'>=</span>
               {{ logic.workOutOneEqualTo() }}
               {{ tradeContext.toToken.symbol }}
             </span>

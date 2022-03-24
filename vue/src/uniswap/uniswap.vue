@@ -386,7 +386,8 @@
                           </div>
                         </button>
                         <button
-                          class="app-modal-button-gray">
+                          class="app-modal-button-gray"
+                          v-if="miningTransactionStatus === TransactionStatus.completed">
                           <div class="uni-ic__swap-button-text"
                                v-on:click="closeModal()">
                             <span>Do it later</span>
@@ -501,7 +502,6 @@ export default defineComponent({
     async swapTransaction() {
       this.showTransactionData = true;
       await this.logic.swapTransaction();
-      console.log(JSON.stringify(this.tradeContext));
       if (this.miningTransaction.status === TransactionStatus.rejected) {
         this.eventBus.emit("transactionRejected");
       }
