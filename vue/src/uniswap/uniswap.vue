@@ -375,14 +375,14 @@
                 </span>
                         <span style="margin-bottom: 10px;"
                           v-if="miningTransactionStatus === TransactionStatus.completed"
-                        >Your tokens has been successfully swapped and now is time to buy the NFT!
+                        >Your tokens has been successfully swapped {{ congratsModalText }}
                         </span>
                         <button style="margin-bottom: 10px; margin-top: 50px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
                                 v-on:click="continueFLow()">
                           <div class="uni-ic__swap-button-text">
-                            <span>Buy NFT</span>
+                            <span>{{ congratsModalButtonText }}</span>
                           </div>
                         </button>
                         <button
@@ -390,7 +390,7 @@
                           v-if="miningTransactionStatus === TransactionStatus.completed">
                           <div class="uni-ic__swap-button-text"
                                v-on:click="closeModal()">
-                            <span>Do it later</span>
+                            <span>Back()</span>
                           </div>
                         </button>
                         <span
@@ -452,7 +452,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'congratsModalText', 'congratsModalButtonText'],
 
   data() {
     return {
