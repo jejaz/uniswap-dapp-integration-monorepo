@@ -103,6 +103,8 @@ export class UniswapDappSharedLogic {
     }
 
     const eth = ETH.info(this.chainId);
+    console.log(this.chainId)
+    console.log(JSON.stringify(eth))
     const supportedNetworkTokens = this._context.supportedNetworkTokens.find(
       (t) => t.chainId === this.chainId,
     )!;

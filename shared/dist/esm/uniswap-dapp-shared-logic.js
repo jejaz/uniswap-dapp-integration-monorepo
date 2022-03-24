@@ -99,6 +99,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             return [2 /*return*/];
                         }
                         eth = ETH.info(this.chainId);
+                        console.log(this.chainId);
+                        console.log(JSON.stringify(eth));
                         supportedNetworkTokens = this._context.supportedNetworkTokens.find(function (t) { return t.chainId === _this.chainId; });
                         if (supportedNetworkTokens.defaultInputValue &&
                             this._inputAmount.isZero()) {
