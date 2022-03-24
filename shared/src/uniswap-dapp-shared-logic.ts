@@ -96,15 +96,15 @@ export class UniswapDappSharedLogic {
     this._quoteSubscription.unsubscribe();
     this._blockStream.unsubscribe();
 
+    const eth = ETH.info(this.chainId);
+    console.log(this.chainId)
+    console.log(JSON.stringify(eth))
+
     await this.setupEthereumContext();
     if (!this.supportedNetwork) {
       this.loading$.next(false);
       return;
     }
-
-    const eth = ETH.info(this.chainId);
-    console.log(this.chainId)
-    console.log(JSON.stringify(eth))
     const supportedNetworkTokens = this._context.supportedNetworkTokens.find(
       (t) => t.chainId === this.chainId,
     )!;

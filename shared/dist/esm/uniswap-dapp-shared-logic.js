@@ -91,6 +91,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         this.supportedNetwork$.next(this.supportedNetwork);
                         this._quoteSubscription.unsubscribe();
                         this._blockStream.unsubscribe();
+                        eth = ETH.info(this.chainId);
+                        console.log(this.chainId);
+                        console.log(JSON.stringify(eth));
                         return [4 /*yield*/, this.setupEthereumContext()];
                     case 1:
                         _d.sent();
@@ -98,9 +101,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             this.loading$.next(false);
                             return [2 /*return*/];
                         }
-                        eth = ETH.info(this.chainId);
-                        console.log(this.chainId);
-                        console.log(JSON.stringify(eth));
                         supportedNetworkTokens = this._context.supportedNetworkTokens.find(function (t) { return t.chainId === _this.chainId; });
                         if (supportedNetworkTokens.defaultInputValue &&
                             this._inputAmount.isZero()) {
