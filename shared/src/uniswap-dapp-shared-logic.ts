@@ -232,12 +232,14 @@ export class UniswapDappSharedLogic {
     this.chainId = (await this._ethereumProvider.provider.getNetwork()).chainId;
     this.chainId$.next(this.chainId);
 
+    console.log(JSON.stringify(this._context.supportedNetworkTokens))
     this.supportedNetwork = this._ethereumProvider.isSupportedChain(
       this.chainId,
       this._context.supportedNetworkTokens,
     );
     this.supportedNetwork$.next(this.supportedNetwork);
 
+    console.log(JSON.stringify(this.supportedNetwork))
     if (this.supportedNetwork) {
       this._tokensFactoryPublic = new TokensFactoryPublic({
         chainId: this.chainId,
