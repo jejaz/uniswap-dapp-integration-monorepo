@@ -95,8 +95,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         this._quoteSubscription.unsubscribe();
                         this._blockStream.unsubscribe();
                         eth = simple_uniswap_sdk_1.ETH.info(this.chainId);
-                        console.log(this.chainId);
-                        console.log(JSON.stringify(eth));
                         return [4 /*yield*/, this.setupEthereumContext()];
                     case 1:
                         _d.sent();
@@ -213,11 +211,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.chainId = (_c.sent()).chainId;
                         this.chainId$.next(this.chainId);
-                        console.log(JSON.stringify(this._context.supportedNetworkTokens));
-                        console.log(JSON.stringify(this.chainId));
                         this.supportedNetwork = this._ethereumProvider.isSupportedChain(this.chainId, this._context.supportedNetworkTokens);
                         this.supportedNetwork$.next(this.supportedNetwork);
-                        console.log(JSON.stringify(this.supportedNetwork));
                         if (this.supportedNetwork) {
                             this._tokensFactoryPublic = new simple_uniswap_sdk_1.TokensFactoryPublic({
                                 chainId: this.chainId,
