@@ -131,6 +131,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         // const inputToken =
                         //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
                         _a.inputToken = _d.sent();
+                        console.log(JSON.stringify(inputToken));
+                        this.inputToken$.next(this.inputToken);
                         this.inputToken$.next(this.inputToken);
                         return [4 /*yield*/, this.getBalances()];
                     case 3:
@@ -147,8 +149,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 6:
                         _c.inputToken = _d.sent();
-                        console.log(JSON.stringify(inputToken));
-                        this.inputToken$.next(this.inputToken);
                         _d.label = 7;
                     case 7:
                         if (this._inputAmount && this.inputToken && this.outputToken) {

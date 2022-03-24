@@ -150,6 +150,8 @@ export class UniswapDappSharedLogic {
       inputToken,
       this._context.ethereumProvider,
     );
+    console.log(JSON.stringify(inputToken))
+    this.inputToken$.next(this.inputToken);
     this.inputToken$.next(this.inputToken);
 
     await this.getBalances();
@@ -166,8 +168,6 @@ export class UniswapDappSharedLogic {
         inputToken,
         this._context.ethereumProvider,
       );
-      console.log(JSON.stringify(inputToken))
-      this.inputToken$.next(this.inputToken);
     }
 
     if (this._inputAmount && this.inputToken && this.outputToken) {
