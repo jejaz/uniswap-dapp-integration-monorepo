@@ -90,7 +90,8 @@ var EthereumProvider = /** @class */ (function () {
         try {
             //(chainId === 80001 || chainId ===137) ? MATIC.info(chainId) : ETH.info(chainId);
             simple_uniswap_sdk_1.ETH.info(chainId);
-            console.log('is supported chain ' + supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
+            console.log("is supported chain");
+            console.log(supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
             return (supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
         }
         catch (error) {
