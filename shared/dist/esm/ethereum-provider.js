@@ -85,7 +85,7 @@ var EthereumProvider = /** @class */ (function () {
      */
     EthereumProvider.prototype.isSupportedChain = function (chainId, supportedNetworkTokens) {
         try {
-            (chainId === 80001 || chainId === 127) ? MATIC.info(chainId) : ETH.info(chainId);
+            (chainId === 80001 || chainId === 137) ? MATIC.info(chainId) : ETH.info(chainId);
             return (supportedNetworkTokens.find(function (t) { return t.chainId === chainId; }) !== undefined);
         }
         catch (error) {

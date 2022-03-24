@@ -142,7 +142,7 @@ export class UniswapDappSharedLogic {
     }
 
     const inputToken =
-      supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 127 ? matic.contractAddress : eth.contractAddress);
+      supportedNetworkTokens.defaultInputToken || (this.chainId === 80001 || this.chainId === 137 ? matic.contractAddress : eth.contractAddress);
     // const inputToken =
     //   supportedNetworkTokens.defaultInputToken || eth.contractAddress;
 
