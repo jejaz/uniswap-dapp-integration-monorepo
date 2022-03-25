@@ -480,8 +480,8 @@ export default defineComponent({
       maticLogo: this.maticLogo,
       showTransactionData: false,
       supportedNetworkTokens: undefined,
-      congratsModalText: this.congratsModalText,
-      congratsModalButtonText: this.congratsModalButtonText,
+      congratsModalText: this.congratsModalText.value,
+      congratsModalButtonText: this.congratsModalButtonText.value,
       TransactionStatus,
       TradeDirection,
     };
