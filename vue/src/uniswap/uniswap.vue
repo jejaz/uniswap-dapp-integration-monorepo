@@ -377,7 +377,7 @@
                           v-if="miningTransactionStatus === TransactionStatus.completed"
                         >Your tokens has been successfully swapped {{ congratsModalText }}
                         </span>
-                        <button style="margin-bottom: 10px; margin-top: 50px;"
+                        <button style="margin-bottom: 10px; margin-top: 30px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
                                 v-on:click="continueFLow()">
