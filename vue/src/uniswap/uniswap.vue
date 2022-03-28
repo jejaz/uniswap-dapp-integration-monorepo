@@ -259,7 +259,9 @@
                     (tradeContext &&
                       tradeContext.fromBalance &&
                       tradeContext.fromBalance.hasEnough === false) ||
-                    noLiquidityFound
+                    noLiquidityFound ||
+                    miningTransactionStatus === TransactionStatus.waitingForConfirmation ||
+                    miningTransactionStatus === TransactionStatus.mining
                 "
               >
                 <div class="uni-ic__swap-button-text">
