@@ -253,7 +253,6 @@
             <div class="uni-ic__swap-button-container">
               <button
                 class="app-modal-button-inverse"
-                :disabled="logic.transactionInProcess()"
                 v-on:click="swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
