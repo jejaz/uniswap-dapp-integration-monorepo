@@ -503,7 +503,10 @@ export default defineComponent({
     },
 
     async swapTransaction() {
-      await this.logic.approveAllowance();
+      if (this.tradeContext.approvalTransaction) {
+        console.log('need approval')
+        await this.logic.approveAllowance();
+      }
       if (this.tradeContext && this.tradeContext.hasEnoughAllowance === true) {
         this.showTransactionData = true;
         await this.logic.swapTransaction();
