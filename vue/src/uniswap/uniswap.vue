@@ -502,9 +502,9 @@ export default defineComponent({
       this.switchSwapCompleted(swapState);
     },
 
+    //TODO: should test functionality
     async swapTransaction() {
       if (this.tradeContext.approvalTransaction) {
-        console.log('need approval')
         await this.logic.approveAllowance();
       }
       if (this.tradeContext && this.tradeContext.hasEnoughAllowance === true) {
