@@ -256,7 +256,6 @@
                 v-on:click="swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
-                    (tradeContext && tradeContext.hasEnoughAllowance === false) ||
                     (tradeContext &&
                       tradeContext.fromBalance &&
                       tradeContext.fromBalance.hasEnough === false) ||
@@ -503,10 +502,12 @@ export default defineComponent({
 
     async swapTransaction() {
       await this.logic.approveAllowance();
-      this.showTransactionData = true;
-      await this.logic.swapTransaction();
-      if (this.miningTransaction.status === TransactionStatus.rejected) {
-        this.eventBus.emit("transactionRejected");
+      if (this.tradeContext && this.tradeContext.hasEnoughAllowance === true) {
+        this.showTransactionData = true;
+        await this.logic.swapTransaction();
+        if (this.miningTransaction.status === TransactionStatus.rejected) {
+          this.eventBus.emit("transactionRejected");
+        }
       }
     },
 
