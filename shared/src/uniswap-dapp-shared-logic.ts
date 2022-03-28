@@ -151,6 +151,16 @@ export class UniswapDappSharedLogic {
     );
     this.inputToken$.next(this.inputToken);
 
+    //set default output token to matic
+    const outputToken =
+      supportedNetworkTokens.defaultOutputToken || eth.contractAddress;
+
+    this.outputToken = await this._tokenService.getTokenInformation(
+      outputToken,
+      this._context.ethereumProvider,
+    );
+    this.outputToken$.next(this.outputToken);
+
     await this.getBalances();
     this._blockStream = this.subscribeToBlockStream();
     this._theming.apply();

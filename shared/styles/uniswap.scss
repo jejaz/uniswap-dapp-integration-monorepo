@@ -184,7 +184,7 @@ radial-gradient(
       display: flex;
       flex-flow: column nowrap;
       -webkit-box-align: center;
-      align-items: start;
+      align-items: flex-start;
       padding: 16px;
       gap:10px;
 
@@ -2022,7 +2022,7 @@ radial-gradient(
   .main-info-item {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     .main-item-text {
       font-family: 'Aktiv Grotesk';
       font-style: normal;

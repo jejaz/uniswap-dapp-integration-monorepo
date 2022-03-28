@@ -81,10 +81,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var eth, supportedNetworkTokens, inputToken, _a, _c;
+            var eth, supportedNetworkTokens, inputToken, _a, outputToken, _c, _d;
             var _this = this;
-            return __generator(this, function (_d) {
-                switch (_d.label) {
+            return __generator(this, function (_e) {
+                switch (_e.label) {
                     case 0:
                         this.loading$.next(true);
                         this.supportedNetwork = false;
@@ -93,7 +93,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         this._blockStream.unsubscribe();
                         return [4 /*yield*/, this.setupEthereumContext()];
                     case 1:
-                        _d.sent();
+                        _e.sent();
                         if (!this.supportedNetwork) {
                             this.loading$.next(false);
                             return [2 /*return*/];
@@ -115,25 +115,31 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         _a = this;
                         return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 2:
-                        _a.inputToken = _d.sent();
+                        _a.inputToken = _e.sent();
                         this.inputToken$.next(this.inputToken);
-                        return [4 /*yield*/, this.getBalances()];
+                        outputToken = supportedNetworkTokens.defaultOutputToken || eth.contractAddress;
+                        _c = this;
+                        return [4 /*yield*/, this._tokenService.getTokenInformation(outputToken, this._context.ethereumProvider)];
                     case 3:
-                        _d.sent();
+                        _c.outputToken = _e.sent();
+                        this.outputToken$.next(this.outputToken);
+                        return [4 /*yield*/, this.getBalances()];
+                    case 4:
+                        _e.sent();
                         this._blockStream = this.subscribeToBlockStream();
                         this._theming.apply();
-                        if (!supportedNetworkTokens.defaultOutputToken) return [3 /*break*/, 5];
+                        if (!supportedNetworkTokens.defaultOutputToken) return [3 /*break*/, 6];
                         return [4 /*yield*/, this.buildFactory(this.inputToken.contractAddress, supportedNetworkTokens.defaultOutputToken)];
-                    case 4:
-                        _d.sent();
-                        return [3 /*break*/, 7];
                     case 5:
-                        _c = this;
-                        return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
+                        _e.sent();
+                        return [3 /*break*/, 8];
                     case 6:
-                        _c.inputToken = _d.sent();
-                        _d.label = 7;
+                        _d = this;
+                        return [4 /*yield*/, this._tokenService.getTokenInformation(inputToken, this._context.ethereumProvider)];
                     case 7:
+                        _d.inputToken = _e.sent();
+                        _e.label = 8;
+                    case 8:
                         if (this._inputAmount && this.inputToken && this.outputToken) {
                             this.buildFactory(this.inputToken.contractAddress, this.outputToken.contractAddress);
                         }
