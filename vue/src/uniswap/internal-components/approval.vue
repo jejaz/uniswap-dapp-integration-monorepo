@@ -7,8 +7,6 @@
           tradeContext.fromBalance &&
           tradeContext.fromBalance.hasEnough
       "
-      :disabled="logic.transactionInProcess()"
-      v-on:click="logic.approveAllowance()"
     >
   
       <span
@@ -18,7 +16,7 @@
         "
         >You must give the Sushiswap smart contract permisson to use your
         {{ tradeContext.fromToken.symbol }}. You only have to do this once per
-        token per sushiswap version. Click here to approve the permissons.
+        token per sushiswap version. Please approve permissions.
       </span>
   
       <span
@@ -29,14 +27,6 @@
       >
       <span v-if="miningTransactionStatus === TransactionStatus.mining"
         >Waiting for your transaction to be mined...
-<!--        <u-->
-<!--          ><a-->
-<!--            class="uni-ic__swap-allow-etherscan"-->
-<!--            v-on:click="logic.viewOnEtherscan()"-->
-<!--          >-->
-<!--            View tx on etherscan-->
-<!--          </a>-->
-<!--        </u>-->
       </span>
     </button>
 </template>

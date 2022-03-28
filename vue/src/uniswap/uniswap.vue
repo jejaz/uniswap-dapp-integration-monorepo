@@ -253,6 +253,7 @@
             <div class="uni-ic__swap-button-container">
               <button
                 class="app-modal-button-inverse"
+                :disabled="logic.transactionInProcess()"
                 v-on:click="swapTransaction()"
                 :disabled="
                   utils().isZero(outputValue) ||
@@ -502,6 +503,7 @@ export default defineComponent({
     },
 
     async swapTransaction() {
+      await this.logic.approveAllowance();
       this.showTransactionData = true;
       await this.logic.swapTransaction();
       if (this.miningTransaction.status === TransactionStatus.rejected) {
