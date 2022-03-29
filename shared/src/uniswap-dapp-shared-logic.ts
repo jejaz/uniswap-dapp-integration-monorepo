@@ -492,6 +492,7 @@ export class UniswapDappSharedLogic {
    */
   public workOutOneEqualTo(): string {
     console.log('WORKOUT ONE EQUAL TO  ' )
+    console.log('quote dir' + this.tradeContext?.quoteDirection)
     console.log( 'expected quote ' + this.tradeContext!.expectedConvertQuote)
     console.log( 'base convert request ' + this.tradeContext!.baseConvertRequest)
     return Utils.toPrecision(

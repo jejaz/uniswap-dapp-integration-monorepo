@@ -505,7 +505,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      * work out what 1 is equal to
      */
     UniswapDappSharedLogic.prototype.workOutOneEqualTo = function () {
+        var _a;
         console.log('WORKOUT ONE EQUAL TO  ');
+        console.log('quote dir' + ((_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.quoteDirection));
         console.log('expected quote ' + this.tradeContext.expectedConvertQuote);
         console.log('base convert request ' + this.tradeContext.baseConvertRequest);
         return utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.expectedConvertQuote /
