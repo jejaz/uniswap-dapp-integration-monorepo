@@ -458,9 +458,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         if (!this.tradeContext) return [3 /*break*/, 6];
-                        this.tradeContext.expectedConvertQuote = Utils.toPrecision(this.tradeContext.expectedConvertQuote);
-                        console.log('SWAP SWITCH expected quote ' + this.tradeContext.expectedConvertQuote);
-                        console.log('SWAP SWITCH base convert request ' + this.tradeContext.baseConvertRequest);
                         if (!(this.tradeContext.quoteDirection === TradeDirection.output)) return [3 /*break*/, 3];
                         amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
                         return [4 /*yield*/, this.trade(new BigNumber(amount), TradeDirection.input)];
@@ -854,6 +851,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         context = _a.sent();
                         this.tradeContext = this.formatTradeContext(context);
                         this.tradeContext$.next(this.tradeContext);
+                        console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote);
                         this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(function (quote) {
                             var _a, _c, _d;
                             if (((_a = _this.miningTransaction) === null || _a === void 0 ? void 0 : _a.miningAction) === MiningAction.swap &&
@@ -873,6 +871,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             }
                         });
                         if (this.tradeContext.quoteDirection === TradeDirection.output) {
+                            console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote);
                             this._inputAmount = new BigNumber(Utils.deepClone(this.tradeContext.expectedConvertQuote));
                         }
                         _a.label = 2;

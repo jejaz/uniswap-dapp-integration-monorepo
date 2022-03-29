@@ -448,11 +448,6 @@ export class UniswapDappSharedLogic {
     );
 
     if (this.tradeContext) {
-      this.tradeContext.expectedConvertQuote = Utils.toPrecision(
-        this.tradeContext.expectedConvertQuote,
-      );
-      console.log( 'SWAP SWITCH expected quote ' + this.tradeContext!.expectedConvertQuote)
-      console.log( 'SWAP SWITCH base convert request ' + this.tradeContext!.baseConvertRequest)
       if (this.tradeContext.quoteDirection === TradeDirection.output) {
         const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
         await this.trade(new BigNumber(amount), TradeDirection.input);
@@ -801,6 +796,9 @@ export class UniswapDappSharedLogic {
       this.tradeContext = this.formatTradeContext(context);
       this.tradeContext$.next(this.tradeContext);
 
+      console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote)
+
+
       this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(
         (quote) => {
           if (
@@ -823,6 +821,7 @@ export class UniswapDappSharedLogic {
       );
 
       if (this.tradeContext.quoteDirection === TradeDirection.output) {
+        console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote)
         this._inputAmount = new BigNumber(
           Utils.deepClone(this.tradeContext.expectedConvertQuote),
         );
