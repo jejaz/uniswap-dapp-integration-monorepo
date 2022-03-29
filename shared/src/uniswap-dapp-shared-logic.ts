@@ -448,33 +448,31 @@ export class UniswapDappSharedLogic {
     );
 
     if (this.tradeContext) {
-      let res = null;
-      let amount = null;
       if (this.tradeContext.quoteDirection === TradeDirection.output) {
-        amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
+        const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
         await this.trade(new BigNumber(amount), TradeDirection.input);
 
-        res = {
+        return {
           outputValue: this.tradeContext.expectedConvertQuote,
           inputValue: amount,
         };
       } else {
-        amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
+        const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
 
         await this.trade(new BigNumber(amount), TradeDirection.output);
 
-        res = {
+        return {
           outputValue: amount,
           inputValue: this.tradeContext.expectedConvertQuote,
         };
       }
-      console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-      console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
-      this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
-      this.tradeContext.expectedConvertQuote = amount;
-      console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-      console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
-      return res;
+      // console.log('SWAP base' + this.tradeContext.baseConvertRequest);
+      // console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
+      // this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
+      // this.tradeContext.expectedConvertQuote = amount;
+      // console.log('SWAP base' + this.tradeContext.baseConvertRequest);
+      // console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
+      //return res;
     } else {
       return {
         outputValue: '',
@@ -499,14 +497,10 @@ export class UniswapDappSharedLogic {
    * work out what 1 is equal to
    */
   public workOutOneEqualTo(): string {
-    console.log('WORKOUT ONE EQUAL TO  ' )
-    console.log('quote dir' + this.tradeContext?.quoteDirection)
-    console.log( 'expected quote ' + this.tradeContext!.expectedConvertQuote)
-    console.log( 'base convert request ' + this.tradeContext!.baseConvertRequest)
     return Utils.toPrecision(
       new BigNumber(
-        +this.tradeContext!.expectedConvertQuote /
-          +this.tradeContext!.baseConvertRequest,
+        +this.tradeContext!.baseConvertRequest /
+          +this.tradeContext!.expectedConvertQuote,
       ),
     );
   }

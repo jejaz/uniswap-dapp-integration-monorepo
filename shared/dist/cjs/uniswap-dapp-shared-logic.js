@@ -451,7 +451,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      */
     UniswapDappSharedLogic.prototype.swapSwitch = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var clonedOutput, clonedInput, res, amount;
+            var clonedOutput, clonedInput, amount, amount;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -461,40 +461,30 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         if (!this.tradeContext) return [3 /*break*/, 6];
-                        res = null;
-                        amount = null;
                         if (!(this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output)) return [3 /*break*/, 3];
                         amount = utils_1.Utils.deepClone(this.tradeContext.baseConvertRequest);
                         return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), simple_uniswap_sdk_1.TradeDirection.input)];
                     case 2:
                         _a.sent();
-                        res = {
-                            outputValue: this.tradeContext.expectedConvertQuote,
-                            inputValue: amount,
-                        };
-                        return [3 /*break*/, 5];
+                        return [2 /*return*/, {
+                                outputValue: this.tradeContext.expectedConvertQuote,
+                                inputValue: amount,
+                            }];
                     case 3:
                         amount = utils_1.Utils.deepClone(this.tradeContext.baseConvertRequest);
                         return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), simple_uniswap_sdk_1.TradeDirection.output)];
                     case 4:
                         _a.sent();
-                        res = {
-                            outputValue: amount,
-                            inputValue: this.tradeContext.expectedConvertQuote,
-                        };
-                        _a.label = 5;
-                    case 5:
-                        console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-                        console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
-                        this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
-                        this.tradeContext.expectedConvertQuote = amount;
-                        console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-                        console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
-                        return [2 /*return*/, res];
+                        return [2 /*return*/, {
+                                outputValue: amount,
+                                inputValue: this.tradeContext.expectedConvertQuote,
+                            }];
+                    case 5: return [3 /*break*/, 7];
                     case 6: return [2 /*return*/, {
                             outputValue: '',
                             inputValue: '',
                         }];
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -514,13 +504,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      * work out what 1 is equal to
      */
     UniswapDappSharedLogic.prototype.workOutOneEqualTo = function () {
-        var _a;
-        console.log('WORKOUT ONE EQUAL TO  ');
-        console.log('quote dir' + ((_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.quoteDirection));
-        console.log('expected quote ' + this.tradeContext.expectedConvertQuote);
-        console.log('base convert request ' + this.tradeContext.baseConvertRequest);
-        return utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.expectedConvertQuote /
-            +this.tradeContext.baseConvertRequest));
+        return utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.baseConvertRequest /
+            +this.tradeContext.expectedConvertQuote));
     };
     /**
      * Set multihops
