@@ -499,10 +499,16 @@ export class UniswapDappSharedLogic {
    * work out what 1 is equal to
    */
   public workOutOneEqualTo(): string {
-    return Utils.toPrecision(
+
+    return this.tradeContext?.quoteDirection === TradeDirection.input ? Utils.toPrecision(
       new BigNumber(
         +this.tradeContext!.baseConvertRequest /
           +this.tradeContext!.expectedConvertQuote,
+      ),
+    ) : Utils.toPrecision(
+      new BigNumber(
+        +this.tradeContext!.expectedConvertQuote /
+        +this.tradeContext!.baseConvertRequest,
       ),
     );
   }

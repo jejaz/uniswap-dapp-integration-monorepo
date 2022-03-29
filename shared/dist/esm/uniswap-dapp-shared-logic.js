@@ -511,8 +511,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      * work out what 1 is equal to
      */
     UniswapDappSharedLogic.prototype.workOutOneEqualTo = function () {
-        return Utils.toPrecision(new BigNumber(+this.tradeContext.baseConvertRequest /
-            +this.tradeContext.expectedConvertQuote));
+        var _a;
+        return ((_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.quoteDirection) === TradeDirection.input ? Utils.toPrecision(new BigNumber(+this.tradeContext.baseConvertRequest /
+            +this.tradeContext.expectedConvertQuote)) : Utils.toPrecision(new BigNumber(+this.tradeContext.expectedConvertQuote /
+            +this.tradeContext.baseConvertRequest));
     };
     /**
      * Set multihops

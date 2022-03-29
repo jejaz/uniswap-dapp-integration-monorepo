@@ -514,8 +514,10 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      * work out what 1 is equal to
      */
     UniswapDappSharedLogic.prototype.workOutOneEqualTo = function () {
-        return utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.baseConvertRequest /
-            +this.tradeContext.expectedConvertQuote));
+        var _a;
+        return ((_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.quoteDirection) === simple_uniswap_sdk_1.TradeDirection.input ? utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.baseConvertRequest /
+            +this.tradeContext.expectedConvertQuote)) : utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.expectedConvertQuote /
+            +this.tradeContext.baseConvertRequest));
     };
     /**
      * Set multihops
