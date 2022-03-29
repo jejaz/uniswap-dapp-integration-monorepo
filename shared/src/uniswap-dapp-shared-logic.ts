@@ -491,7 +491,7 @@ export class UniswapDappSharedLogic {
    * work out what 1 is equal to
    */
   public workOutOneEqualTo(): string {
-    console.log('tWORKOUT ONE EQUAL TO rade context ' + JSON.stringify(this.tradeContext!))
+    console.log('WORKOUT ONE EQUAL TO  ' )
     console.log( 'expected quote ' + this.tradeContext!.expectedConvertQuote)
     console.log( 'base convert request ' + this.tradeContext!.baseConvertRequest)
     return Utils.toPrecision(

@@ -505,7 +505,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
      * work out what 1 is equal to
      */
     UniswapDappSharedLogic.prototype.workOutOneEqualTo = function () {
-        console.log('tWORKOUT ONE EQUAL TO rade context ' + JSON.stringify(this.tradeContext));
+        console.log('WORKOUT ONE EQUAL TO  ');
         console.log('expected quote ' + this.tradeContext.expectedConvertQuote);
         console.log('base convert request ' + this.tradeContext.baseConvertRequest);
         return utils_1.Utils.toPrecision(new bignumber_js_1.BigNumber(+this.tradeContext.expectedConvertQuote /
