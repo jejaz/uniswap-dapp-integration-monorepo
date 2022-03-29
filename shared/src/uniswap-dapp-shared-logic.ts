@@ -468,12 +468,8 @@ export class UniswapDappSharedLogic {
           inputValue: this.tradeContext.expectedConvertQuote,
         };
       }
-      console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-      console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
       this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
       this.tradeContext.expectedConvertQuote = amount;
-      console.log('SWAP base' + this.tradeContext.baseConvertRequest);
-      console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
       return res;
     } else {
       return {
