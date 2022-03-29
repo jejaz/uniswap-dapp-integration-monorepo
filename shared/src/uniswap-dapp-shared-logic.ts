@@ -660,6 +660,7 @@ export class UniswapDappSharedLogic {
       await new Promise<void>((resolve, reject) => {
         blockStream = this._chainService.newBlock$.subscribe(async () => {
           try {
+            console.log('tx hash ' + JSON.stringify(txHash))
             const receipt =
               await this._ethereumProvider.provider.getTransactionReceipt(
                 txHash,

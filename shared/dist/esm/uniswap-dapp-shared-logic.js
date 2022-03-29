@@ -679,6 +679,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                         switch (_a.label) {
                                             case 0:
                                                 _a.trys.push([0, 2, , 3]);
+                                                console.log('tx hash ' + JSON.stringify(txHash_1));
                                                 return [4 /*yield*/, this._ethereumProvider.provider.getTransactionReceipt(txHash_1)];
                                             case 1:
                                                 receipt = _a.sent();
