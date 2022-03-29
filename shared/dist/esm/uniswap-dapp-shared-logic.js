@@ -292,9 +292,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         };
                         this.miningTransaction$.next(this.miningTransaction);
                         //this.showTransaction();
-                        console.log('transaction ' + JSON.stringify(this.tradeContext.transaction));
                         return [4 /*yield*/, this.handleTransaction(this.tradeContext.transaction, this.miningTransaction)];
                     case 1:
+                        //this.showTransaction();
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -417,7 +417,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         _a.label = 2;
-                    case 2: return [4 /*yield*/, this.trade(new BigNumber(amount), directon)];
+                    case 2:
+                        console.log("amount " + new BigNumber(amount));
+                        return [4 /*yield*/, this.trade(new BigNumber(amount), directon)];
                     case 3:
                         _a.sent();
                         return [2 /*return*/];
@@ -877,6 +879,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         });
                         if (this.tradeContext.quoteDirection === TradeDirection.output) {
                             this._inputAmount = new BigNumber(Utils.deepClone(this.tradeContext.expectedConvertQuote));
+                            console.log('input amount ' + new BigNumber(Utils.deepClone(this.tradeContext.expectedConvertQuote)));
                         }
                         _a.label = 2;
                     case 2: return [2 /*return*/];

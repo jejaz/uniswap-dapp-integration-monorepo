@@ -307,7 +307,6 @@ export class UniswapDappSharedLogic {
 
     //this.showTransaction();
 
-    console.log('transaction ' + JSON.stringify(this.tradeContext!.transaction))
     await this.handleTransaction(
       this.tradeContext!.transaction,
       this.miningTransaction,
@@ -422,6 +421,7 @@ export class UniswapDappSharedLogic {
         this.outputToken!.contractAddress,
       );
     }
+    console.log("amount " + new BigNumber(amount))
     await this.trade(new BigNumber(amount), directon);
   }
 
@@ -830,6 +830,9 @@ export class UniswapDappSharedLogic {
         this._inputAmount = new BigNumber(
           Utils.deepClone(this.tradeContext.expectedConvertQuote),
         );
+        console.log('input amount ' + new BigNumber(
+          Utils.deepClone(this.tradeContext.expectedConvertQuote),
+        ))
       }
     }
   }
