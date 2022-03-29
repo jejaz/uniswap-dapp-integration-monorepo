@@ -636,6 +636,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         if (!(((_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.quoteDirection) === TradeDirection.output)) return [3 /*break*/, 2];
+                        console.log('executeTradeAndHonourLastTradeDirection ' + new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)));
                         return [4 /*yield*/, this.trade(new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)), TradeDirection.output)];
                     case 1:
                         _c.sent();
@@ -679,7 +680,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                         switch (_a.label) {
                                             case 0:
                                                 _a.trys.push([0, 2, , 3]);
-                                                console.log('tx hash ' + JSON.stringify(txHash_1));
                                                 return [4 /*yield*/, this._ethereumProvider.provider.getTransactionReceipt(txHash_1)];
                                             case 1:
                                                 receipt = _a.sent();

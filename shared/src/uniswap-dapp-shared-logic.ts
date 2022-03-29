@@ -624,6 +624,7 @@ export class UniswapDappSharedLogic {
    */
   private async executeTradeAndHonourLastTradeDirection(): Promise<void> {
     if (this.tradeContext?.quoteDirection === TradeDirection.output) {
+      console.log('executeTradeAndHonourLastTradeDirection ' + new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)));
       await this.trade(
         new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)),
         TradeDirection.output,
@@ -660,7 +661,6 @@ export class UniswapDappSharedLogic {
       await new Promise<void>((resolve, reject) => {
         blockStream = this._chainService.newBlock$.subscribe(async () => {
           try {
-            console.log('tx hash ' + JSON.stringify(txHash))
             const receipt =
               await this._ethereumProvider.provider.getTransactionReceipt(
                 txHash,
