@@ -406,7 +406,7 @@
                 </span>
                         <span
                           v-if="
-                    logic.tradeContext.quoteDirection === TradeDirection.output
+                    logic.tradeContext.quoteDirection === TradeDirection.output && miningTransactionStatus !== TransactionStatus.completed
                   "
                         >
                   {{ logic.tradeContext.expectedConvertQuote }}
