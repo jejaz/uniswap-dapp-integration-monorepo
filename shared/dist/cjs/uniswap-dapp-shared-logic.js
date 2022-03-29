@@ -461,7 +461,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         if (!this.tradeContext) return [3 /*break*/, 6];
-                        console.log('SWAP expected convert quote' + this.tradeContext.expectedConvertQuote);
                         res = null;
                         amount = null;
                         if (!(this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output)) return [3 /*break*/, 3];
@@ -485,9 +484,12 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         };
                         _a.label = 5;
                     case 5:
-                        //change places
+                        console.log('SWAP base' + this.tradeContext.baseConvertRequest);
+                        console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
                         this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
                         this.tradeContext.expectedConvertQuote = amount;
+                        console.log('SWAP base' + this.tradeContext.baseConvertRequest);
+                        console.log('SWAP expected' + this.tradeContext.expectedConvertQuote);
                         return [2 /*return*/, res];
                     case 6: return [2 /*return*/, {
                             outputValue: '',
@@ -883,7 +885,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 _this.tradeContext$.next(_this.tradeContext);
                             }
                         });
-                        console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote);
                         if (this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output) {
                             this._inputAmount = new bignumber_js_1.BigNumber(utils_1.Utils.deepClone(this.tradeContext.expectedConvertQuote));
                         }
