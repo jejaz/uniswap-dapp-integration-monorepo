@@ -490,6 +490,8 @@ export class UniswapDappSharedLogic {
    * work out what 1 is equal to
    */
   public workOutOneEqualTo(): string {
+    console.log( 'expected quote ' + this.tradeContext!.expectedConvertQuote)
+    console.log( 'base convert request ' + this.tradeContext!.baseConvertRequest)
     return Utils.toPrecision(
       new BigNumber(
         +this.tradeContext!.expectedConvertQuote /
