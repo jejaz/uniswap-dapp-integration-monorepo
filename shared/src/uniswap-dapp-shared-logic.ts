@@ -307,6 +307,7 @@ export class UniswapDappSharedLogic {
 
     //this.showTransaction();
 
+    console.log('transaction ' + JSON.stringify(this.tradeContext!.transaction))
     await this.handleTransaction(
       this.tradeContext!.transaction,
       this.miningTransaction,
