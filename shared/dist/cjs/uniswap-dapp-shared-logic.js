@@ -876,8 +876,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 _this.tradeContext$.next(_this.tradeContext);
                             }
                         });
+                        console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote);
                         if (this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output) {
-                            console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote);
                             this._inputAmount = new bignumber_js_1.BigNumber(utils_1.Utils.deepClone(this.tradeContext.expectedConvertQuote));
                         }
                         _a.label = 2;
