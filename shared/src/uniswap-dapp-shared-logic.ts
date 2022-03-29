@@ -449,24 +449,30 @@ export class UniswapDappSharedLogic {
 
     if (this.tradeContext) {
       console.log('SWAP expected convert quote' + this.tradeContext.expectedConvertQuote)
+      let res = null;
+      let amount = null;
       if (this.tradeContext.quoteDirection === TradeDirection.output) {
-        const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
+        amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
         await this.trade(new BigNumber(amount), TradeDirection.input);
 
-        return {
+        res = {
           outputValue: this.tradeContext.expectedConvertQuote,
           inputValue: amount,
         };
       } else {
-        const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
+        amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
 
         await this.trade(new BigNumber(amount), TradeDirection.output);
 
-        return {
+        res = {
           outputValue: amount,
           inputValue: this.tradeContext.expectedConvertQuote,
         };
       }
+      //change places
+      this.tradeContext.baseConvertRequest = this.tradeContext.expectedConvertQuote;
+      this.tradeContext.expectedConvertQuote = amount;
+      return res;
     } else {
       return {
         outputValue: '',
