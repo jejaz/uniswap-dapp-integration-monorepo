@@ -448,6 +448,7 @@ export class UniswapDappSharedLogic {
     );
 
     if (this.tradeContext) {
+      console.log('SWAP expected convert quote' + this.tradeContext.expectedConvertQuote)
       if (this.tradeContext.quoteDirection === TradeDirection.output) {
         const amount = Utils.deepClone(this.tradeContext.baseConvertRequest);
         await this.trade(new BigNumber(amount), TradeDirection.input);
@@ -490,6 +491,7 @@ export class UniswapDappSharedLogic {
    * work out what 1 is equal to
    */
   public workOutOneEqualTo(): string {
+    console.log('tWORKOUT ONE EQUAL TO rade context ' + JSON.stringify(this.tradeContext!))
     console.log( 'expected quote ' + this.tradeContext!.expectedConvertQuote)
     console.log( 'base convert request ' + this.tradeContext!.baseConvertRequest)
     return Utils.toPrecision(
@@ -795,9 +797,6 @@ export class UniswapDappSharedLogic {
       const context = await this.factory!.trade(amount.toFixed(), direction);
       this.tradeContext = this.formatTradeContext(context);
       this.tradeContext$.next(this.tradeContext);
-
-      console.log('TRADE expected convert quote' + this.tradeContext.expectedConvertQuote)
-
 
       this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(
         (quote) => {
