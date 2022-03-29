@@ -421,7 +421,6 @@ export class UniswapDappSharedLogic {
         this.outputToken!.contractAddress,
       );
     }
-    console.log("amount " + new BigNumber(amount))
     await this.trade(new BigNumber(amount), directon);
   }
 
@@ -624,7 +623,6 @@ export class UniswapDappSharedLogic {
    */
   private async executeTradeAndHonourLastTradeDirection(): Promise<void> {
     if (this.tradeContext?.quoteDirection === TradeDirection.output) {
-      console.log('executeTradeAndHonourLastTradeDirection ' + new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)));
       await this.trade(
         new BigNumber(Utils.deepClone(this.tradeContext.baseConvertRequest)),
         TradeDirection.output,
@@ -831,9 +829,6 @@ export class UniswapDappSharedLogic {
         this._inputAmount = new BigNumber(
           Utils.deepClone(this.tradeContext.expectedConvertQuote),
         );
-        console.log('input amount ' + new BigNumber(
-          Utils.deepClone(this.tradeContext.expectedConvertQuote),
-        ))
       }
     }
   }
