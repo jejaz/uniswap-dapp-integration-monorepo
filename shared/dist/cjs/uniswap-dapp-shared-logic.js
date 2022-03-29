@@ -461,6 +461,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         if (!this.tradeContext) return [3 /*break*/, 6];
+                        this.tradeContext.expectedConvertQuote = utils_1.Utils.toPrecision(this.tradeContext.expectedConvertQuote);
+                        console.log('SWAP SWITCH expected quote ' + this.tradeContext.expectedConvertQuote);
+                        console.log('SWAP SWITCH base convert request ' + this.tradeContext.baseConvertRequest);
                         if (!(this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output)) return [3 /*break*/, 3];
                         amount = utils_1.Utils.deepClone(this.tradeContext.baseConvertRequest);
                         return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), simple_uniswap_sdk_1.TradeDirection.input)];
