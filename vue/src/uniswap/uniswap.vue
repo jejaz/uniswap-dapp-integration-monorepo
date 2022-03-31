@@ -9,6 +9,7 @@
             v-if="logic && supportedNetwork && inputToken"
             :logic="logic"
             @disableMultihopsCompleted="disableMultihopsCompleted"
+            style='display: none'
           />
   
           <div
