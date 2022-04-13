@@ -282,6 +282,11 @@ radial-gradient(
           &-symbol {
             margin: 0px 0.25rem 0px 0.75rem;
             font-size: 20px;
+            font-family: 'Aktiv Grotesk';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
             @include xsm {
               font-size: 16px;
             }
@@ -290,6 +295,7 @@ radial-gradient(
           &-choose {
             margin: 0px 0.25rem 0px 0.5rem;
             height: 35%;
+            height: 5px;
           }
         }
       }
@@ -2059,6 +2065,7 @@ radial-gradient(
   max-width: 358px;
   color: #E3E8DD;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 .swap-complete-main {
   font-family: 'Editorial New';
@@ -2089,7 +2096,7 @@ radial-gradient(
   color: #caff2c;
   border: 2px solid #caff2c;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 30px;
 }
 
 .app-modal-button-disabled {
