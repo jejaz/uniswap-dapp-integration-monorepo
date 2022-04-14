@@ -64,11 +64,11 @@
                     </div>
   
                     <div class="uni-ic__modal-tokens-item-content">
-                      <div class="uni-ic__modal-tokens-item-content-symbol">
-                        {{ token.symbol }}
-                      </div>
                       <div class="uni-ic__modal-tokens-item-content-name">
                         {{ token.name }}
+                      </div>
+                      <div class="uni-ic__modal-tokens-item-content-symbol">
+                        {{ token.symbol }}
                       </div>
                     </div>
                     <span></span>
