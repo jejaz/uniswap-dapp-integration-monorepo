@@ -3,7 +3,7 @@
       <div
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
-        <span class="uni-ic__modal__close" v-on:click="logic.hideTokenSelector()"
+        <span class="uni-ic__modal__close" v-on:click="closeTokenSelectorModal()"
           >&times;</span
         >
         <p class="uni-ic__modal-tokens-title">
@@ -100,7 +100,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'eventBus'],
 
   data() {
     return {
@@ -116,7 +116,10 @@ export default defineComponent({
 
       this.$forceUpdate();
     },
-
+    closeTokenSelectorModal() {
+      this.logic.hideTokenSelector();
+      this.eventBus.emit("openExchangeTokenModal");
+    },
     async changeSelectToken(contractAddress) {
       var _this$outputToken, _this$outputToken2;
 
