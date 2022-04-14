@@ -1045,6 +1045,13 @@ radial-gradient(
     }
   }
 
+  .token-modal-wrapper {
+    background: #0B0B0B;
+    border: 1px solid rgba(247, 249, 246, 0.3);
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
   &__modal {
     &-tokens {
       &-title {
@@ -1057,6 +1064,7 @@ radial-gradient(
         line-height: 28px;
         text-transform: uppercase;
         text-align: left;
+        margin-bottom: 10px;
       }
 
       &-search {
@@ -1120,7 +1128,7 @@ radial-gradient(
         // opacity: 0.5;
 
         &-container {
-          border-radius: 8px;
+          //border-bottom: 1px solid rgba(247, 249, 246, 0.3);
           &:hover {
             background: #6E6F67;;
             color: white;
@@ -1943,7 +1951,7 @@ radial-gradient(
       padding: 20px;
       width: 20%;
 
-      //background: rgba(20, 20, 20, 0.6);
+      background: rgba(20, 20, 20, 1);
       border: 2px solid rgba(247, 249, 246, 0.3);
       box-sizing: border-box;
       backdrop-filter: blur(36px);
@@ -2176,4 +2184,8 @@ radial-gradient(
 }
 .app-modal-button-gray:hover {
   background: rgba(50, 50, 50, 0.6);
+}
+.divider {
+  width: 100%;
+  border: 1px solid rgba(247, 249, 246, 0.3);;
 }

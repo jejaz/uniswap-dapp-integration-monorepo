@@ -24,7 +24,7 @@
 
         </div>
   
-        <div style="flex: 1 1 0%; position: relative">
+        <div style="flex: 1 1 0%; position: relative" class='token-modal-wrapper'>
           <div style="overflow: visible; height: 0px">
             <div
               style="
@@ -38,7 +38,7 @@
             >
               <div style="height: 100%; width: 100%">
                 <div
-                  v-for="token in logic.supportedTokenBalances"
+                  v-for="(token, index) in logic.supportedTokenBalances"
                   v-bind:key="token.contractAddress"
                   v-on:click="changeSelectToken(token.contractAddress)"
                   class="uni-ic__modal-tokens-item-container"
@@ -80,6 +80,7 @@
                       </div>
                     </div>
                   </div>
+                  <div v-if='index !== logic.supportedTokenBalances.length - 1' class='divider'></div>
                 </div>
               </div>
             </div>
