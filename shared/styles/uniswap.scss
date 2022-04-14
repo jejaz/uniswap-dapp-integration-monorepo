@@ -1050,12 +1050,13 @@ radial-gradient(
       &-title {
         margin-top: 2px;
         color: #E3E8DD;
-        font-family: 'Aktiv Grotesk';
+        font-family: 'Formula Condensed';
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 16px;
-        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        text-align: left;
       }
 
       &-search {
@@ -1081,16 +1082,23 @@ radial-gradient(
           background: none;
           outline: none;
           border-radius: 8px;
-          color: #6E6F67;
           appearance: none;
-          font-size: 18px;
           transition: border 100ms ease 0s;
-          margin-bottom: 12px;
+          margin-bottom: 35px;
+
           font-family: 'Aktiv Grotesk';
           font-style: normal;
           font-weight: 400;
-          font-size: 12px;
-          line-height: 16px;
+          font-size: 16px;
+          line-height: 20px;
+
+          display: flex;
+          align-items: center;
+          color: #85877D;
+          background: #141414;
+          border: 1.5px solid rgba(247, 249, 246, 0.3);
+          box-sizing: border-box;
+          border-radius: 8px;
         }
       }
 
@@ -1930,13 +1938,17 @@ radial-gradient(
 
     &__content {
       border-radius: 8px;
-      //background: rgba(9, 9, 9, 0.6);
-      background: #0B0B0B;
       border: 1px solid white;
-      border-radius: 30px 30px 30px 30px;
       margin: auto;
       padding: 20px;
       width: 20%;
+
+      //background: rgba(20, 20, 20, 0.6);
+      border: 2px solid rgba(247, 249, 246, 0.3);
+      box-sizing: border-box;
+      backdrop-filter: blur(36px);
+      border-radius: 8px;
+      min-width: 500px;
 
       @include rwd(1400) {
         width: 40%;

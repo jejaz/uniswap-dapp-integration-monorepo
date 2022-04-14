@@ -316,22 +316,9 @@
             :outputToken="outputToken"
             :theosLogo="theosLogo"
             :maticLogo="maticLogo"
-            :eventBus="eventBus"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
-<!--          <ConfirmSwap-->
-<!--            :logic="logic"-->
-<!--            :tradeContext="tradeContext"-->
-<!--            :newPriceTradeContext="newPriceTradeContext"-->
-<!--            :inputFiatPrice="inputFiatPrice"-->
-<!--            :outputFiatPrice="outputFiatPrice"-->
-<!--          />-->
-<!--          <TransactionModal-->
-<!--            :logic="logic"-->
-<!--            :miningTransaction="miningTransaction"-->
-<!--            :miningTransactionStatus="miningTransactionStatus"-->
-<!--          />-->
         </template>
       </div>
       <div v-else-if='showTransactionData' >
@@ -520,13 +507,10 @@ export default defineComponent({
     closeModal() {
       this.eventBus.emit("closeExchangeTokenModal");
     },
-
     openTokenSelectorModalFrom() {
-      this.eventBus.emit("closeExchangeTokenModal");
       this.logic.openTokenSelectorFrom();
     },
     openTokenSelectorModalTo() {
-      this.eventBus.emit("closeExchangeTokenModal");
       this.logic.openTokenSelectorTo();
     },
     continueFLow() {

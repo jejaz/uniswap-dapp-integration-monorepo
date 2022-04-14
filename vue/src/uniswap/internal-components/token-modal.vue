@@ -19,6 +19,10 @@
             v-on:input="searchForToken"
           />
         </div>
+
+        <div class='common-bases'>
+
+        </div>
   
         <div style="flex: 1 1 0%; position: relative">
           <div style="overflow: visible; height: 0px">
@@ -100,7 +104,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'eventBus'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo'],
 
   data() {
     return {
@@ -118,7 +122,6 @@ export default defineComponent({
     },
     closeTokenSelectorModal() {
       this.logic.hideTokenSelector();
-      this.eventBus.emit("openExchangeTokenModal");
     },
     async changeSelectToken(contractAddress) {
       var _this$outputToken, _this$outputToken2;
