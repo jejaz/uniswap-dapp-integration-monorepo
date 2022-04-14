@@ -308,18 +308,18 @@
           </div>
         </div>
 
-<!--        <template v-if="logic && supportedNetwork">-->
-<!--          <TokenModal-->
-<!--            :logic="logic"-->
-<!--            :selectorOpenFrom="selectorOpenFrom"-->
-<!--            :inputToken="inputToken"-->
-<!--            :outputToken="outputToken"-->
-<!--            :theosLogo="theosLogo"-->
-<!--            :maticLogo="maticLogo"-->
-<!--            @switchSwapCompleted="switchSwapCompleted"-->
-<!--            @changeTokenCompleted="changeTokenCompleted"-->
-<!--          />-->
-<!--        </template>-->
+        <template v-if="logic && supportedNetwork">
+          <TokenModal
+            :logic="logic"
+            :selectorOpenFrom="selectorOpenFrom"
+            :inputToken="inputToken"
+            :outputToken="outputToken"
+            :theosLogo="theosLogo"
+            :maticLogo="maticLogo"
+            @switchSwapCompleted="switchSwapCompleted"
+            @changeTokenCompleted="changeTokenCompleted"
+          />
+        </template>
       </div>
       <div v-else-if='showTransactionData' >
         <div class="uni-ic uni-ic__theme-background">
@@ -509,7 +509,6 @@ export default defineComponent({
     },
     openTokenSelectorModalFrom() {
       this.logic.openTokenSelectorFrom();
-      this.eventBus.emit("openTokenSelectModal", {"logic" : this.logic, "inputToken" : this.inputToken, "outputToken" : this.outputToken, "selectorOpenFrom" : this.selectorOpenFrom});
     },
     openTokenSelectorModalTo() {
       this.logic.openTokenSelectorTo();
