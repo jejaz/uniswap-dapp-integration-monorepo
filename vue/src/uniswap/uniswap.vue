@@ -307,19 +307,19 @@
             </p>
           </div>
         </div>
-  
-        <template v-if="logic && supportedNetwork">
-          <TokenModal
-            :logic="logic"
-            :selectorOpenFrom="selectorOpenFrom"
-            :inputToken="inputToken"
-            :outputToken="outputToken"
-            :theosLogo="theosLogo"
-            :maticLogo="maticLogo"
-            @switchSwapCompleted="switchSwapCompleted"
-            @changeTokenCompleted="changeTokenCompleted"
-          />
-        </template>
+
+<!--        <template v-if="logic && supportedNetwork">-->
+<!--          <TokenModal-->
+<!--            :logic="logic"-->
+<!--            :selectorOpenFrom="selectorOpenFrom"-->
+<!--            :inputToken="inputToken"-->
+<!--            :outputToken="outputToken"-->
+<!--            :theosLogo="theosLogo"-->
+<!--            :maticLogo="maticLogo"-->
+<!--            @switchSwapCompleted="switchSwapCompleted"-->
+<!--            @changeTokenCompleted="changeTokenCompleted"-->
+<!--          />-->
+<!--        </template>-->
       </div>
       <div v-else-if='showTransactionData' >
         <div class="uni-ic uni-ic__theme-background">
@@ -509,6 +509,7 @@ export default defineComponent({
     },
     openTokenSelectorModalFrom() {
       this.logic.openTokenSelectorFrom();
+      this.eventBus.emit("openTokenSelectModal", {"logic" : this.logic, "inputToken" : this.inputToken, "outputToken" : this.outputToken, "selectorOpenFrom" : this.selectorOpenFrom});
     },
     openTokenSelectorModalTo() {
       this.logic.openTokenSelectorTo();
@@ -639,6 +640,9 @@ export default defineComponent({
 
   async mounted() {
     var _uniswapDappSharedLog, _uniswapDappSharedLog2, _uniswapDappSharedLog3, _uniswapDappSharedLog4, _uniswapDappSharedLog5, _uniswapDappSharedLog6;
+
+    this.eventBus.on("switchSwapCompleted", () => this.switchSwapCompleted());
+    this.eventBus.on("changeTokenCompleted", () => this.changeTokenCompleted());
 
     this.registerEventListeners();
     const uniswapDappSharedLogic = new UniswapDappSharedLogic(this.uniswapDappSharedLogicContext);
