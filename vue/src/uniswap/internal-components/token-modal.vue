@@ -1,5 +1,5 @@
 <template>  
-    <div id="uni-ic__modal-token" class="uni-ic__modal" style='padding-top: 40px;'>
+    <div id="uni-ic__modal-token" class="uni-ic__modal">
       <div
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
@@ -24,7 +24,7 @@
 
         </div>
   
-        <div style="flex: 1 1 0%; position: relative">
+        <div style="flex: 1 1 0%; position: relative; height: 100%;">
           <div class='token-modal-wrapper' >
               <div class='token-modal-wrapper-2'>
                 <div
@@ -73,7 +73,7 @@
                   <div v-if='index !== logic.supportedTokenBalances.length - 1' class='divider'></div>
                 </div>
               </div>
-\          </div>
+          </div>
           <div class="resize-triggers">
             <div class="expand-trigger">
               <div style="width: 419px; height: 211px"></div>
