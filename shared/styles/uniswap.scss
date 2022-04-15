@@ -2231,7 +2231,7 @@ radial-gradient(
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0b0b !important;
+  background: #141414 !important;
   border-radius: 0 6px 0 0;
   border-right: 1px solid #2c2c2c;
   border-top: 1px solid #2c2c2c;
@@ -2258,11 +2258,18 @@ radial-gradient(
   }
   .common-bases-input-wrapper {
     display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+
     .common-bases-input {
       background: #303030;
       border-radius: 16px;
       height: 28px;
       align-items: center;
+      display: flex;
+      padding: 2px 8px 2px 2px;
+      gap: 5px;
       .common-bases-input-text {
         font-family: 'Aktiv Grotesk';
         font-style: normal;
@@ -2270,6 +2277,9 @@ radial-gradient(
         font-size: 14px;
         line-height: 21px;
         color: #E3E8DD;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
   }

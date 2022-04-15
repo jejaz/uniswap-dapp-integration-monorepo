@@ -24,7 +24,7 @@
           <span class='common-bases-text'>Common bases</span>
 
           <div class='common-bases-input-wrapper'>
-            <div class="common-bases-input">
+            <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'THEOS'))">
             <img
               width="24"
               height="24"
@@ -35,7 +35,7 @@
                 THEOS
               </span>
             </div>
-            <div class="common-bases-input">
+            <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'MATIC'))">
               <img
                 width="24"
                 height="24"
@@ -47,7 +47,6 @@
               </span>
             </div>
           </div>
-
         </div>
   
         <div style="flex: 1 1 0%; position: relative; height: 100%;">
