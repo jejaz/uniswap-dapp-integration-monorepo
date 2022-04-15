@@ -21,8 +21,31 @@
         </div>
 
         <div class='common-bases'>
-          <span class='uni-ic__modal-tokens-item-content-name'>Common bases</span>
-          
+          <span class='common-bases-text'>Common bases</span>
+
+          <div class="common-bases-input">
+          <img
+            width="24"
+            height="24"
+            alt="THEOS"
+            :src="theosLogo"
+          />
+            <span class='common-bases-input-text'>
+              THEOS
+            </span>
+          </div>
+          <div class="common-bases-input">
+            <img
+              width="24"
+              height="24"
+              alt="MATIC"
+              :src="maticLogo"
+            />
+            <span class='common-bases-input-text'>
+              MATIC
+            </span>
+          </div>
+
         </div>
   
         <div style="flex: 1 1 0%; position: relative; height: 100%;">

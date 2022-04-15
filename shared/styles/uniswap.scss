@@ -2245,3 +2245,28 @@ radial-gradient(
 ::-webkit-scrollbar-thumb:hover {
   background: #2C2C2C;
 }
+
+.common-bases {
+  text-align: left;
+  .common-bases-text {
+    font-family: 'Aktiv Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #85877D;
+  }
+  .common-bases-input {
+    background: #303030;
+    border-radius: 16px;
+    height: 28px;
+    .common-bases-input-text {
+      font-family: 'Aktiv Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #E3E8DD;
+    }
+  }
+}
