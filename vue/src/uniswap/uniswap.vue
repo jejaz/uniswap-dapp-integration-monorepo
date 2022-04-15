@@ -22,7 +22,7 @@
                   <div class="uni-ic__swap-input-content-main">
                     <button
                       class="uni-ic__swap-input-content-main-from-currency-container uni-ic__theme-panel"
-                      v-on:click="openTokenSelectorModalFrom()"
+                      v-on:click="logic.openTokenSelectorFrom"
                     >
                       <span
                         class="uni-ic__swap-output-content-main-select-content"
@@ -133,7 +133,7 @@
                       class="
                     uni-ic__swap-output-content-main-select uni-ic__theme-panel
                   "
-                      v-on:click="openTokenSelectorModalTo()"
+                      v-on:click="logic.openTokenSelectorTo"
                     >
                       <span
                         class="uni-ic__swap-output-content-main-select-content"
@@ -506,12 +506,6 @@ export default defineComponent({
 
     closeModal() {
       this.eventBus.emit("closeExchangeTokenModal");
-    },
-    openTokenSelectorModalFrom() {
-      this.logic.openTokenSelectorFrom();
-    },
-    openTokenSelectorModalTo() {
-      this.logic.openTokenSelectorTo();
     },
     continueFLow() {
       this.eventBus.emit("continueFlow");
