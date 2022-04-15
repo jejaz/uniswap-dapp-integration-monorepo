@@ -1,5 +1,5 @@
 <template>  
-    <div id="uni-ic__modal-token" class="uni-ic__modal">
+    <div id="uni-ic__modal-token" class="uni-ic__modal" style='padding-top: 40px;'>
       <div
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
@@ -24,19 +24,10 @@
 
         </div>
   
-        <div style="flex: 1 1 0%; position: relative" class='token-modal-wrapper'>
+        <div style="flex: 1 1 0%; position: relative">
           <div style="overflow: visible; height: 0px">
-            <div
-              style="
-              position: relative;
-              height: 210px;
-              width: 100%;
-              overflow: auto;
-              will-change: transform;
-              direction: ltr;
-            "
-            >
-              <div style="height: 100%; width: 100%">
+            <div class='token-modal-wrapper' >
+              <div class='token-modal-wrapper-2'>
                 <div
                   v-for="(token, index) in logic.supportedTokenBalances"
                   v-bind:key="token.contractAddress"
