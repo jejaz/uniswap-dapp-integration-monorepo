@@ -1975,6 +1975,7 @@ radial-gradient(
       backdrop-filter: blur(36px);
       border-radius: 8px;
       min-width: 500px;
+      min-height: 500px;
 
       @include rwd(1400) {
         width: 40%;
