@@ -2256,17 +2256,21 @@ radial-gradient(
     line-height: 18px;
     color: #85877D;
   }
-  .common-bases-input {
-    background: #303030;
-    border-radius: 16px;
-    height: 28px;
-    .common-bases-input-text {
-      font-family: 'Aktiv Grotesk';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 21px;
-      color: #E3E8DD;
+  .common-bases-input-wrapper {
+    display: flex;
+    .common-bases-input {
+      background: #303030;
+      border-radius: 16px;
+      height: 28px;
+      align-items: center;
+      .common-bases-input-text {
+        font-family: 'Aktiv Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #E3E8DD;
+      }
     }
   }
 }

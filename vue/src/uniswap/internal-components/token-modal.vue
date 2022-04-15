@@ -23,27 +23,29 @@
         <div class='common-bases'>
           <span class='common-bases-text'>Common bases</span>
 
-          <div class="common-bases-input">
-          <img
-            width="24"
-            height="24"
-            alt="THEOS"
-            :src="theosLogo"
-          />
-            <span class='common-bases-input-text'>
-              THEOS
-            </span>
-          </div>
-          <div class="common-bases-input">
+          <div class='common-bases-input-wrapper'>
+            <div class="common-bases-input">
             <img
               width="24"
               height="24"
-              alt="MATIC"
-              :src="maticLogo"
+              alt="THEOS"
+              :src="theosLogo"
             />
-            <span class='common-bases-input-text'>
-              MATIC
-            </span>
+              <span class='common-bases-input-text'>
+                THEOS
+              </span>
+            </div>
+            <div class="common-bases-input">
+              <img
+                width="24"
+                height="24"
+                alt="MATIC"
+                :src="maticLogo"
+              />
+              <span class='common-bases-input-text'>
+                MATIC
+              </span>
+            </div>
           </div>
 
         </div>
