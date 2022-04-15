@@ -21,7 +21,8 @@
         </div>
 
         <div class='common-bases'>
-
+          <span class='uni-ic__modal-tokens-item-content-name'>Common bases</span>
+          
         </div>
   
         <div style="flex: 1 1 0%; position: relative; height: 100%;">
