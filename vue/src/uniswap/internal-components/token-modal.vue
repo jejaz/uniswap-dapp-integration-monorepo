@@ -25,8 +25,7 @@
         </div>
   
         <div style="flex: 1 1 0%; position: relative">
-          <div style="overflow: visible; height: 0px">
-            <div class='token-modal-wrapper' >
+          <div class='token-modal-wrapper' >
               <div class='token-modal-wrapper-2'>
                 <div
                   v-for="(token, index) in logic.supportedTokenBalances"
@@ -74,8 +73,7 @@
                   <div v-if='index !== logic.supportedTokenBalances.length - 1' class='divider'></div>
                 </div>
               </div>
-            </div>
-          </div>
+\          </div>
           <div class="resize-triggers">
             <div class="expand-trigger">
               <div style="width: 419px; height: 211px"></div>
