@@ -108,8 +108,7 @@ export class Theming {
   public showTokenSelector(): void {
     this.hideSettings();
     const modal = document.getElementById('uni-ic__modal-token')!;
-    modal.style.display = 'block';
-    console.log('debug')
+    modal.style.display = 'flex';
     this.renderModalWithCorrectPosition(modal, 200);
   }
 

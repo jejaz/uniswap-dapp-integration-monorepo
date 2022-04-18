@@ -91,8 +91,7 @@ var Theming = /** @class */ (function () {
     Theming.prototype.showTokenSelector = function () {
         this.hideSettings();
         var modal = document.getElementById('uni-ic__modal-token');
-        modal.style.display = 'block';
-        console.log('debug');
+        modal.style.display = 'flex';
         this.renderModalWithCorrectPosition(modal, 200);
     };
     /**
