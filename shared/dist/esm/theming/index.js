@@ -89,6 +89,7 @@ var Theming = /** @class */ (function () {
         this.hideSettings();
         var modal = document.getElementById('uni-ic__modal-token');
         modal.style.display = 'block';
+        console.log('debug');
         this.renderModalWithCorrectPosition(modal, 100);
     };
     /**

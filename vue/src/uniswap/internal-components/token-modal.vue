@@ -1,5 +1,5 @@
 <template>  
-    <div id="uni-ic__modal-token" class="uni-ic__modal" style='padding-top: 100px !important;'>
+    <div id="uni-ic__modal-token" class="uni-ic__modal">
       <div
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
