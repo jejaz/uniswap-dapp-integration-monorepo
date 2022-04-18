@@ -90,7 +90,7 @@ var Theming = /** @class */ (function () {
         var modal = document.getElementById('uni-ic__modal-token');
         modal.style.display = 'block';
         console.log('debug');
-        this.renderModalWithCorrectPosition(modal, 100);
+        this.renderModalWithCorrectPosition(modal, 200);
     };
     /**
      * Hide the token selector
