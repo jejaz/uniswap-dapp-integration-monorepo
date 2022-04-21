@@ -370,7 +370,6 @@
                         <button style="margin-bottom: 10px; margin-top: 30px;"
                                 v-if="miningTransactionStatus === TransactionStatus.completed"
                                 class="app-modal-button-inverse"
-                                style="margin-top: 30px;"
                                 v-on:click="continueFLow()">
                           <div class="uni-ic__swap-button-text">
                             <span>{{ congratsModalButtonText }}</span>
