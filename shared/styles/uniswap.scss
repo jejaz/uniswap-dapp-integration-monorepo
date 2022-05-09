@@ -1055,11 +1055,10 @@ radial-gradient(
   &__modal {
     &-tokens {
       &-title {
-        margin-top: 2px;
         color: #E3E8DD;
-        font-family: 'Formula Condensed';
+        font-family: 'Formula Condensed', sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 24px;
         line-height: 28px;
         text-transform: uppercase;
@@ -2005,6 +2004,7 @@ radial-gradient(
       float: right;
       font-size: 20px;
       font-weight: bold;
+      color: #A0A395;
 
       &:hover,
       &:focus {
@@ -2096,6 +2096,7 @@ radial-gradient(
     background-clip: text;
     background-blend-mode: screen, difference, normal;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 26px;
   }
 
   .app-modal-text {
@@ -2300,6 +2301,18 @@ radial-gradient(
           cursor: pointer;
         }
       }
+    }
+  }
+  .sushi-logo {
+    font-family: 'Aktiv Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #85877D;
+    & span {
+
     }
   }
 }

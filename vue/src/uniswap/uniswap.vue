@@ -308,7 +308,12 @@
             </p>
           </div>
         </div>
-
+        <div class="sushi-logo"> In collab with
+          <img
+            alt="SUSHI"
+            :src="sushiLogo"
+          />
+        </div>
         <template v-if="logic && supportedNetwork">
           <TokenModal
             :logic="logic"
@@ -317,6 +322,7 @@
             :outputToken="outputToken"
             :theosLogo="theosLogo"
             :maticLogo="maticLogo"
+            :sushiLogo="sushiLogo"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -442,7 +448,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'congratsModalText', 'congratsModalButtonText'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'sushiLogo', 'congratsModalText', 'congratsModalButtonText'],
 
   data() {
     return {
@@ -468,6 +474,7 @@ export default defineComponent({
       image: this.image,
       theosLogo: this.theosLogo,
       maticLogo: this.maticLogo,
+      sushiLogo: this.sushiLogo,
       showTransactionData: false,
       supportedNetworkTokens: undefined,
       congratsModalText: this.congratsModalText != null ? this.congratsModalText.value : '',

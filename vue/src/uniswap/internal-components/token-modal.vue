@@ -98,6 +98,12 @@
                   <div v-if='index !== logic.supportedTokenBalances.length - 1' class='divider'></div>
                 </div>
               </div>
+            <div class="sushi-logo"> In collab with
+              <img
+                alt="SUSHI"
+                :src="sushiLogo"
+              />
+            </div>
           </div>
           <div class="resize-triggers">
             <div class="expand-trigger">
