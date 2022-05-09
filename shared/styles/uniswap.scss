@@ -2311,8 +2311,12 @@ radial-gradient(
     line-height: 18px;
     text-align: center;
     color: #85877D;
-    & span {
-
+    align-content: center;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+    & img {
+      margin-left:3px;
     }
   }
 }

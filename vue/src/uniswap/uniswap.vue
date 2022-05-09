@@ -300,7 +300,7 @@
                 </div>
               </button>
             </div>
-            <div class="sushi-logo"> In collab with
+            <div class="sushi-logo" style='margin-top: 30px'> In collab with
               <img
                 alt="SUSHI"
                 :src="sushiLogo"

@@ -49,7 +49,7 @@
           </div>
         </div>
   
-        <div style="flex: 1 1 0%; position: relative; height: 100%;">
+        <div style="flex: 1 1 0%; position: relative;">
           <div class='token-modal-wrapper' >
               <div class='token-modal-wrapper-2'>
                 <div
@@ -99,12 +99,12 @@
                 </div>
               </div>
           </div>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 419px; height: 211px"></div>
-            </div>
-            <div class="contract-trigger"></div>
-          </div>
+<!--          <div class="resize-triggers">-->
+<!--            <div class="expand-trigger">-->
+<!--              <div style="width: 419px; height: 211px"></div>-->
+<!--            </div>-->
+<!--            <div class="contract-trigger"></div>-->
+<!--          </div>-->
         </div>
         <div class="sushi-logo"> In collab with
           <img
