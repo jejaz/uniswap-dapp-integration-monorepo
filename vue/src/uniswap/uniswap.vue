@@ -300,6 +300,12 @@
                 </div>
               </button>
             </div>
+            <div class="sushi-logo"> In collab with
+              <img
+                alt="SUSHI"
+                :src="sushiLogo"
+              />
+            </div>
           </div>
   
           <div class="uni-ic__error" v-if="!supportedNetwork">
@@ -307,12 +313,6 @@
               <strong>Chain id {{ chainId }} is a unsupported network.</strong>
             </p>
           </div>
-        </div>
-        <div class="sushi-logo"> In collab with
-          <img
-            alt="SUSHI"
-            :src="sushiLogo"
-          />
         </div>
         <template v-if="logic && supportedNetwork">
           <TokenModal
