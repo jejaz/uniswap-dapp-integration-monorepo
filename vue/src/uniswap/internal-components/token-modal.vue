@@ -82,7 +82,7 @@
                 >
                   <div class="uni-ic__modal-tokens-item" v-if="token.canShow">
                     <TokenIcon
-                      v-if='token.symbol == "THEOS" || token.symbol == "MATIC"'
+                      v-if='commonBases.includes(token.symbol)'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
                       :logo='token.symbol == "THEOS" ? theosLogo : maticLogo'
@@ -142,7 +142,8 @@ export default defineComponent({
   data() {
     return {
       searchToken: '',
-      SelectTokenActionFrom
+      SelectTokenActionFrom,
+      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH']
     };
   },
 
