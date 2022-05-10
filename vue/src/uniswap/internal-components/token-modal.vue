@@ -35,10 +35,11 @@
           </div>
           <div class="info-hover address-hover">These tokens are commonly paired <br> with other tokens</div>
 
-          <div class='common-bases-input-wrapper'
-               v-for="(token, index) in logic.supportedTokenBalances"
-               v-bind:key="token.contractAddress">
-            <div class="common-bases-input" v-if="commonBases.includes(token.symbol)"
+          <div class='common-bases-input-wrapper'>
+            <div
+              v-for="(token, index) in logic.supportedTokenBalances"
+              v-bind:key="token.contractAddress"
+              class="common-bases-input" v-if="commonBases.includes(token.symbol)"
                  v-on:click="changeSelectToken(token.contractAddress)">
             <img
               width="24"
