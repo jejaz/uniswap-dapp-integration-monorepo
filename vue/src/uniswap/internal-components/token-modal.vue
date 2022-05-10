@@ -35,7 +35,7 @@
           </div>
           <div class="info-hover address-hover">These tokens are commonly paired <br> with other tokens</div>
 
-          {{logos["ADA"] }}
+          {{logos[0] }}
           <div class='common-bases-input-wrapper'
                v-for="(token, index) in logic.supportedTokenBalances"
                v-bind:key="token.contractAddress">
@@ -45,7 +45,7 @@
               width="24"
               height="24"
               alt="THEOS"
-              :src="logos[token.symbol]"
+              :src="logos.find(logo => logo.name === token.name).path"
             />
               <span class='common-bases-input-text'>
                 {{ token.symbol }}
@@ -79,7 +79,7 @@
                       v-if='commonBases.includes(token.symbol)'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
-                      :logo='logos[token.symbol]'
+                      :logo='logos.find(logo => logo.name === token.name).path'
                     />
                     <div v-else style='width: 24px; height: 24px;'>
                     </div>
