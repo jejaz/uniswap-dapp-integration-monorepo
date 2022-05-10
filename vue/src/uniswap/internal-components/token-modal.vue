@@ -25,12 +25,12 @@
         <div class='common-bases'>
           <div>
             <div class="info-icon">
+              <span class='common-bases-text'>Common bases </span>
               <img
                 :src="infoIcon"
                 alt="Info"
                 class='icon' style='cursor: pointer;'
               />
-              <span class='common-bases-text'>Common bases </span>
             </div>
           </div>
           <div class="info-hover address-hover">These tokens are commonly paired with other tokens</div>

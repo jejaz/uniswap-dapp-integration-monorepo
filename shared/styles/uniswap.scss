@@ -2326,6 +2326,10 @@ radial-gradient(
     display:flex;
   }
 
+  .info-icon {
+    display: flex;
+    gap: 5px;
+  }
   .info-hover {
     position: absolute;
     display: none;
