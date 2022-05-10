@@ -35,8 +35,7 @@
           </div>
           <div class="info-hover address-hover">These tokens are commonly paired <br> with other tokens</div>
 
-          {{logos}}
-          {{logos['ADA']}}
+          {{logos["ADA"] }}
           <div class='common-bases-input-wrapper'
                v-for="(token, index) in logic.supportedTokenBalances"
                v-bind:key="token.contractAddress">
