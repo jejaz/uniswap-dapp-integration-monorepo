@@ -23,7 +23,16 @@
         </div>
 
         <div class='common-bases'>
-          <span class='common-bases-text'>Common bases <font-awesome-icon icon="fa-solid fa-circle-info" class='icon' style='cursor: pointer;'/></span>
+          <div>
+            <div class="info-icon">
+              <img
+                :src="infoIcon"
+                alt="Info"
+                class='icon' style='cursor: pointer;'
+              />
+              <span class='common-bases-text'>Common bases </span>
+            </div>
+          </div>
           <div class="info-hover address-hover">These tokens are commonly paired with other tokens</div>
 
           <div class='common-bases-input-wrapper'>
@@ -128,7 +137,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon'],
 
   data() {
     return {

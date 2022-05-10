@@ -323,6 +323,7 @@
             :theosLogo="theosLogo"
             :maticLogo="maticLogo"
             :sushiLogo="sushiLogo"
+            :infoIcon="infoIcon"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -448,7 +449,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'sushiLogo', 'congratsModalText', 'congratsModalButtonText'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon', 'congratsModalText', 'congratsModalButtonText'],
 
   data() {
     return {
@@ -475,6 +476,7 @@ export default defineComponent({
       theosLogo: this.theosLogo,
       maticLogo: this.maticLogo,
       sushiLogo: this.sushiLogo,
+      infoIcon: this.infoIcon,
       showTransactionData: false,
       supportedNetworkTokens: undefined,
       congratsModalText: this.congratsModalText != null ? this.congratsModalText.value : '',
