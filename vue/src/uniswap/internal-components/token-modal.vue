@@ -44,7 +44,7 @@
               width="24"
               height="24"
               alt="THEOS"
-              :logo='logos.filter((elem) => elem.name === token.symbol)?.pop()?.path'
+              :src='logos.filter((elem) => elem.name === token.symbol)?.pop()?.path'
             />
               <span class='common-bases-input-text'>
                 {{ token.symbol }}
