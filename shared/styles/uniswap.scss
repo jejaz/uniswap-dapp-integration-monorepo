@@ -2333,11 +2333,10 @@ radial-gradient(
   .info-hover {
     position: absolute;
     display: none;
-    left: 8%;
-    bottom: 60px;
+    left: 25%;
     line-height: 30px;
     padding: 0 5px;
-    transform: translate(-50%, 40%);
+    transform: translate(0, -145%);
     color: #E3E8DD;
     background: #2C2C2C;
     white-space: nowrap;
@@ -2360,7 +2359,7 @@ radial-gradient(
       border-top: 8px solid #2C2C2C;;
     }
   }
-  .icon:hover + .address-hover {
+  .icon:hover + .info-hover {
     display: block;
   }
 }

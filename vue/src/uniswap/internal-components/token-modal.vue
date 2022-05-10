@@ -33,7 +33,7 @@
               />
             </div>
           </div>
-          <div class="info-hover address-hover">These tokens are commonly paired with other tokens</div>
+          <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
 
           <div class='common-bases-input-wrapper'>
             <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'THEOS')?.pop()?.contractAddress)">
