@@ -4,12 +4,12 @@
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
         <div class='token-modal-heading'>
-          <span class="uni-ic__modal__close" v-on:click="closeTokenSelectorModal()"
-            >&times;</span
-          >
           <p class="uni-ic__modal-tokens-title">
             Select a token
           </p>
+          <span class="uni-ic__modal__close" style='margin-left: auto; margin-right: 0px;' v-on:click="closeTokenSelectorModal()"
+          >&times;</span
+          >
         </div>
         <div class="uni-ic__modal-tokens-search">
           <input
