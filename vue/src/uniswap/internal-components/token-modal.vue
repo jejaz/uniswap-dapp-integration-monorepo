@@ -45,7 +45,7 @@
               width="24"
               height="24"
               alt="THEOS"
-              :src="logos.find(logo => logo.name === token.name).path"
+              :logo='logic.supportedTokenBalances.filter((elem) => elem.symbol === token.symbol)?.pop()?.path'
             />
               <span class='common-bases-input-text'>
                 {{ token.symbol }}
@@ -79,7 +79,7 @@
                       v-if='commonBases.includes(token.symbol)'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
-                      :logo='logos.find(logo => logo.name === token.name).path'
+                      :logo='logic.supportedTokenBalances.filter((elem) => elem.symbol === token.symbol)?.pop()?.path'
                     />
                     <div v-else style='width: 24px; height: 24px;'>
                     </div>
