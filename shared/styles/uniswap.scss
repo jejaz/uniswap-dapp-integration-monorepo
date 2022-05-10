@@ -1054,6 +1054,8 @@ radial-gradient(
 
   &__modal {
     &-tokens {
+      display: flex;
+      flex-direction: column;
       &-title {
         color: #E3E8DD;
         font-family: 'Formula Condensed', sans-serif;
@@ -2311,6 +2313,7 @@ radial-gradient(
     line-height: 18px;
     text-align: center;
     color: #85877D;
+    display: flex;
     align-content: center;
     align-items: center;
     margin-top: 10px;
@@ -2318,5 +2321,42 @@ radial-gradient(
     & img {
       margin-left:3px;
     }
+  }
+  .token-modal-heading {
+    display:flex;
+  }
+
+  .info-hover {
+    position: absolute;
+    display: none;
+    left: 8%;
+    bottom: 60px;
+    line-height: 30px;
+    padding: 0 5px;
+    transform: translate(-50%, 40%);
+    color: #E3E8DD;
+    background: #2C2C2C;
+    white-space: nowrap;
+    position: absolute;
+    font-size: 0.9rem;
+    font-family: 'Aktiv Grotesk', sans-serif;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    &::before {
+      width: 0;
+      height: 0;
+      display: block;
+      content: '';
+      bottom: -8px;
+      left: 50%;
+      position: absolute;
+      margin-left: -8px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #2C2C2C;;
+    }
+  }
+  .icon:hover + .address-hover {
+    display: block;
   }
 }

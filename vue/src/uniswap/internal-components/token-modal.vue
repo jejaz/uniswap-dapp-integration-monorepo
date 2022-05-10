@@ -3,12 +3,14 @@
       <div
         class="uni-ic__modal__content uni-ic__modal-tokens uni-ic__theme-background"
       >
-        <span class="uni-ic__modal__close" v-on:click="closeTokenSelectorModal()"
-          >&times;</span
-        >
-        <p class="uni-ic__modal-tokens-title">
-          Select a token
-        </p>
+        <div class='token-modal-heading'>
+          <span class="uni-ic__modal__close" v-on:click="closeTokenSelectorModal()"
+            >&times;</span
+          >
+          <p class="uni-ic__modal-tokens-title">
+            Select a token
+          </p>
+        </div>
         <div class="uni-ic__modal-tokens-search">
           <input
             type="text"
@@ -21,7 +23,8 @@
         </div>
 
         <div class='common-bases'>
-          <span class='common-bases-text'>Common bases</span>
+          <span class='common-bases-text'>Common bases <font-awesome-icon icon="fa-solid fa-circle-info" class='icon' style='cursor: pointer;'/></span>
+          <div class="info-hover address-hover">These tokens are commonly paired with other tokens</div>
 
           <div class='common-bases-input-wrapper'>
             <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'THEOS')?.pop()?.contractAddress)">
@@ -106,7 +109,7 @@
 <!--            <div class="contract-trigger"></div>-->
 <!--          </div>-->
         </div>
-        <div class="sushi-logo"> In collab with
+        <div class="sushi-logo" style='margin-top:auto; margin-bottom: 24px;'> In collab with
           <img
             alt="SUSHI"
             :src="sushiLogo"
