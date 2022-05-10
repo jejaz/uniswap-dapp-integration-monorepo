@@ -35,27 +35,19 @@
           </div>
           <div class="info-hover address-hover">These tokens are commonly paired <br> with other tokens</div>
 
-          <div class='common-bases-input-wrapper'>
-            <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'THEOS')?.pop()?.contractAddress)">
+          <div class='common-bases-input-wrapper'
+               v-for="(token, index) in logic.supportedTokenBalances"
+               v-bind:key="token.contractAddress">
+            <div class="common-bases-input" v-if="commonBases.includes(token.symbol)"
+                 v-on:click="changeSelectToken(token.contractAddress)">
             <img
               width="24"
               height="24"
               alt="THEOS"
-              :src="theosLogo"
+              :src="logos[token.symbol]"
             />
               <span class='common-bases-input-text'>
-                THEOS
-              </span>
-            </div>
-            <div class="common-bases-input" v-on:click="changeSelectToken(logic.supportedTokenBalances.filter((elem) => elem.symbol === 'MATIC').pop()?.contractAddress)">
-              <img
-                width="24"
-                height="24"
-                alt="MATIC"
-                :src="maticLogo"
-              />
-              <span class='common-bases-input-text'>
-                MATIC
+                {{ token.symbol }}
               </span>
             </div>
           </div>
@@ -81,11 +73,12 @@
                   }"
                 >
                   <div class="uni-ic__modal-tokens-item" v-if="token.canShow">
+<!--                    TODO: change its logo-->
                     <TokenIcon
                       v-if='commonBases.includes(token.symbol)'
                       classes="uni-ic__modal-tokens-item-icon"
                       :context="token.tokenImageContext"
-                      :logo='token.symbol == "THEOS" ? theosLogo : maticLogo'
+                      :logo='logos[token.symbol]'
                     />
                     <div v-else style='width: 24px; height: 24px;'>
                     </div>
@@ -118,7 +111,7 @@
 <!--            <div class="contract-trigger"></div>-->
 <!--          </div>-->
         </div>
-        <div class="sushi-logo" style='margin-top:auto; margin-bottom: 24px;'> In collab with
+        <div class="sushi-logo" style='margin-top:auto; margin-bottom: 0px;'> In collab with
           <img
             alt="SUSHI"
             :src="sushiLogo"
@@ -137,7 +130,7 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon', 'logos'],
 
   data() {
     return {

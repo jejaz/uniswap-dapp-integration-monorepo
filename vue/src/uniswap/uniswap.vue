@@ -324,6 +324,7 @@
             :maticLogo="maticLogo"
             :sushiLogo="sushiLogo"
             :infoIcon="infoIcon"
+            :logos="logos"
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -449,7 +450,7 @@ export default defineComponent({
     TransactionModal,
     TokenModal
   },
-  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon', 'congratsModalText', 'congratsModalButtonText'],
+  props: ['uniswapDappSharedLogicContext', 'image', 'eventBus', 'theosLogo', 'maticLogo', 'logos', 'sushiLogo', 'infoIcon', 'congratsModalText', 'congratsModalButtonText'],
 
   data() {
     return {
