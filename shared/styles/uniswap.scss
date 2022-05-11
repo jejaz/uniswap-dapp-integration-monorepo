@@ -1975,7 +1975,7 @@ radial-gradient(
       box-sizing: border-box;
       backdrop-filter: blur(36px);
       border-radius: 8px;
-      height: 800px;
+      height: 830px;
 
       @include rwd(1400) {
         width: 40%;
@@ -2351,7 +2351,7 @@ radial-gradient(
       display: block;
       content: '';
       bottom: -8px;
-      left: 50%;
+      left: 47%;
       position: absolute;
       margin-left: -8px;
       border-left: 8px solid transparent;
@@ -2359,7 +2359,7 @@ radial-gradient(
       border-top: 8px solid #2C2C2C;;
     }
   }
-  .info-hover > div:hover .info-hover {
+  .info-icon > div:hover .info-hover {
     display: block;
   }
 }

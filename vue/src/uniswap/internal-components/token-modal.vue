@@ -27,13 +27,13 @@
             <div class="info-icon">
               <span class='common-bases-text'>Common bases </span>
               <div>
-              <img
-                :src="infoIcon"
-                alt="Info"
-                class='icon' style='cursor: pointer;'
-              />
+                <img
+                  :src="infoIcon"
+                  alt="Info"
+                  class='icon' style='cursor: pointer;'
+                />
+                <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
               </div>
-              <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
             </div>
           </div>
 
