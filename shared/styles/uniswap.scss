@@ -2277,8 +2277,7 @@ radial-gradient(
 
     .common-bases-input-wrapper {
       display: flex;
-      gap: 2px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       margin-top: 15px;
       flex-wrap: wrap;
 
@@ -2360,7 +2359,7 @@ radial-gradient(
       border-top: 8px solid #2C2C2C;;
     }
   }
-  .icon:hover .info-hover {
+  .info-hover > div:hover .info-hover {
     display: block;
   }
 }

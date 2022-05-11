@@ -26,31 +26,33 @@
           <div>
             <div class="info-icon">
               <span class='common-bases-text'>Common bases </span>
+              <div>
               <img
                 :src="infoIcon"
                 alt="Info"
                 class='icon' style='cursor: pointer;'
               />
+              </div>
               <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
             </div>
           </div>
-          
+
           <div class='common-bases-input-wrapper'>
             <div v-for="(token, index) in logic.supportedTokenBalances"
                  v-bind:key="token.contractAddress" style='margin-bottom: 8px;'>
-            <div
-              class="common-bases-input" v-if="commonBases.includes(token.symbol)"
-                 v-on:click="changeSelectToken(token.contractAddress)">
-            <img
-              width="24"
-              height="24"
-              alt="THEOS"
-              :src='logos.filter((elem) => elem.name === token.symbol)?.pop()?.path'
-            />
-              <span class='common-bases-input-text'>
-                {{ token.symbol }}
-              </span>
-            </div>
+              <div
+                class="common-bases-input" v-if="commonBases.includes(token.symbol)" :style="commonBases.includes(token.symbol) ? 'margin-right: 5px;' : 'margin-right: 0px'"
+                   v-on:click="changeSelectToken(token.contractAddress)">
+              <img
+                width="24"
+                height="24"
+                alt="THEOS"
+                :src='logos.filter((elem) => elem.name === token.symbol)?.pop()?.path'
+              />
+                <span class='common-bases-input-text'>
+                  {{ token.symbol }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
