@@ -31,13 +31,15 @@
                 alt="Info"
                 class='icon' style='cursor: pointer;'
               />
+              <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
             </div>
           </div>
-          <div class="info-hover address-hover">These tokens are commonly paired <br> with other tokens</div>
+
+          {{logic.supportedTokenBalances}}
 
           <div class='common-bases-input-wrapper'>
             <div v-for="(token, index) in logic.supportedTokenBalances"
-                 v-bind:key="token.contractAddress">
+                 v-bind:key="token.contractAddress" style='margin-bottom: 8px;'>
             <div
               class="common-bases-input" v-if="commonBases.includes(token.symbol)"
                  v-on:click="changeSelectToken(token.contractAddress)">
