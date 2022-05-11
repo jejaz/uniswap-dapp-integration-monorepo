@@ -34,9 +34,7 @@
               <div class="info-hover">These tokens are commonly paired <br> with other tokens</div>
             </div>
           </div>
-
-          {{logic.supportedTokenBalances}}
-
+          
           <div class='common-bases-input-wrapper'>
             <div v-for="(token, index) in logic.supportedTokenBalances"
                  v-bind:key="token.contractAddress" style='margin-bottom: 8px;'>
