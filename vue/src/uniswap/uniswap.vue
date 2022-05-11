@@ -325,6 +325,7 @@
             :sushiLogo="sushiLogo"
             :infoIcon="infoIcon"
             :logos="logos"
+            :commonBases='commonBases'
             @switchSwapCompleted="switchSwapCompleted"
             @changeTokenCompleted="changeTokenCompleted"
           />
@@ -484,7 +485,7 @@ export default defineComponent({
       congratsModalButtonText: this.congratsModalButtonText.value,
       TransactionStatus,
       TradeDirection,
-      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'WMATIC']
+      commonBases: ['THEOS', 'MATIC', 'BTCB', 'BTC', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'ETH', 'WMATIC']
     };
   },
 

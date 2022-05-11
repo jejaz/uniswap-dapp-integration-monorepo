@@ -133,13 +133,12 @@ export default defineComponent({
   components: {
     TokenIcon
   },
-  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon', 'logos'],
+  props: ['logic', 'selectorOpenFrom', 'inputToken', 'outputToken', 'theosLogo', 'maticLogo', 'sushiLogo', 'infoIcon', 'logos', 'commonBases'],
 
   data() {
     return {
       searchToken: '',
       SelectTokenActionFrom,
-      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'WMATIC']
     };
   },
 
