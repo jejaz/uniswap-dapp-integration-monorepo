@@ -48,9 +48,9 @@
 
                       <span class="uni-ic__swap-input-content-main-from-currency" v-if='inputToken'>
                         <TokenIcon
-                          v-if='inputToken.symbol == "THEOS" || inputToken.symbol == "MATIC"'
+                          v-if='commonBases.includes(inputToken.symbol)'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
-                          :logo='inputToken.symbol == "THEOS" ? theosLogo : maticLogo'
+                          :logo='logos.filter((elem) => elem.name === inputToken.symbol)?.pop()?.path'
                           :context="inputToken.tokenImageContext"
                         />
                         <div v-else style='width: 24px; height: 24px;'>
@@ -162,10 +162,10 @@
                         v-if="outputToken"
                       >
                         <TokenIcon
-                          v-if='outputToken.symbol == "THEOS" || outputToken.symbol == "MATIC"'
+                          v-if='commonBases.includes(outputToken.symbol)'
                           classes="uni-ic__swap-input-content-main-from-currency-icon"
                           :context="outputToken.tokenImageContext"
-                          :logo='outputToken.symbol == "THEOS" ? theosLogo : maticLogo'
+                          :logo='logos.filter((elem) => elem.name === outputToken.symbol)?.pop()?.path'
                         />
                         <div v-else style='width: 24px; height: 24px;'>
                         </div>
@@ -484,6 +484,7 @@ export default defineComponent({
       congratsModalButtonText: this.congratsModalButtonText.value,
       TransactionStatus,
       TradeDirection,
+      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'WMATIC']
     };
   },
 

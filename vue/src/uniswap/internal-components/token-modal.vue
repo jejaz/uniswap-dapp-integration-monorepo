@@ -139,7 +139,7 @@ export default defineComponent({
     return {
       searchToken: '',
       SelectTokenActionFrom,
-      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH']
+      commonBases: ['THEOS', 'MATIC', 'BTCB', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'WMATIC']
     };
   },
 
