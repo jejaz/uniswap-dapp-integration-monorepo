@@ -776,9 +776,12 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_m.label) {
                     case 0:
                         (_a = this.tradeContext) === null || _a === void 0 ? void 0 : _a.destroy();
+                        console.log(inputToken);
+                        console.log(outputToken);
                         inputToken = getAddress(inputToken, true);
                         outputToken = getAddress(outputToken, true);
                         uniswapPair = this.createUniswapPairContext(inputToken, outputToken, this.uniswapPairSettings);
+                        console.log(JSON.stringify(uniswapPair));
                         _c = this;
                         return [4 /*yield*/, uniswapPair.createFactory()];
                     case 1:
@@ -806,6 +809,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         _h.outputToken = _m.sent();
                         this.outputToken$.next(this.outputToken);
                         if (!executeTrade) return [3 /*break*/, 8];
+                        console.log('execute trade');
                         return [4 /*yield*/, this.trade(this._inputAmount, TradeDirection.input)];
                     case 7:
                         _m.sent();
@@ -852,6 +856,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (!amount.isGreaterThan(0)) return [3 /*break*/, 2];
+                        console.log('trade');
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];
                     case 1:
                         context = _a.sent();

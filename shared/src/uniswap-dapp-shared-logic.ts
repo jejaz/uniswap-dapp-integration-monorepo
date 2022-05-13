@@ -727,6 +727,8 @@ export class UniswapDappSharedLogic {
     executeTrade = true,
   ): Promise<void> {
     this.tradeContext?.destroy();
+    console.log(inputToken)
+    console.log(outputToken)
     inputToken = getAddress(inputToken, true);
     outputToken = getAddress(outputToken, true);
     const uniswapPair = this.createUniswapPairContext(
@@ -735,6 +737,7 @@ export class UniswapDappSharedLogic {
       this.uniswapPairSettings,
     );
 
+    console.log(JSON.stringify(uniswapPair))
     this.factory = await uniswapPair.createFactory();
     const fiatPrices = await this._coinGecko.getCoinGeckoFiatPrices(
       [
@@ -757,6 +760,7 @@ export class UniswapDappSharedLogic {
     );
     this.outputToken$.next(this.outputToken);
     if (executeTrade) {
+      console.log('execute trade')
       await this.trade(this._inputAmount, TradeDirection.input);
     }
   }
@@ -801,6 +805,7 @@ export class UniswapDappSharedLogic {
     direction: TradeDirection,
   ): Promise<void> {
     if (amount.isGreaterThan(0)) {
+      console.log('trade')
       const context = await this.factory!.trade(amount.toFixed(), direction);
       this.tradeContext = this.formatTradeContext(context);
       this.tradeContext$.next(this.tradeContext);
