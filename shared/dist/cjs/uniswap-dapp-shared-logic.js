@@ -420,7 +420,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         _a.label = 2;
-                    case 2: return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), directon)];
+                    case 2:
+                        console.log('before trade');
+                        return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), directon)];
                     case 3:
                         _a.sent();
                         return [2 /*return*/];
@@ -788,6 +790,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, uniswapPair.createFactory()];
                     case 1:
                         _c.factory = _m.sent();
+                        console.log('factory created');
                         return [4 /*yield*/, this._coinGecko.getCoinGeckoFiatPrices([
                                 this.factory.fromToken.contractAddress,
                                 this.factory.toToken.contractAddress,
@@ -858,11 +861,11 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (!amount.isGreaterThan(0)) return [3 /*break*/, 2];
-                        console.log('trade');
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];
                     case 1:
                         context = _a.sent();
                         this.tradeContext = this.formatTradeContext(context);
+                        console.log(JSON.stringify(this.tradeContext));
                         this.tradeContext$.next(this.tradeContext);
                         this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(function (quote) {
                             var _a, _c, _d;
@@ -882,6 +885,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 _this.tradeContext$.next(_this.tradeContext);
                             }
                         });
+                        console.log('bla');
                         if (this.tradeContext.quoteDirection === simple_uniswap_sdk_1.TradeDirection.output) {
                             this._inputAmount = new bignumber_js_1.BigNumber(utils_1.Utils.deepClone(this.tradeContext.expectedConvertQuote));
                         }
