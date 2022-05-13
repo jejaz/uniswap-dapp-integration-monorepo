@@ -737,7 +737,6 @@ export class UniswapDappSharedLogic {
       this.uniswapPairSettings,
     );
 
-    console.log(JSON.stringify(uniswapPair))
     this.factory = await uniswapPair.createFactory();
     const fiatPrices = await this._coinGecko.getCoinGeckoFiatPrices(
       [

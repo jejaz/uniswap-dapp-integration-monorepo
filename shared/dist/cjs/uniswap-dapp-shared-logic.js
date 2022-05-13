@@ -784,7 +784,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         inputToken = (0, simple_uniswap_sdk_1.getAddress)(inputToken, true);
                         outputToken = (0, simple_uniswap_sdk_1.getAddress)(outputToken, true);
                         uniswapPair = this.createUniswapPairContext(inputToken, outputToken, this.uniswapPairSettings);
-                        console.log(JSON.stringify(uniswapPair));
                         _c = this;
                         return [4 /*yield*/, uniswapPair.createFactory()];
                     case 1:
