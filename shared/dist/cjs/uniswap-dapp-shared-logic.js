@@ -858,7 +858,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                     case 0:
                         if (!amount.isGreaterThan(0)) return [3 /*break*/, 2];
                         console.log('THIS IS THE PROBLEM');
-                        console.log('factory' + JSON.stringify(this.factory));
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];
                     case 1:
                         context = _a.sent();

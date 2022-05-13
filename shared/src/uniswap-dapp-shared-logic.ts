@@ -804,7 +804,6 @@ export class UniswapDappSharedLogic {
   ): Promise<void> {
     if (amount.isGreaterThan(0)) {
       console.log('THIS IS THE PROBLEM')
-      console.log('factory' + JSON.stringify(this.factory))
       const context = await this.factory!.trade(amount.toFixed(), direction);
       this.tradeContext = this.formatTradeContext(context);
       this.tradeContext$.next(this.tradeContext);
