@@ -416,14 +416,11 @@ export class UniswapDappSharedLogic {
       this._inputAmount = new BigNumber(amount);
     }
     if (!this.factory) {
-      console.log('before build factory')
       await this.buildFactory(
         this.inputToken.contractAddress,
         this.outputToken!.contractAddress,
       );
-      console.log('factory is built')
     }
-    console.log("before trade")
     await this.trade(new BigNumber(amount), directon);
   }
 
@@ -741,7 +738,6 @@ export class UniswapDappSharedLogic {
     );
 
     this.factory = await uniswapPair.createFactory();
-    console.log('factoryyyyyyyyy create')
     const fiatPrices = await this._coinGecko.getCoinGeckoFiatPrices(
       [
         this.factory.fromToken.contractAddress,
@@ -806,14 +802,11 @@ export class UniswapDappSharedLogic {
     amount: BigNumber,
     direction: TradeDirection,
   ): Promise<void> {
-    console.log("trade")
-    console.log(amount)
     if (amount.isGreaterThan(0)) {
-      console.log(JSON.stringify(direction))
+      console.log('THIS IS THE PROBLEM')
+      console.log('factory' + JSON.stringify(this.factory))
       const context = await this.factory!.trade(amount.toFixed(), direction);
-      console.log(JSON.stringify(context))
       this.tradeContext = this.formatTradeContext(context);
-      console.log(JSON.stringify(this.tradeContext))
       this.tradeContext$.next(this.tradeContext);
 
       this._quoteSubscription = this.tradeContext.quoteChanged$.subscribe(
