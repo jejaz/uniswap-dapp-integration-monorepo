@@ -416,10 +416,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, this.buildFactory(this.inputToken.contractAddress, this.outputToken.contractAddress)];
                     case 1:
                         _a.sent();
+                        console.log('factory is built');
                         _a.label = 2;
-                    case 2:
-                        console.log('before trade');
-                        return [4 /*yield*/, this.trade(new BigNumber(amount), directon)];
+                    case 2: return [4 /*yield*/, this.trade(new BigNumber(amount), directon)];
                     case 3:
                         _a.sent();
                         return [2 /*return*/];
@@ -787,7 +786,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, uniswapPair.createFactory()];
                     case 1:
                         _c.factory = _m.sent();
-                        console.log('factory created');
                         return [4 /*yield*/, this._coinGecko.getCoinGeckoFiatPrices([
                                 this.factory.fromToken.contractAddress,
                                 this.factory.toToken.contractAddress,
@@ -811,7 +809,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         _h.outputToken = _m.sent();
                         this.outputToken$.next(this.outputToken);
                         if (!executeTrade) return [3 /*break*/, 8];
-                        console.log('execute trade');
                         return [4 /*yield*/, this.trade(this._inputAmount, TradeDirection.input)];
                     case 7:
                         _m.sent();
@@ -858,9 +855,11 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (!amount.isGreaterThan(0)) return [3 /*break*/, 2];
+                        console.log(JSON.stringify(direction));
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];
                     case 1:
                         context = _a.sent();
+                        console.log(JSON.stringify(context));
                         this.tradeContext = this.formatTradeContext(context);
                         console.log(JSON.stringify(this.tradeContext));
                         this.tradeContext$.next(this.tradeContext);
@@ -882,7 +881,6 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                                 _this.tradeContext$.next(_this.tradeContext);
                             }
                         });
-                        console.log('bla');
                         if (this.tradeContext.quoteDirection === TradeDirection.output) {
                             this._inputAmount = new BigNumber(Utils.deepClone(this.tradeContext.expectedConvertQuote));
                         }

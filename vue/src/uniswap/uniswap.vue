@@ -533,6 +533,8 @@ export default defineComponent({
         await this.logic.changeTradePrice(amount, tradeDirection);
       } catch (error) {
         if ((error === null || error === void 0 ? void 0 : error.code) === ErrorCodes.noRoutesFound) {
+          console.log(JSON.stringify(tradeDirection))
+          console.log(JSON.stringify(error))
           this.handleNoLiquidityFound(true, tradeDirection);
           return false;
         } else {
