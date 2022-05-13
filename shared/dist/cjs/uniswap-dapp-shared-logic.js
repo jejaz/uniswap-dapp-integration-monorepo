@@ -422,7 +422,9 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         _a.sent();
                         console.log('factory is built');
                         _a.label = 2;
-                    case 2: return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), directon)];
+                    case 2:
+                        console.log("before trade");
+                        return [4 /*yield*/, this.trade(new bignumber_js_1.BigNumber(amount), directon)];
                     case 3:
                         _a.sent();
                         return [2 /*return*/];
@@ -859,6 +861,8 @@ var UniswapDappSharedLogic = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        console.log("trade");
+                        console.log(amount);
                         if (!amount.isGreaterThan(0)) return [3 /*break*/, 2];
                         console.log(JSON.stringify(direction));
                         return [4 /*yield*/, this.factory.trade(amount.toFixed(), direction)];

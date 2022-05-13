@@ -423,6 +423,7 @@ export class UniswapDappSharedLogic {
       );
       console.log('factory is built')
     }
+    console.log("before trade")
     await this.trade(new BigNumber(amount), directon);
   }
 
@@ -805,6 +806,8 @@ export class UniswapDappSharedLogic {
     amount: BigNumber,
     direction: TradeDirection,
   ): Promise<void> {
+    console.log("trade")
+    console.log(amount)
     if (amount.isGreaterThan(0)) {
       console.log(JSON.stringify(direction))
       const context = await this.factory!.trade(amount.toFixed(), direction);
