@@ -416,6 +416,7 @@ export class UniswapDappSharedLogic {
       this._inputAmount = new BigNumber(amount);
     }
     if (!this.factory) {
+      console.log('before build factory')
       await this.buildFactory(
         this.inputToken.contractAddress,
         this.outputToken!.contractAddress,
@@ -739,6 +740,7 @@ export class UniswapDappSharedLogic {
     );
 
     this.factory = await uniswapPair.createFactory();
+    console.log('factoryyyyyyyyy create')
     const fiatPrices = await this._coinGecko.getCoinGeckoFiatPrices(
       [
         this.factory.fromToken.contractAddress,

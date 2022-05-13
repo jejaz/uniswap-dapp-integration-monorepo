@@ -416,6 +416,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                             this._inputAmount = new bignumber_js_1.BigNumber(amount);
                         }
                         if (!!this.factory) return [3 /*break*/, 2];
+                        console.log('before build factory');
                         return [4 /*yield*/, this.buildFactory(this.inputToken.contractAddress, this.outputToken.contractAddress)];
                     case 1:
                         _a.sent();
@@ -789,6 +790,7 @@ var UniswapDappSharedLogic = /** @class */ (function () {
                         return [4 /*yield*/, uniswapPair.createFactory()];
                     case 1:
                         _c.factory = _m.sent();
+                        console.log('factoryyyyyyyyy create');
                         return [4 /*yield*/, this._coinGecko.getCoinGeckoFiatPrices([
                                 this.factory.fromToken.contractAddress,
                                 this.factory.toToken.contractAddress,
