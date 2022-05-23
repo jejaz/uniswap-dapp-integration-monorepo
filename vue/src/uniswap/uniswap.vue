@@ -723,10 +723,9 @@ export default defineComponent({
       this.loading = _loading;
     }));
     this.logic = uniswapDappSharedLogic;
-    setTimeout(
-      () => (this.loading = false),
-      1000
-    );
+
+    await this.$nextTick();
+    this.loading = false;
     this.supportedNetworkTokens = supportedNetworkTokens;
   },
 
