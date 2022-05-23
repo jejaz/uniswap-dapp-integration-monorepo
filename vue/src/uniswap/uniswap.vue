@@ -1,7 +1,7 @@
 <template>  
     <div className="uniswap-vue-react" id="uniswap__716283642843643826">
       <Loading v-if="loading" />
-      <div v-else-if='!showTransactionData'>
+      <div ref='data1' v-else-if='!showTransactionData'>
         <p class="app-modal-title">Buy tokens</p>
         <p class="app-modal-text">Select tokens to swap them</p>
         <div class="uni-ic uni-ic__theme-background">
@@ -331,7 +331,7 @@
           />
         </template>
       </div>
-      <div v-else-if='showTransactionData' >
+      <div ref='data2' v-else-if='showTransactionData' >
         <div class="uni-ic uni-ic__theme-background">
           <template v-if="logic && supportedNetwork">
 
@@ -487,6 +487,14 @@ export default defineComponent({
       TradeDirection,
       commonBases: ['THEOS', 'MATIC', 'BTCB', 'BTC', 'ADA', 'DAI', 'USDT', 'USDC', 'WETH', 'ETH', 'WMATIC']
     };
+  },
+  watch: {
+    data1: {
+      handler: this.loading = false;
+    },
+    data2: {
+      handler: this.loading = false;
+    },
   },
 
   methods: {
@@ -723,8 +731,6 @@ export default defineComponent({
       this.loading = _loading;
     }));
     this.logic = uniswapDappSharedLogic;
-
-    await this.$nextTick();
     this.loading = false;
     this.supportedNetworkTokens = supportedNetworkTokens;
   },
