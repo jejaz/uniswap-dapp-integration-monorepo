@@ -723,12 +723,18 @@ export default defineComponent({
       this.loading = _loading;
     }));
     this.logic = uniswapDappSharedLogic;
-    await this.$nextTick(function () {
-      this.loading = false;
-    })
+    // await this.$nextTick(function () {
+    //   this.loading = false;
+    // })
     this.supportedNetworkTokens = supportedNetworkTokens;
   },
 
+  beforeUpdate() {
+    this.loading = true;
+  },
+  updated() {
+    this.loading = false;
+  },
   unmounted() {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
