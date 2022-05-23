@@ -490,10 +490,10 @@ export default defineComponent({
   },
   watch: {
     data1: {
-      handler: this.loading = false;
+      handler: this.loading = false,
     },
     data2: {
-      handler: this.loading = false;
+      handler: this.loading = false,
     },
   },
 
